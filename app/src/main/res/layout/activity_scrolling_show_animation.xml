@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".scrollview.ScrollingShowAnimation">
+
+        <com.jinhanexample.scrollview.ScrollingShowAnimationControl
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:background="#009688"
+                        android:gravity="center"
+                        android:text="첫번째" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:background="#E91E63"
+                        android:gravity="center"
+                        android:text="두번째" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:background="#9C27B0"
+                        android:gravity="center"
+                        android:text="세번째" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:background="#2196F3"
+                        android:gravity="center"
+                        android:text="네번째" />
+
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:background="#2196F3"
+                        android:gravity="center"
+                        android:text="네번째" />
+
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:background="#2196F3"
+                        android:gravity="center"
+                        android:text="네번째" />
+
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:background="#2196F3"
+                        android:gravity="center"
+                        android:text="네번째" />
+
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:background="#2196F3"
+                        android:gravity="center"
+                        android:text="네번째" />
+
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:background="#2196F3"
+                        android:gravity="center"
+                        android:text="네번째" />
+
+
+
+                    <TextView
+                        android:id="@+id/fourth"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:background="#2196F3"
+                        android:gravity="center"
+                        android:text="네번째" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fifth"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#FF5722"
+                        android:gravity="center"
+                        android:text="다섯번째" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.jinhanexample.scrollview.ScrollingShowAnimationControl>
+
+
+    </FrameLayout>
+</layout>

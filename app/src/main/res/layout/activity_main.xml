@@ -20,9 +20,40 @@
                 android:id="@+id/mpchart"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:backgroundTint="@color/white"
                 android:text="MPChart"
-                android:textColor="@color/black" />
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/scroll_animation"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="SCROLL ANIMATION"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="TAB LAYOUT" />
+
+            <Button
+                android:id="@+id/animation"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="ANIMATION" />
+
+            <Button
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="VIEW PAGER" />
+
+            <Button
+                android:id="@+id/floatingButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="FLOATING BUTTON" />
+
 
         </LinearLayout>
 

@@ -9,8 +9,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JinhanExample">
+        <activity android:name=".floatingButton.FloatingAnimationActivity"></activity>
+        <activity android:name=".floatingButton.ExpandFloatingButton" />
+        <activity android:name=".floatingButton.BaseFloatingButtonActivity" />
+        <activity android:name=".viewPager.DepthPageViewPager" />
+        <activity android:name=".viewPager.BaseViewPagerActivity" />
+        <activity android:name=".animation.BaseAnimationActivity" />
+        <activity android:name=".animation.ScaleAnimation" />
+        <activity android:name=".tablayout.BaseTabLayout" />
+        <activity android:name=".tablayout.CircleTabIndicator" />
+        <activity android:name=".tablayout.RectangleTabIndicator" />
+        <activity android:name=".scrollview.ScrollingShowAnimation" />
+        <activity android:name=".scrollview.StickyScrollView" />
+        <activity
+            android:name=".scrollview.CollapsingToolbarLayout"
+            android:theme="@style/Theme.Design.NoActionBar" />
+        <activity android:name=".scrollview.BaseScrollViewAnimation" />
         <activity android:name=".mpchart.MPChartCubic" />
         <activity android:name=".mpchart.MPChartList" />
+
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

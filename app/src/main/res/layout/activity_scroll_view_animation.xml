@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".scrollview.BaseScrollViewAnimation">
+
+
+        <Button
+            android:id="@+id/collapsing_toolbar_layout"
+            style="@style/button_height"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Collapsing Toolbar Layout" />
+
+
+        <Button
+            android:id="@+id/sticky_scroll_view"
+            style="@style/button_height"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="STICKY SCROLL VIEW" />
+
+
+        <Button
+            android:id="@+id/scroll_show_animation"
+            style="@style/button_height"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SCROLLING SHOW ANIMATION" />
+    </LinearLayout>
+</layout>
