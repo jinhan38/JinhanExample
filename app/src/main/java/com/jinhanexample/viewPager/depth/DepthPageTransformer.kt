@@ -1,4 +1,4 @@
-package com.jinhanexample.viewPager
+package com.jinhanexample.viewPager.depth
 
 import android.util.Log
 import android.view.View

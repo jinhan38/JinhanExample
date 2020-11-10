@@ -1,4 +1,4 @@
-package com.jinhanexample.viewPager.fragment
+package com.jinhanexample.viewPager.depth.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,14 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import com.jinhanexample.R
 
-class ThirdFragment : Fragment() {
+class SecondFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_third, container, false)
+        return inflater.inflate(R.layout.fragment_second, container, false)
     }
 
 

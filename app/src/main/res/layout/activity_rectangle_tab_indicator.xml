@@ -16,15 +16,18 @@
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
-        android:layout_marginHorizontal="30dp"
         android:layout_height="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        app:tabIndicatorGravity="center"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginBottom="10dp"
         android:background="@color/gray"
-        app:tabIndicatorColor="@color/teal_200"
-        app:tabIndicator="@drawable/tab_selected_rectangle_indicator"
         app:tabGravity="fill"
+        
+        app:tabIndicator="@drawable/tab_selected_rectangle_indicator"
+        app:tabIndicatorColor="@color/teal_200"
+        app:tabIndicatorGravity="center"
+        app:tabPaddingStart="20dp"
         app:tabRippleColor="@android:color/transparent">
 
         <com.google.android.material.tabs.TabItem

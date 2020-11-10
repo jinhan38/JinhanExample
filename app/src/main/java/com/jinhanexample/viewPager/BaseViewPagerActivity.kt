@@ -1,15 +1,14 @@
 package com.jinhanexample.viewPager
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.databinding.DataBindingUtil
 import com.jinhanexample.BaseActivity
 import com.jinhanexample.R
-import com.jinhanexample.animation.ScaleAnimation
 import com.jinhanexample.databinding.ActivityBaseViewPagerBinding
-import com.jinhanexample.databinding.ActivityDepthPageViewPagerBinding
+import com.jinhanexample.viewPager.depth.DepthPageViewPager
+import com.jinhanexample.viewPager.fragmentTrans.FragmentTransViewPager
 
 class BaseViewPagerActivity : BaseActivity(), View.OnClickListener {
 
@@ -24,12 +23,16 @@ class BaseViewPagerActivity : BaseActivity(), View.OnClickListener {
 
     override fun setupListener() {
         b.depthPageViewPager.setOnClickListener(this)
+        b.fragmentViewPager.setOnClickListener(this)
     }
 
     override fun onClick(p0: View?) {
         when (p0!!.id) {
             R.id.depth_page_view_pager -> {
                 startActivity(Intent(this, DepthPageViewPager::class.java))
+            }
+            R.id.fragment_view_pager -> {
+                startActivity(Intent(this, FragmentTransViewPager::class.java))
             }
         }
     }

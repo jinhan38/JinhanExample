@@ -6,6 +6,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         tools:context=".viewPager.BaseViewPagerActivity">
 
         <Button
@@ -14,5 +15,10 @@
             android:layout_height="50dp"
             android:text="DEPTH PAGE VIEW PAGER" />
 
+        <Button
+            android:id="@+id/fragment_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="FRAGMENT TRANS VIEW PAGER" />
     </LinearLayout>
 </layout>

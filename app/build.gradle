@@ -61,4 +61,9 @@ dependencies {
     //헤더 상단에 달라붙는 라이브러리
     implementation 'com.github.amarjain07:StickyScrollView:1.0.2'
 
+
+    //fragmentContainer 사용 가능
+    implementation 'androidx.activity:activity-ktx:1.1.0' // 1.1.0-rc02
+    implementation 'androidx.fragment:fragment-ktx:1.2.5' // 1.2.0-rc02
+
 }

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/navigation_game"
+        android:title="게임" />
+
+    <item
+        android:id="@+id/navigation_market"
+        android:title="마켓" />
+
+    <item
+        android:id="@+id/navigation_portfolio"
+        android:title="포폴" />
+
+    <item
+        android:id="@+id/navigation_mypage"
+        android:title="마이" />
+
+</menu>

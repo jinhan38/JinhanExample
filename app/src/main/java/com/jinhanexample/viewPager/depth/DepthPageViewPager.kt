@@ -1,4 +1,4 @@
-package com.jinhanexample.viewPager
+package com.jinhanexample.viewPager.depth
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -8,9 +8,9 @@ import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.jinhanexample.R
 import com.jinhanexample.databinding.ActivityDepthPageViewPagerBinding
-import com.jinhanexample.viewPager.fragment.FirstFragment
-import com.jinhanexample.viewPager.fragment.SecondFragment
-import com.jinhanexample.viewPager.fragment.ThirdFragment
+import com.jinhanexample.viewPager.depth.fragment.FirstFragment
+import com.jinhanexample.viewPager.depth.fragment.SecondFragment
+import com.jinhanexample.viewPager.depth.fragment.ThirdFragment
 
 
 class DepthPageViewPager : AppCompatActivity() {
