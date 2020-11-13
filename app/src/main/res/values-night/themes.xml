@@ -13,4 +13,20 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+
+    <!--    EditText 밑줄, 커서 컬러 변경-->
+    <style name="EditThemeNormal" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--        커서-->
+        <item name="colorAccent">#00BCD4</item>
+        <!--        밑줄-->
+        <item name="colorControlNormal">#00BCD4</item>
+    </style>
+
+    <style name="EditThemeError" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorAccent">#E91E63</item>
+        <item name="colorPrimary">#E91E63</item>
+        <item name="colorPrimaryDark">#E91E63</item>
+        <item name="colorControlNormal">#E91E63</item>
+    </style>
 </resources>

@@ -10,6 +10,7 @@ import com.jinhanexample.floatingButton.BaseFloatingButtonActivity
 import com.jinhanexample.mpchart.MPChartList
 import com.jinhanexample.scrollview.BaseScrollViewAnimation
 import com.jinhanexample.tablayout.BaseTabLayout
+import com.jinhanexample.textView.TextViewListActivity
 import com.jinhanexample.viewPager.BaseViewPagerActivity
 
 class MainActivity : BaseActivity(), View.OnClickListener {
@@ -32,6 +33,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         b.animation.setOnClickListener(this)
         b.viewPager.setOnClickListener(this)
         b.floatingButton.setOnClickListener(this)
+        b.textView.setOnClickListener(this)
     }
 
     override fun onClick(p0: View?) {
@@ -57,6 +59,9 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
             R.id.floatingButton ->{
                 startActivity(Intent(this, BaseFloatingButtonActivity::class.java))
+            }
+            R.id.textView ->{
+                startActivity(Intent(this, TextViewListActivity::class.java))
             }
 
         }

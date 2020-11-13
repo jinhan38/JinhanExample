@@ -54,6 +54,12 @@
                 android:layout_height="50dp"
                 android:text="FLOATING BUTTON" />
 
+            <Button
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="TextView" />
+
 
         </LinearLayout>
 
