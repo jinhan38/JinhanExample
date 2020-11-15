@@ -7,6 +7,7 @@ import androidx.databinding.DataBindingUtil
 import com.jinhanexample.animation.BaseAnimationActivity
 import com.jinhanexample.databinding.ActivityMainBinding
 import com.jinhanexample.floatingButton.BaseFloatingButtonActivity
+import com.jinhanexample.jetBrain.JetBrainBaseActivity
 import com.jinhanexample.mpchart.MPChartList
 import com.jinhanexample.scrollview.BaseScrollViewAnimation
 import com.jinhanexample.tablayout.BaseTabLayout
@@ -34,6 +35,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         b.viewPager.setOnClickListener(this)
         b.floatingButton.setOnClickListener(this)
         b.textView.setOnClickListener(this)
+        b.jetBrain.setOnClickListener(this)
     }
 
     override fun onClick(p0: View?) {
@@ -62,6 +64,9 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
             R.id.textView ->{
                 startActivity(Intent(this, TextViewListActivity::class.java))
+            }
+            R.id.jetBrain ->{
+                startActivity(Intent(this, JetBrainBaseActivity::class.java))
             }
 
         }

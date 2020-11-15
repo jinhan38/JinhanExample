@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JinhanExample">
-        <activity android:name=".textView.EditTextUnderlineColorChange"></activity>
+        <activity android:name=".jetBrain.shoppingList.ShoppingList"></activity>
+        <activity android:name=".jetBrain.JetBrainBaseActivity" />
+        <activity android:name=".textView.EditTextUnderlineColorChange" />
         <activity android:name=".textView.TextViewListActivity" />
         <activity android:name=".textView.EditTextCharChange" />
         <activity android:name=".viewPager.fragmentTrans.FragmentTransViewPager" />
