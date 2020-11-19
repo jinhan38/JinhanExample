@@ -68,6 +68,26 @@
                 android:text="jetBrain" />
 
 
+            <Button
+                android:id="@+id/codingLecture"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="생존코딩" />
+
+            <Button
+                android:id="@+id/stopWatch"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="STOP WATCH" />
+
+
+            <Button
+                android:id="@+id/fragment"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="FRAGMENT" />
+
+
         </LinearLayout>
 
 

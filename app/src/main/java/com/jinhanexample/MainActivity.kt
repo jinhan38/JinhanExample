@@ -5,11 +5,15 @@ import android.os.Bundle
 import android.view.View
 import androidx.databinding.DataBindingUtil
 import com.jinhanexample.animation.BaseAnimationActivity
+import com.jinhanexample.codingLecture.CodingLectureMainActivity
 import com.jinhanexample.databinding.ActivityMainBinding
 import com.jinhanexample.floatingButton.BaseFloatingButtonActivity
+import com.jinhanexample.fragment.BaseFragmentActivity
+import com.jinhanexample.fragment.ColorFragmentActivity
 import com.jinhanexample.jetBrain.JetBrainBaseActivity
 import com.jinhanexample.mpchart.MPChartList
 import com.jinhanexample.scrollview.BaseScrollViewAnimation
+import com.jinhanexample.stopWatch.StopWatchActivity
 import com.jinhanexample.tablayout.BaseTabLayout
 import com.jinhanexample.textView.TextViewListActivity
 import com.jinhanexample.viewPager.BaseViewPagerActivity
@@ -36,6 +40,9 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         b.floatingButton.setOnClickListener(this)
         b.textView.setOnClickListener(this)
         b.jetBrain.setOnClickListener(this)
+        b.codingLecture.setOnClickListener(this)
+        b.stopWatch.setOnClickListener(this)
+        b.fragment.setOnClickListener(this)
     }
 
     override fun onClick(p0: View?) {
@@ -52,21 +59,30 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 startActivity(Intent(this, BaseTabLayout::class.java))
             }
 
-            R.id.animation ->{
+            R.id.animation -> {
                 startActivity(Intent(this, BaseAnimationActivity::class.java))
             }
 
-            R.id.viewPager ->{
+            R.id.viewPager -> {
                 startActivity(Intent(this, BaseViewPagerActivity::class.java))
             }
-            R.id.floatingButton ->{
+            R.id.floatingButton -> {
                 startActivity(Intent(this, BaseFloatingButtonActivity::class.java))
             }
-            R.id.textView ->{
+            R.id.textView -> {
                 startActivity(Intent(this, TextViewListActivity::class.java))
             }
-            R.id.jetBrain ->{
+            R.id.jetBrain -> {
                 startActivity(Intent(this, JetBrainBaseActivity::class.java))
+            }
+            R.id.codingLecture -> {
+                startActivity(Intent(this, CodingLectureMainActivity::class.java))
+            }
+            R.id.stopWatch -> {
+                startActivity(Intent(this, StopWatchActivity::class.java))
+            }
+            R.id.fragment -> {
+                startActivity(Intent(this, BaseFragmentActivity::class.java))
             }
 
         }

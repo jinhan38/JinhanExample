@@ -9,7 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JinhanExample">
-        <activity android:name=".jetBrain.shoppingList.ShoppingList"></activity>
+        <activity android:name=".fragment.BaseFragmentActivity"></activity>
+        <activity android:name=".fragment.RecyclerViewFragmentActivity" />
+        <activity android:name=".fragment.ColorFragmentActivity" />
+        <activity android:name=".stopWatch.StopWatchActivity" />
+        <activity android:name=".codingLecture.intent.IntentActivity2" />
+        <activity android:name=".codingLecture.intent.IntentActivity" />
+        <activity android:name=".codingLecture.CodingLectureMainActivity" />
+        <activity android:name=".jetBrain.shoppingList.ShoppingList" />
         <activity android:name=".jetBrain.JetBrainBaseActivity" />
         <activity android:name=".textView.EditTextUnderlineColorChange" />
         <activity android:name=".textView.TextViewListActivity" />
