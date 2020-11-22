@@ -21,4 +21,11 @@
         android:layout_height="50dp"
         android:onClick="onClick"/>
 
+    <Button
+        android:id="@+id/fragment_callback"
+        android:text="FRAGMENT CALLBACK"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:onClick="onClick"/>
+
 </LinearLayout>

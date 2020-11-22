@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.jinhanexample.R
+import com.jinhanexample.fragment.callback.FragmentCallBackActivity
 
 class BaseFragmentActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,6 +21,9 @@ class BaseFragmentActivity : AppCompatActivity() {
             }
             R.id.fragment_recyclerView ->{
                 startActivity(Intent(this, RecyclerViewFragmentActivity::class.java))
+            }
+            R.id.fragment_callback ->{
+                startActivity(Intent(this, FragmentCallBackActivity::class.java))
             }
         }
 
