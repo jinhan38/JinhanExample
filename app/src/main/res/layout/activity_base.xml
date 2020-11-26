@@ -15,5 +15,18 @@
             android:layout_height="50dp"
             android:text="SCALE ANIMATION" />
 
+
+        <Button
+            android:id="@+id/imageSlide"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="IMAGE SLIDE" />
+
+        <Button
+            android:id="@+id/LockedBottomSheet"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="드래그 안되는 바텀시트" />
+
     </LinearLayout>
 </layout>

@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JinhanExample">
-        <activity android:name=".fragment.callback.FragmentCallBackActivity"></activity>
+        <activity android:name=".animation.LockedBottomSheetActivity"></activity>
+        <activity android:name=".animation.ImageSlideActivity" />
+        <activity android:name=".calendar.CustomCalendarActivity" />
+        <activity android:name=".middleClass.ThreadActivity" />
+        <activity android:name=".middleClass.MiddleClassActivity" />
+        <activity android:name=".fragment.callback.FragmentCallBackActivity" />
         <activity android:name=".fragment.BaseFragmentActivity" />
         <activity android:name=".fragment.RecyclerViewFragmentActivity" />
         <activity android:name=".fragment.ColorFragmentActivity" />

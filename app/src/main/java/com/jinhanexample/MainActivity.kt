@@ -5,12 +5,14 @@ import android.os.Bundle
 import android.view.View
 import androidx.databinding.DataBindingUtil
 import com.jinhanexample.animation.BaseAnimationActivity
+import com.jinhanexample.calendar.CustomCalendarActivity
 import com.jinhanexample.codingLecture.CodingLectureMainActivity
 import com.jinhanexample.databinding.ActivityMainBinding
 import com.jinhanexample.floatingButton.BaseFloatingButtonActivity
 import com.jinhanexample.fragment.BaseFragmentActivity
 import com.jinhanexample.fragment.ColorFragmentActivity
 import com.jinhanexample.jetBrain.JetBrainBaseActivity
+import com.jinhanexample.middleClass.MiddleClassActivity
 import com.jinhanexample.mpchart.MPChartList
 import com.jinhanexample.scrollview.BaseScrollViewAnimation
 import com.jinhanexample.stopWatch.StopWatchActivity
@@ -43,6 +45,8 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         b.codingLecture.setOnClickListener(this)
         b.stopWatch.setOnClickListener(this)
         b.fragment.setOnClickListener(this)
+        b.middleClass.setOnClickListener(this)
+        b.calendarView.setOnClickListener(this)
     }
 
     override fun onClick(p0: View?) {
@@ -83,6 +87,12 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
             R.id.fragment -> {
                 startActivity(Intent(this, BaseFragmentActivity::class.java))
+            }
+            R.id.middleClass -> {
+                startActivity(Intent(this, MiddleClassActivity::class.java))
+            }
+            R.id.calendarView -> {
+                startActivity(Intent(this, CustomCalendarActivity::class.java))
             }
 
         }

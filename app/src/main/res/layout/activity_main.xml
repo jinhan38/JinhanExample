@@ -86,6 +86,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:text="FRAGMENT" />
+            <Button
+                android:id="@+id/middleClass"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="안드로이드 중급" />
+            <Button
+                android:id="@+id/calendarView"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="CalendarView" />
 
 
         </LinearLayout>

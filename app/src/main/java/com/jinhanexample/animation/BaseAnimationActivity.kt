@@ -20,12 +20,20 @@ class BaseAnimationActivity : BaseActivity(), View.OnClickListener {
 
     override fun setupListener() {
         b.scaleAnimation.setOnClickListener(this)
+        b.imageSlide.setOnClickListener(this)
+        b.LockedBottomSheet.setOnClickListener(this)
     }
 
     override fun onClick(p0: View?) {
         when (p0!!.id) {
             R.id.scale_animation -> {
                 startActivity(Intent(this, ScaleAnimation::class.java))
+            }
+            R.id.imageSlide -> {
+                startActivity(Intent(this, ImageSlideActivity::class.java))
+            }
+            R.id.LockedBottomSheet -> {
+                startActivity(Intent(this, LockedBottomSheetActivity::class.java))
             }
         }
     }

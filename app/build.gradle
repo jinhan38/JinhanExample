@@ -58,7 +58,6 @@ dependencies {
     //mpchart
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
-    implementation 'com.google.android.material:material:1.2.1'
 
     //헤더 상단에 달라붙는 라이브러리
     implementation 'com.github.amarjain07:StickyScrollView:1.0.2'
