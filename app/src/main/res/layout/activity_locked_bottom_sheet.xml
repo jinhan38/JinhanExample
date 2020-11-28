@@ -14,12 +14,30 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="바텀시트 예제"
             android:textSize="30dp" />
+
+        <Button
+            android:id="@+id/bottomSheetExpand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:text="bottomSheet Expand" />
+
+        <Button
+            android:id="@+id/bottomSheetHidden"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:text="bottomSheetHidden" />
     </LinearLayout>
 
     <include
         android:id="@+id/locked_bottom_sheet"
-        layout="@layout/bottom_sheet_item" />
+        layout="@layout/bottom_sheet_item"
+        app:layout_behavior=".animation.CustomBottomSheetBehavior" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

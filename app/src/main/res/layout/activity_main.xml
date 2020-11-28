@@ -91,11 +91,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:text="안드로이드 중급" />
+
             <Button
                 android:id="@+id/calendarView"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:text="CalendarView" />
+                android:text="달력 예제" />
+
+            <Button
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="리사이클러뷰" />
 
 
         </LinearLayout>

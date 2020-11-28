@@ -10,4 +10,5 @@
     <color name="gray">#817F7F</color>
     <color name="red">#F80606</color>
 
+    <color name="btn_inactivity">#dad9e2</color>
 </resources>
