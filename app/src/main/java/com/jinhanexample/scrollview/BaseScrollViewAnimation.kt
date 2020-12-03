@@ -24,6 +24,7 @@ class BaseScrollViewAnimation : BaseActivity(), View.OnClickListener {
 
     override fun setupListener() {
         b.collapsingToolbarLayout.setOnClickListener(this)
+        b.collapsingToolbarLayout2.setOnClickListener(this)
         b.stickyScrollView.setOnClickListener(this)
         b.scrollShowAnimation.setOnClickListener(this)
     }
@@ -32,6 +33,9 @@ class BaseScrollViewAnimation : BaseActivity(), View.OnClickListener {
         when (p0!!.id) {
             R.id.collapsing_toolbar_layout -> {
                 startActivity(Intent(this, CollapsingToolbarLayout::class.java))
+            }
+            R.id.collapsing_toolbar_layout_2 -> {
+                startActivity(Intent(this, CollapsingScrollView2Activity::class.java))
             }
             R.id.sticky_scroll_view -> {
                 startActivity(Intent(this, StickyScrollView::class.java))

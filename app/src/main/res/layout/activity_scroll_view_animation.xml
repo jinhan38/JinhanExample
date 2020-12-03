@@ -19,6 +19,14 @@
 
 
         <Button
+            android:id="@+id/collapsing_toolbar_layout_2"
+            style="@style/button_height"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Collapsing Toolbar Layout 2" />
+
+
+        <Button
             android:id="@+id/sticky_scroll_view"
             style="@style/button_height"
             android:layout_width="match_parent"

@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JinhanExample">
-        <activity android:name=".recyclerView.RecyclerViewChildControlActivity"></activity>
+        <activity
+            android:name=".scrollview.CollapsingScrollView2Activity"
+            android:theme="@style/Theme.Design.NoActionBar"></activity>
+        <activity android:name=".recyclerView.RecyclerViewChildControlActivity" />
         <activity android:name=".recyclerView.RecyclerViewActivity" />
         <activity android:name=".animation.LockedBottomSheetActivity" />
         <activity android:name=".animation.ImageSlideActivity" />
