@@ -15,5 +15,11 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="탭 펼치기, 접기" />
+
+        <Button
+            android:id="@+id/dragAndSwipeRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="드래그, 스와이프 기능" />
     </LinearLayout>
 </layout>
