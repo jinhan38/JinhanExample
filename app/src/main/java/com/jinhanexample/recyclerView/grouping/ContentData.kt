@@ -1,4 +1,4 @@
-package com.jinhanexample.recyclerView.dragAndSwipe
+package com.jinhanexample.recyclerView.grouping
 
 class ContentData(count: Int, var name : String) : ParentData(count) {
     override fun getType(): Int {

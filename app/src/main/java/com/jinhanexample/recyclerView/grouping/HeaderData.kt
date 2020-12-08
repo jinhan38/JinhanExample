@@ -1,4 +1,4 @@
-package com.jinhanexample.recyclerView.dragAndSwipe
+package com.jinhanexample.recyclerView.grouping
 
 
 //HeaderData 클래스의 생성자는 count : Int

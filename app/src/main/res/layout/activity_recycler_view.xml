@@ -17,6 +17,12 @@
             android:text="탭 펼치기, 접기" />
 
         <Button
+            android:id="@+id/groupingRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="그루핑" />
+
+        <Button
             android:id="@+id/dragAndSwipeRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="50dp"

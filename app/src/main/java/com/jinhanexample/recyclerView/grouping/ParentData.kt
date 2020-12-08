@@ -1,4 +1,4 @@
-package com.jinhanexample.recyclerView.dragAndSwipe
+package com.jinhanexample.recyclerView.grouping
 
 abstract class ParentData(var count: Int) {
 

@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".recyclerView.dragAndSwipe.DragAndSwipeRecyclerViewActivity">
-
+    tools:context=".recyclerView.grouping.GroupingRecyclerViewActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/dragAndSwipeRecyclerView"
+        android:id="@+id/groupingRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/drag_nad_drop_swipe_rv_item" />
+        tools:listitem="@layout/grouping_rv_content_item" />
+
 </LinearLayout>

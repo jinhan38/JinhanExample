@@ -7,8 +7,8 @@ import android.view.View
 import androidx.databinding.DataBindingUtil
 import com.jinhanexample.R
 import com.jinhanexample.databinding.ActivityRecyclerViewBinding
-import com.jinhanexample.mpchart.MPChartList
 import com.jinhanexample.recyclerView.dragAndSwipe.DragAndSwipeRecyclerViewActivity
+import com.jinhanexample.recyclerView.grouping.GroupingRecyclerViewActivity
 
 class RecyclerViewActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -18,6 +18,7 @@ class RecyclerViewActivity : AppCompatActivity(), View.OnClickListener {
         b = DataBindingUtil.setContentView(this, R.layout.activity_recycler_view)
 
         b.childTabControlRecyclerView.setOnClickListener(this)
+        b.groupingRecyclerView.setOnClickListener(this)
         b.dragAndSwipeRecyclerView.setOnClickListener(this)
     }
 
@@ -26,6 +27,9 @@ class RecyclerViewActivity : AppCompatActivity(), View.OnClickListener {
         when (p0!!.id) {
             R.id.childTabControlRecyclerView -> {
                 startActivity(Intent(this, RecyclerViewChildControlActivity::class.java))
+            }
+            R.id.groupingRecyclerView -> {
+                startActivity(Intent(this, GroupingRecyclerViewActivity::class.java))
             }
             R.id.dragAndSwipeRecyclerView -> {
                 startActivity(Intent(this, DragAndSwipeRecyclerViewActivity::class.java))

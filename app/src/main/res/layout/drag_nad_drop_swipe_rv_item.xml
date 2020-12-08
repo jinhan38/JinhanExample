@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:id="@+id/itemWrap"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/drag_rv_text"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:paddingLeft="30dp"
+        android:text="아이템"
+        android:textSize="20dp" />
+
+
+    <ImageView
+        android:id="@+id/dragIcon"
+        android:layout_width="50dp"
+        android:padding="5dp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="10dp"
+        android:scaleType="center"
+        android:src="@drawable/ic_table_row" />
+
+</LinearLayout>

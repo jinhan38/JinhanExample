@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JinhanExample">
         <activity android:name=".recyclerView.dragAndSwipe.DragAndSwipeRecyclerViewActivity"></activity>
+        <activity android:name=".recyclerView.grouping.GroupingRecyclerViewActivity" />
         <activity android:name=".imageSearchApp.ImageSearchActivity" />
         <activity
             android:name=".scrollview.CollapsingScrollView2Activity"
