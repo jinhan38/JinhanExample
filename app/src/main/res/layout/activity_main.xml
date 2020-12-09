@@ -104,6 +104,12 @@
                 android:layout_height="50dp"
                 android:text="리사이클러뷰" />
 
+            <Button
+                android:id="@+id/mvvmTodo"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="MVVM Todo List" />
+
 
         </LinearLayout>
 

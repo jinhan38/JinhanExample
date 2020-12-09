@@ -14,6 +14,7 @@ import com.jinhanexample.fragment.ColorFragmentActivity
 import com.jinhanexample.jetBrain.JetBrainBaseActivity
 import com.jinhanexample.middleClass.MiddleClassActivity
 import com.jinhanexample.mpchart.MPChartList
+import com.jinhanexample.mvvmTodo.ui.MVVMTodoActivity
 import com.jinhanexample.recyclerView.RecyclerViewActivity
 import com.jinhanexample.scrollview.BaseScrollViewAnimation
 import com.jinhanexample.stopWatch.StopWatchActivity
@@ -49,6 +50,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         b.middleClass.setOnClickListener(this)
         b.calendarView.setOnClickListener(this)
         b.recyclerView.setOnClickListener(this)
+        b.mvvmTodo.setOnClickListener(this)
     }
 
     override fun onClick(p0: View?) {
@@ -98,6 +100,9 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
             R.id.recyclerView -> {
                 startActivity(Intent(this, RecyclerViewActivity::class.java))
+            }
+            R.id.mvvmTodo -> {
+                startActivity(Intent(this, MVVMTodoActivity::class.java))
             }
 
         }

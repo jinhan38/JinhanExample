@@ -1,4 +1,4 @@
-package com.jinhanexample.recyclerView.dragAndSwipe
+ package com.jinhanexample.recyclerView.dragAndSwipe
 
 import android.annotation.SuppressLint
 import android.content.Context

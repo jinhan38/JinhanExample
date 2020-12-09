@@ -3,15 +3,16 @@
     package="com.jinhanexample">
 
     <application
+        android:name=".mvvmTodo.TodoApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JinhanExample">
-        <activity android:name=".recyclerView.dragAndSwipe.DragAndSwipeRecyclerViewActivity"></activity>
+        <activity android:name=".mvvmTodo.ui.MVVMTodoActivity"></activity>
+        <activity android:name=".recyclerView.dragAndSwipe.DragAndSwipeRecyclerViewActivity" />
         <activity android:name=".recyclerView.grouping.GroupingRecyclerViewActivity" />
-        <activity android:name=".imageSearchApp.ImageSearchActivity" />
         <activity
             android:name=".scrollview.CollapsingScrollView2Activity"
             android:theme="@style/Theme.Design.NoActionBar" />
