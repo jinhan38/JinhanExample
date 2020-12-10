@@ -6,6 +6,7 @@ import android.view.View
 import androidx.databinding.DataBindingUtil
 import com.jinhanexample.BaseActivity
 import com.jinhanexample.R
+import com.jinhanexample.animation.animBuilder.AnimBuilderClassActivity
 import com.jinhanexample.databinding.ActivityBaseBinding
 
 class BaseAnimationActivity : BaseActivity(), View.OnClickListener {
@@ -22,6 +23,7 @@ class BaseAnimationActivity : BaseActivity(), View.OnClickListener {
         b.scaleAnimation.setOnClickListener(this)
         b.imageSlide.setOnClickListener(this)
         b.LockedBottomSheet.setOnClickListener(this)
+        b.animationBuilder.setOnClickListener(this)
     }
 
     override fun onClick(p0: View?) {
@@ -34,6 +36,9 @@ class BaseAnimationActivity : BaseActivity(), View.OnClickListener {
             }
             R.id.LockedBottomSheet -> {
                 startActivity(Intent(this, LockedBottomSheetActivity::class.java))
+            }
+            R.id.animationBuilder -> {
+                startActivity(Intent(this, AnimBuilderClassActivity::class.java))
             }
         }
     }

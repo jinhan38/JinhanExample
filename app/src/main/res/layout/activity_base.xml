@@ -28,5 +28,11 @@
             android:layout_height="50dp"
             android:text="드래그 안되는 바텀시트" />
 
+        <Button
+            android:id="@+id/animationBuilder"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="animation 빌더 클래스" />
+
     </LinearLayout>
 </layout>

@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JinhanExample">
-        <activity android:name=".mvvmTodo.ui.MVVMTodoActivity"></activity>
+        <activity android:name=".animation.animBuilder.AnimBuilderClassActivity"></activity>
+        <activity android:name=".mvvmTodo.ui.MVVMTodoActivity" />
         <activity android:name=".recyclerView.dragAndSwipe.DragAndSwipeRecyclerViewActivity" />
         <activity android:name=".recyclerView.grouping.GroupingRecyclerViewActivity" />
         <activity
