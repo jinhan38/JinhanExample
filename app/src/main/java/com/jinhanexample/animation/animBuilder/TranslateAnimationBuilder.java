@@ -63,6 +63,7 @@ public class TranslateAnimationBuilder {
             return new TranslateAnimationBuilder(this);
         }
 
+        //필수로 값이 필요한 속성들을 Builder의 생성자에 넣어주세요
         public Builder(View view, int fromXType, float fromX, int toXType, float toX,
                        int fromYType, float fromY, int toYType, float toY, int duration) {
             this.view = view;

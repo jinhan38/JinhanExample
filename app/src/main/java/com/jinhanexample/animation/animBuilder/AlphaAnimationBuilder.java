@@ -38,7 +38,6 @@ public class AlphaAnimationBuilder {
     }
 
 
-    //변수들 중 필수로 들어가야 하는, 생성해야 하는 변수들을 Builder클래스에 다시 변수 설정
     public static class Builder {
         private View view;
         private float fromAlpha = 0;
@@ -58,6 +57,8 @@ public class AlphaAnimationBuilder {
             return new AlphaAnimationBuilder(this);
         }
 
+
+        //필수로 값이 필요한 속성들을 Builder의 생성자에 넣어주세요
         public Builder(View view, float fromAlpha, float toAlpha, int duration) {
             this.view = view;
             this.fromAlpha = fromAlpha;

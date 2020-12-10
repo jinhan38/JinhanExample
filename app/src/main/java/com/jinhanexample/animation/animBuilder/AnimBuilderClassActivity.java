@@ -1,7 +1,6 @@
 package com.jinhanexample.animation.animBuilder;
 
 import android.os.Bundle;
-import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -26,11 +25,11 @@ public class AnimBuilderClassActivity extends AppCompatActivity {
         Button translateAnim = findViewById(R.id.translateAnim);
 
         alphaAnim.setOnClickListener(view -> {
-            new AlphaAnimationBuilder.Builder(imageView, 1.0f, 0.3f, 2000)
+            new AlphaAnimationBuilder.Builder(imageView, 1.0f, 0.3f, 1000)
                     .setFillAfter(true)
                     .setRepeatCount(3)
                     .setInterpolator(new AccelerateInterpolator())
-                    .setStartOffset(1500)
+                    .setStartOffset(500)
                     .setRepeatMode(AlphaAnimation.REVERSE)
                     .build();
         });
@@ -46,7 +45,7 @@ public class AnimBuilderClassActivity extends AppCompatActivity {
                     animationType, 0,
                     animationType, 0,
                     animationType, 0.5f,
-                    1500)
+                    1000)
                     .setRepeatMode(TranslateAnimation.REVERSE)
                     .setInterpolator(new AccelerateInterpolator())
                     .setStartOffset(300)
