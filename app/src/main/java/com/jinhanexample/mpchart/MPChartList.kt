@@ -22,12 +22,16 @@ class MPChartList : BaseActivity(), View.OnClickListener {
 
     override fun setupListener() {
         b.mpchartCubic.setOnClickListener(this)
+        b.mpchartCandle.setOnClickListener(this)
     }
 
     override fun onClick(p0: View?) {
         when (p0!!.id) {
             R.id.mpchart_cubic -> {
                 startActivity(Intent(this, MPChartCubic::class.java))
+            }
+            R.id.mpchart_candle -> {
+                startActivity(Intent(this, MPChartCandle::class.java))
             }
         }
     }

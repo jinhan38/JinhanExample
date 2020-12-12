@@ -18,6 +18,7 @@ public class AlphaAnimationBuilder {
         boolean fillBefore = builder.fillBefore;
         int repeatMode = builder.repeatMode;
         int repeatCount = builder.repeatCount;
+        int visible = builder.visible;
 
 
         if (interpolator == null) {
@@ -35,6 +36,7 @@ public class AlphaAnimationBuilder {
         alphaAnimation.setRepeatCount(repeatCount);
 
         view.startAnimation(alphaAnimation);
+        view.setVisibility(visible);
     }
 
 
@@ -49,6 +51,7 @@ public class AlphaAnimationBuilder {
         private boolean fillBefore = false;
         private int repeatMode = 0;
         private int repeatCount = 0;
+        private int visible = View.VISIBLE;
 
 
         //builder 패턴을 종료하는 함수
@@ -95,6 +98,11 @@ public class AlphaAnimationBuilder {
 
         public Builder setRepeatCount(int repeatCount) {
             this.repeatCount = repeatCount;
+            return this;
+        }
+
+        public Builder setVisibility(int visible) {
+            this.visible = visible;
             return this;
         }
 

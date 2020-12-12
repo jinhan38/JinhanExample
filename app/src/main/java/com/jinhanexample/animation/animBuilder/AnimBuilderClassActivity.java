@@ -1,5 +1,6 @@
 package com.jinhanexample.animation.animBuilder;
 
+import android.animation.ObjectAnimator;
 import android.os.Bundle;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AlphaAnimation;
@@ -12,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.jinhanexample.R;
+import com.jinhanexample.Common;
 
 public class AnimBuilderClassActivity extends AppCompatActivity {
 
@@ -23,6 +25,19 @@ public class AnimBuilderClassActivity extends AppCompatActivity {
         ImageView imageView = findViewById(R.id.catImage);
         Button alphaAnim = findViewById(R.id.alphaAnim);
         Button translateAnim = findViewById(R.id.translateAnim);
+        Button objectAnim = findViewById(R.id.objectAnim);
+
+
+        objectAnim.setOnClickListener(view -> {
+
+            //x는 좌우, y는 상하, rotation은 회전
+            ObjectAnimator objectAnimator =
+                    ObjectAnimator.ofFloat(imageView, "x", Common.Companion.getDP(this, 100));
+            objectAnimator.setDuration(2000);
+            objectAnimator.start();
+
+        });
+
 
         alphaAnim.setOnClickListener(view -> {
             new AlphaAnimationBuilder.Builder(imageView, 1.0f, 0.3f, 1000)

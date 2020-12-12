@@ -11,4 +11,7 @@
     <color name="red">#F80606</color>
 
     <color name="btn_inactivity">#dad9e2</color>
+    <color name="colorBackground">#f5f7fa</color>
+    <color name="colorTransparent">#00000000</color>
+    <color name="colorFeelingBar">#f4f8fc</color>
 </resources>

@@ -37,7 +37,6 @@ public class TranslateAnimationBuilder {
         translateAnimation.setRepeatMode(repeatMode);
         translateAnimation.setRepeatCount(repeatCount);
 
-
         view.startAnimation(translateAnimation);
     }
 

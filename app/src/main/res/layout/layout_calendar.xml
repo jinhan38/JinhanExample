@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/lineChart"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@color/colorTransparent" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="321dp"
+            android:layout_marginTop="120dp"
+            android:background="@color/colorBackground" />
+
+        <FrameLayout
+            android:id="@+id/progressArea"
+            android:layout_width="match_parent"
+            android:layout_height="234dp"
+            android:layout_marginTop="207dp">
+
+            <ImageView
+                android:id="@+id/ivBox"
+                android:layout_width="367dp"
+                android:layout_height="234dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/rectangle_copy_14" />
+
+            <ImageView
+                android:id="@+id/ivArrow"
+                android:layout_width="47dp"
+                android:layout_height="16dp"
+                android:background="@drawable/path_copy_2"
+                android:visibility="invisible" />
+
+            <FrameLayout
+                android:layout_width="314dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="38dp"
+                android:gravity="left">
+
+                <TextView
+                    android:id="@+id/tvFeeling1"
+                    android:layout_width="92dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginLeft="0dp"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="27dp"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:id="@+id/ivScoreBar"
+                    android:layout_width="169dp"
+                    android:layout_height="14dp"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginLeft="92dp"
+                    android:background="@drawable/shape_feeling_bar" />
+
+                <ImageView
+                    android:id="@+id/ivScoreBar1"
+                    android:layout_width="0dp"
+                    android:layout_height="14dp"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginLeft="92dp"
+                    android:background="@drawable/shape_feeling_bar" />
+
+                <ImageView
+                    android:id="@+id/ivScorePoint1"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginLeft="92dp"
+                    android:background="@drawable/shape_feeling_bar" />
+
+                <TextView
+                    android:id="@+id/tvScore1"
+                    android:layout_width="52dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginLeft="261dp"
+                    android:gravity="center"
+                    android:paddingRight="16dp"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="314dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="75dp"
+                android:gravity="left">
+
+                <TextView
+                    android:id="@+id/tvFeeling2"
+                    android:layout_width="92dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginLeft="0dp"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="27dp"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="169dp"
+                    android:layout_height="14dp"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginLeft="92dp"
+                    android:background="@drawable/shape_feeling_bar" />
+
+                <ImageView
+                    android:id="@+id/ivScoreBar2"
+                    android:layout_width="0dp"
+                    android:layout_height="14dp"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginLeft="92dp"
+                    android:background="@drawable/shape_feeling_bar" />
+
+                <ImageView
+                    android:id="@+id/ivScorePoint2"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginLeft="92dp"
+                    android:background="@drawable/shape_feeling_bar" />
+
+                <TextView
+                    android:id="@+id/tvScore2"
+                    android:layout_width="52dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginLeft="261dp"
+                    android:gravity="center"
+                    android:paddingRight="16dp"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="314dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="112dp"
+                android:gravity="left">
+
+                <TextView
+                    android:id="@+id/tvFeeling3"
+                    android:layout_width="92dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginLeft="0dp"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="27dp"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="169dp"
+                    android:layout_height="14dp"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginLeft="92dp"
+                    android:background="@drawable/shape_feeling_bar" />
+
+                <ImageView
+                    android:id="@+id/ivScoreBar3"
+                    android:layout_width="0dp"
+                    android:layout_height="14dp"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginLeft="92dp"
+                    android:background="@drawable/shape_feeling_bar" />
+
+                <ImageView
+                    android:id="@+id/ivScorePoint3"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginLeft="92dp"
+                    android:background="@drawable/shape_feeling_bar" />
+
+                <TextView
+                    android:id="@+id/tvScore3"
+                    android:layout_width="52dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginLeft="261dp"
+                    android:gravity="center"
+                    android:paddingRight="16dp"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+            </FrameLayout>
+
+            <ImageButton
+                android:id="@+id/btnMore"
+                android:layout_width="314dp"
+                android:layout_height="41dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="179dp"
+                android:background="@drawable/image_main_data_more"
+                android:src="@drawable/button_text_icon_5_black" />
+
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/outMarker"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/graph_main_select_top_red"
+            android:visibility="invisible" />
+
+        <!--    <ImageView-->
+        <!--        android:id="@+id/outMarker"-->
+        <!--        android:layout_width="20dp"-->
+        <!--        android:layout_height="20dp"-->
+        <!--        android:background="@drawable/shape_out_marker"-->
+        <!--        android:visibility="invisible"/>-->
+
+        <!--    <ImageView-->
+        <!--        android:id="@+id/inMarker"-->
+        <!--        android:layout_width="5dp"-->
+        <!--        android:layout_height="5dp"-->
+        <!--        android:background="@drawable/shape_in_marker"-->
+        <!--        android:visibility="invisible"/>-->
+
+    </FrameLayout>
+</layout>

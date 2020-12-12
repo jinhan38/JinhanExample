@@ -18,6 +18,12 @@
                 android:layout_height="50dp"
                 android:text="Cubic" />
 
+            <Button
+                android:id="@+id/mpchart_candle"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Candle" />
+
         </LinearLayout>
 
     </ScrollView>
