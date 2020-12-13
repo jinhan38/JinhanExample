@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JinhanExample">
-        <activity android:name=".mpchart.calendar.CalendarMPChartActivity"></activity>
+        <activity android:name=".draw.DrawActivity"></activity>
+        <activity android:name=".mpchart.calendar.CalendarMPChartActivity" />
         <activity android:name=".mpchart.MPChartCandle" />
         <activity android:name=".animation.animBuilder.AnimBuilderClassActivity" />
         <activity android:name=".mvvmTodo.ui.MVVMTodoActivity" />

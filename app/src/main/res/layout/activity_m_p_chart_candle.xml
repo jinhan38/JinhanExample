@@ -8,6 +8,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <ImageView
+            android:id="@+id/startMarker"
+            android:visibility="invisible"
+            tools:visibility="visible"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/star"/>
+
 
         <com.github.mikephil.charting.charts.CandleStickChart
             android:id="@+id/chart1"

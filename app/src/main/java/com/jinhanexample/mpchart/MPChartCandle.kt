@@ -100,7 +100,7 @@ class MPChartCandle : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
 
     private fun chartDataSetting() {
 
-        var progress = 350
+        var progress = 30
 
         b.chart1.resetTracking() // seekbar에 따라 차트 다시 그리기
         //데이터 생성 시작

@@ -23,6 +23,7 @@ abstract class TaskDatabase : RoomDatabase() {
         private val database: Provider<TaskDatabase>,
         @ApplicationScope private val applicationScope: CoroutineScope
     ) : RoomDatabase.Callback() {
+
         override fun onCreate(db: SupportSQLiteDatabase) {
             super.onCreate(db)
 
