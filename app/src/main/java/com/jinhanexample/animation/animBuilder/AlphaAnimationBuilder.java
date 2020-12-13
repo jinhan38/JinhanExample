@@ -21,11 +21,6 @@ public class AlphaAnimationBuilder {
         int visible = builder.visible;
 
 
-        if (interpolator == null) {
-            interpolator = new AccelerateDecelerateInterpolator();
-        }
-
-
         AlphaAnimation alphaAnimation = new AlphaAnimation(fromAlpha, toAlpha);
         alphaAnimation.setDuration(duration);
         alphaAnimation.setInterpolator(interpolator);

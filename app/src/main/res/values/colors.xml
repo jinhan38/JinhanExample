@@ -14,4 +14,21 @@
     <color name="colorBackground">#f5f7fa</color>
     <color name="colorTransparent">#00000000</color>
     <color name="colorFeelingBar">#f4f8fc</color>
+
+    <color name="brand_blue">#6fc9fa</color>
+    <color name="brand_green">#71f48a</color>
+    <color name="brand_yellow">#fcf150</color>
+    <color name="brand_orange">#ff9837</color>
+    <color name="brand_red">#ff3636</color>
+    <color name="brand_pink">#ff55a3</color>
+    <color name="brand_purple">#956eff</color>
+    <color name="brand_gray">#8c8c8c</color>
+    <color name="point_blue">#54b7ed</color>
+    <color name="point_green">#43d45f</color>
+    <color name="point_yellow">#ebdf2c</color>
+    <color name="point_orange">#f1851f</color>
+    <color name="point_red">#e61616</color>
+    <color name="point_pink">#ee3f8f</color>
+    <color name="point_purple">#8159ef</color>
+    <color name="point_gray">#7b7777</color>
 </resources>
