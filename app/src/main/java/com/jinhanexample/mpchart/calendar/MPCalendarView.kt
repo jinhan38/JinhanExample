@@ -1,11 +1,18 @@
 package com.jinhanexample.mpchart.calendar
 
 import android.animation.Animator
+import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.style.AbsoluteSizeSpan
+import android.text.style.ForegroundColorSpan
 import android.util.AttributeSet
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.animation.AccelerateInterpolator
 import android.widget.Button
@@ -20,11 +27,19 @@ import com.jinhanexample.animation.animBuilder.ObjectAnimationBuilder
 import com.jinhanexample.databinding.ActivityCalendarMPChartBinding
 import com.jinhanexample.others.Utils
 import kotlinx.android.synthetic.main.layout_calendar.view.*
+import java.lang.Exception
+import java.lang.StringBuilder
+import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
 
+@Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 class MPCalendarView(context: Context, attr: AttributeSet) : FrameLayout(context, attr) {
+
+    companion object {
+        private const val TAG = "MPCalendarView"
+    }
 
     lateinit var b: ActivityCalendarMPChartBinding
     private val SELECT_DURATION = 500
@@ -35,7 +50,7 @@ class MPCalendarView(context: Context, attr: AttributeSet) : FrameLayout(context
     private val hData: HashMap<Int, DayInfo>? = null
 
     // MP차트
-    private val entries: List<Entry> = ArrayList()
+    private val entries = ArrayList<Entry>()
     private var fStartXAxis = 0f
 
     var aa = 0
@@ -61,7 +76,7 @@ class MPCalendarView(context: Context, attr: AttributeSet) : FrameLayout(context
     private var dateBtnHeight = 0
     private val btnDateSelect: Button? = null
     private val arrDateBtns: ArrayList<Button>? = null
-    private val nSelected = 0
+    private var nSelected = 0
     private var bAnimation = false
 
     // 마커
@@ -114,6 +129,9 @@ class MPCalendarView(context: Context, attr: AttributeSet) : FrameLayout(context
 
     }
 
+    /**
+     * 날짜 선택
+     */
     private fun animateDateSelector(nFrom: Int, nTo: Int) {
         val info = getAddedDayInfo(nTo)
         var x: Float = info.x
@@ -123,16 +141,22 @@ class MPCalendarView(context: Context, attr: AttributeSet) : FrameLayout(context
             .setListener(object : Animator.AnimatorListener {
                 override fun onAnimationStart(p0: Animator?) {
                     postDelayed({
-
-                        //TODO::시작
                         val info = getAddedDayInfo(nFrom)
-                        val btn = arrDateBtns?.get(nFrom +6)
-//                        btn.setText(getDateString)
-                    },100);
+                        val btn = arrDateBtns?.get(nFrom + 6)
+                        btn?.text = getDateString(info.date, false)
+                    }, 100);
+
+                    postDelayed({
+                        val info = getAddedDayInfo(nTo)
+                        val btn = arrDateBtns?.get(nFrom + 6)
+                        btn?.text = getDateString(info.date, false)
+                    }, (SELECT_DURATION - 100).toLong())
 
                 }
 
                 override fun onAnimationEnd(p0: Animator?) {
+                    nSelected = nTo
+                    bAnimation = false
                 }
 
                 override fun onAnimationCancel(p0: Animator?) {
@@ -142,6 +166,73 @@ class MPCalendarView(context: Context, attr: AttributeSet) : FrameLayout(context
                 }
 
             })
+
+    }
+
+
+    @SuppressLint("SimpleDateFormat")
+    private fun getDateString(date: Int, bSelected: Boolean): SpannableString {
+        var color = 0
+        var span: SpannableString
+        var str = ""
+
+        try {
+            var sdfIn = SimpleDateFormat("yyyyMMdd")
+            var sdfOut = SimpleDateFormat("E", Locale.ENGLISH)
+            var calendar = Calendar.getInstance()
+            calendar.time = sdfIn.parse(date.toString())
+            str = sdfOut.format(calendar.time)
+
+            color = when (str.toLowerCase()) {
+                "sat" -> {
+                    resources.getColor(R.color.colorSaturday, null)
+                }
+                "sun" -> {
+                    resources.getColor(R.color.colorSunday, null)
+                }
+                else -> {
+                    resources.getColor(R.color.colorGray500, null)
+                }
+            }
+
+
+            str = str.substring(0, 1)
+            str += "\n"
+            str += String.format("%02d", date % 100)
+
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
+        span = SpannableString(str)
+        span.setSpan(ForegroundColorSpan(color), 0, 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+
+        color = when {
+            bSelected -> {
+                resources.getColor(R.color.colorWhite, null)
+            }
+            getDayInfo(date)!!.hasScoreData() -> {
+                resources.getColor(R.color.colorBlack, null)
+            }
+            else -> {
+                resources.getColor(R.color.colorGray400, null)
+            }
+        }
+
+        span.setSpan(
+            ForegroundColorSpan(color),
+            str.length - 2,
+            str.length,
+            Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+
+        span.setSpan(
+            AbsoluteSizeSpan(
+                Common.getSP(context, 14).toInt()
+            ), str.length - 2, str.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+
+        return span
 
     }
 
@@ -284,6 +375,39 @@ class MPCalendarView(context: Context, attr: AttributeSet) : FrameLayout(context
             hData.containsKey(nDate) -> hData[nDate]
             else -> null
         }
+    }
+
+    fun reDraw() {
+        drawDateButtons()
+    }
+
+    fun setLineChartData() {
+
+        var xAxis: Int
+        var nAvg: Float
+        var info: DayInfo
+
+        for (i in -8..2){
+            xAxis = i +6
+
+            info = getAddedDayInfo(i)
+            nAvg = info.getTop3AverageScore()
+            entries.add(Entry(xAxis.toFloat(), nAvg))
+
+            //TODO::시작
+            
+//            info.x()
+        }
+
+
+    }
+
+    private fun calX(index : Int) : Float{
+        return index*unitX + sideMargin
+    }
+
+    private fun drawDateButtons() {
+
     }
 
 

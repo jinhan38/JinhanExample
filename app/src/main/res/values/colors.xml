@@ -31,4 +31,11 @@
     <color name="point_pink">#ee3f8f</color>
     <color name="point_purple">#8159ef</color>
     <color name="point_gray">#7b7777</color>
+
+    <color name="colorGray500">#9e9e9e</color>
+    <color name="colorSaturday">#7dadf7</color>
+    <color name="colorSunday">#fa7a7a</color>
+    <color name="colorWhite">#ffffffff</color>
+    <color name="colorGray400">#bdbdbd</color>
+    <color name="colorBlack">#ff000000</color>
 </resources>

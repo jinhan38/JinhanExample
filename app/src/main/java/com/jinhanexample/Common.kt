@@ -13,5 +13,13 @@ class Common {
                 context.resources.displayMetrics
             )
         }
+
+        fun getSP(context: Context, value: Int): Float {
+            return TypedValue.applyDimension(
+                TypedValue.COMPLEX_UNIT_SP,
+                value.toFloat(),
+                context.resources.displayMetrics
+            )
+        }
     }
 }
