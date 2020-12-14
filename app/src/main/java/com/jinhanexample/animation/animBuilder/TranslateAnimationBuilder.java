@@ -2,6 +2,7 @@ package com.jinhanexample.animation.animBuilder;
 
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.Animation;
 import android.view.animation.Interpolator;
 import android.view.animation.TranslateAnimation;
 
@@ -23,8 +24,10 @@ public class TranslateAnimationBuilder {
         int startOffset = builder.startOffset;
         boolean fillAfter = builder.fillAfter;
         boolean fillBefore = builder.fillBefore;
+        boolean fillEnabled = builder.fillEnabled;
         int repeatMode = builder.repeatMode;
         int repeatCount = builder.repeatCount;
+        Animation.AnimationListener listener = builder.listener;
 
 
         TranslateAnimation translateAnimation =
@@ -34,8 +37,10 @@ public class TranslateAnimationBuilder {
         translateAnimation.setStartOffset(startOffset);
         translateAnimation.setFillAfter(fillAfter);
         translateAnimation.setFillBefore(fillBefore);
+        translateAnimation.setFillEnabled(fillEnabled);
         translateAnimation.setRepeatMode(repeatMode);
         translateAnimation.setRepeatCount(repeatCount);
+        if (listener != null) translateAnimation.setAnimationListener(listener);
 
         view.startAnimation(translateAnimation);
     }
@@ -55,8 +60,10 @@ public class TranslateAnimationBuilder {
         private int startOffset = 0;
         private boolean fillAfter = false;
         private boolean fillBefore = false;
+        private boolean fillEnabled = false;
         private int repeatMode = 0;
         private int repeatCount = 0;
+        Animation.AnimationListener listener = null;
 
         public TranslateAnimationBuilder build() {
             return new TranslateAnimationBuilder(this);
@@ -97,6 +104,11 @@ public class TranslateAnimationBuilder {
             return this;
         }
 
+        public TranslateAnimationBuilder.Builder setFillEnabled(boolean fillEnabled) {
+            this.fillEnabled = fillEnabled;
+            return this;
+        }
+
         public TranslateAnimationBuilder.Builder setRepeatMode(int repeatMode) {
             this.repeatMode = repeatMode;
             return this;
@@ -104,6 +116,11 @@ public class TranslateAnimationBuilder {
 
         public TranslateAnimationBuilder.Builder setRepeatCount(int repeatCount) {
             this.repeatCount = repeatCount;
+            return this;
+        }
+
+        public TranslateAnimationBuilder.Builder setAnimationListener(Animation.AnimationListener listener) {
+            this.listener = listener;
             return this;
         }
 
