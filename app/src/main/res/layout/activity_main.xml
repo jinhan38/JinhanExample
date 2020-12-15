@@ -116,6 +116,12 @@
                 android:layout_height="50dp"
                 android:text="Draw 연습" />
 
+            <Button
+                android:id="@+id/designPattern"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="디자인 패턴" />
+
 
         </LinearLayout>
 

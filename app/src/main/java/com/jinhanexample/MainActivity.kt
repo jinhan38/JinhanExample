@@ -8,6 +8,7 @@ import com.jinhanexample.animation.BaseAnimationActivity
 import com.jinhanexample.calendar.CustomCalendarActivity
 import com.jinhanexample.codingLecture.CodingLectureMainActivity
 import com.jinhanexample.databinding.ActivityMainBinding
+import com.jinhanexample.designPattern.DesignPatternActivity
 import com.jinhanexample.draw.DrawActivity
 import com.jinhanexample.floatingButton.BaseFloatingButtonActivity
 import com.jinhanexample.fragment.BaseFragmentActivity
@@ -53,6 +54,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         b.recyclerView.setOnClickListener(this)
         b.mvvmTodo.setOnClickListener(this)
         b.draw.setOnClickListener(this)
+        b.designPattern.setOnClickListener(this)
     }
 
     override fun onClick(p0: View?) {
@@ -108,6 +110,9 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
             R.id.draw -> {
                 startActivity(Intent(this, DrawActivity::class.java))
+            }
+            R.id.designPattern -> {
+                startActivity(Intent(this, DesignPatternActivity::class.java))
             }
 
         }
