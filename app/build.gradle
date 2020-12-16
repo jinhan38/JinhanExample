@@ -20,7 +20,7 @@ android {
 
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        
+
         buildConfigField("String", "UNSPLASH_ACCESS_KEY", unsplash_access_key)
     }
 
@@ -100,7 +100,7 @@ dependencies {
     //코루틴
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.1'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.1'
-    
+
 
     //navigation Component
     def nav_version = "2.3.2"
