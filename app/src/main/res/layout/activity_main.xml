@@ -86,6 +86,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:text="FRAGMENT" />
+
             <Button
                 android:id="@+id/middleClass"
                 android:layout_width="match_parent"
@@ -121,6 +122,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:text="디자인 패턴" />
+
+
+            <Button
+                android:id="@+id/mvvmSample"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="MVVM 샘플" />
 
 
         </LinearLayout>

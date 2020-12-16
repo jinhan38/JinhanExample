@@ -10,7 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JinhanExample">
-        <activity android:name=".designPattern.factory.FactoryPatternActivity"></activity>
+        <activity android:name=".mvvmSample.kotlin.author.ui.AuthorAddActivity"></activity>
+        <activity android:name=".mvvmSample.kotlin.author.ui.AuthorActivityByKotlin" />
+        <activity android:name=".designPattern.factory.FactoryPatternActivity" />
         <activity android:name=".designPattern.DesignPatternActivity" />
         <activity android:name=".draw.DrawActivity" />
         <activity android:name=".mpchart.calendar.CalendarMPChartActivity" />

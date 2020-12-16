@@ -16,6 +16,7 @@ import com.jinhanexample.fragment.ColorFragmentActivity
 import com.jinhanexample.jetBrain.JetBrainBaseActivity
 import com.jinhanexample.middleClass.MiddleClassActivity
 import com.jinhanexample.mpchart.MPChartList
+import com.jinhanexample.mvvmSample.kotlin.author.ui.AuthorActivityByKotlin
 import com.jinhanexample.mvvmTodo.ui.MVVMTodoActivity
 import com.jinhanexample.recyclerView.RecyclerViewActivity
 import com.jinhanexample.scrollview.BaseScrollViewAnimation
@@ -55,6 +56,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         b.mvvmTodo.setOnClickListener(this)
         b.draw.setOnClickListener(this)
         b.designPattern.setOnClickListener(this)
+        b.mvvmSample.setOnClickListener(this)
     }
 
     override fun onClick(p0: View?) {
@@ -66,15 +68,12 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             R.id.scroll_animation -> {
                 startActivity(Intent(this, BaseScrollViewAnimation::class.java))
             }
-
             R.id.tab_layout -> {
                 startActivity(Intent(this, BaseTabLayout::class.java))
             }
-
             R.id.animation -> {
                 startActivity(Intent(this, BaseAnimationActivity::class.java))
             }
-
             R.id.viewPager -> {
                 startActivity(Intent(this, BaseViewPagerActivity::class.java))
             }
@@ -113,6 +112,9 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
             R.id.designPattern -> {
                 startActivity(Intent(this, DesignPatternActivity::class.java))
+            }
+            R.id.mvvmSample -> {
+                startActivity(Intent(this, AuthorActivityByKotlin::class.java))
             }
 
         }
