@@ -1,8 +1,10 @@
-package com.jinhanexample.mvvmSample.kotlin.author.data
+package com.jinhanexample.mvvmSample.kotlin.author.ui
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import com.jinhanexample.mvvmSample.kotlin.author.data.AuthorEntity
+import com.jinhanexample.mvvmSample.kotlin.author.data.AuthorRepository
 
 
 // AuthorRepository에 접근하여 데이터를 불러온다.

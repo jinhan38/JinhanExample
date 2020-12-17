@@ -12,7 +12,7 @@ import androidx.room.RoomDatabase
 abstract class AuthorDatabase : RoomDatabase() {
 
     //AuthorDao를 반환하는 추상메소드
-    abstract fun authorDao(): AuthorDao
+    abstract fun getAuthorDao(): AuthorDao
 
     companion object {
 

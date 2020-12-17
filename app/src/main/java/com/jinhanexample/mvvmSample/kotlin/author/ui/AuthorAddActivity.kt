@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.jinhanexample.R
 import com.jinhanexample.mvvmSample.kotlin.author.data.AuthorEntity
-import com.jinhanexample.mvvmSample.kotlin.author.data.AuthorViewModel
 import kotlinx.android.synthetic.main.activity_author_add.*
 
 class AuthorAddActivity : AppCompatActivity() {

@@ -125,10 +125,16 @@
 
 
             <Button
-                android:id="@+id/mvvmSample"
+                android:id="@+id/mvvmSampleKotlin"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:text="MVVM 샘플" />
+                android:text="MVVM 샘플 코틀린" />
+
+            <Button
+                android:id="@+id/mvvmSampleJava"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="MVVM 샘플 자바" />
 
 
         </LinearLayout>

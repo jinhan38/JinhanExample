@@ -16,6 +16,7 @@ import com.jinhanexample.fragment.ColorFragmentActivity
 import com.jinhanexample.jetBrain.JetBrainBaseActivity
 import com.jinhanexample.middleClass.MiddleClassActivity
 import com.jinhanexample.mpchart.MPChartList
+import com.jinhanexample.mvvmSample.java.author.ui.AuthorActivityByJava
 import com.jinhanexample.mvvmSample.kotlin.author.ui.AuthorActivityByKotlin
 import com.jinhanexample.mvvmTodo.ui.MVVMTodoActivity
 import com.jinhanexample.recyclerView.RecyclerViewActivity
@@ -56,7 +57,8 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         b.mvvmTodo.setOnClickListener(this)
         b.draw.setOnClickListener(this)
         b.designPattern.setOnClickListener(this)
-        b.mvvmSample.setOnClickListener(this)
+        b.mvvmSampleKotlin.setOnClickListener(this)
+        b.mvvmSampleJava.setOnClickListener(this)
     }
 
     override fun onClick(p0: View?) {
@@ -113,8 +115,11 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             R.id.designPattern -> {
                 startActivity(Intent(this, DesignPatternActivity::class.java))
             }
-            R.id.mvvmSample -> {
+            R.id.mvvmSampleKotlin -> {
                 startActivity(Intent(this, AuthorActivityByKotlin::class.java))
+            }
+            R.id.mvvmSampleJava -> {
+                startActivity(Intent(this, AuthorActivityByJava::class.java))
             }
 
         }

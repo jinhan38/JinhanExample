@@ -14,7 +14,7 @@ class AuthorRepository(application: Application) {
 
     //authorDatabase 의 authorDao() 메소드로 authorDao 생성
     //getInstance가 optional AuthorDatabase 를 반환했기 때문에 !!로 optional unwrapping
-    private val authorDao: AuthorDao = authorDatabase!!.authorDao()
+    private val authorDao: AuthorDao = authorDatabase!!.getAuthorDao()
 
     //authorDao.getAll() 메소드로 authorDatabase에 있는 모든 정보 가져오기
     private val authors: LiveData<List<AuthorEntity>> = authorDao.getAll()

@@ -1,5 +1,6 @@
 package com.jinhanexample.mvvmSample.kotlin.author.data
 
+import androidx.annotation.NonNull
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -10,6 +11,7 @@ import androidx.room.PrimaryKey
 data class AuthorEntity(
 
     //optional Int 타입으로 자동 키값 생성,
+    @NonNull
     @PrimaryKey(autoGenerate = true)
     var id: Int?,
 
