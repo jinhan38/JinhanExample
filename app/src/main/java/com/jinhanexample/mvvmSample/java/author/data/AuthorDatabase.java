@@ -2,8 +2,6 @@ package com.jinhanexample.mvvmSample.java.author.data;
 
 
 import android.content.Context;
-import android.util.Log;
-
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
@@ -20,11 +18,9 @@ public abstract class AuthorDatabase extends RoomDatabase {
     public static AuthorDatabase getInstance(Context context) {
 
         if (instance == null) {
-//            new Thread(() -> {
             instance = Room.databaseBuilder(context.getApplicationContext(), AuthorDatabase.class, "author")
                     .fallbackToDestructiveMigration()
                     .build();
-//            });
 
         }
         return instance;

@@ -34,5 +34,11 @@
             android:layout_height="50dp"
             android:text="animation 빌더 클래스" />
 
+        <Button
+            android:id="@+id/progressBarAnim"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="프로그레스바 애니메이션" />
+
     </LinearLayout>
 </layout>

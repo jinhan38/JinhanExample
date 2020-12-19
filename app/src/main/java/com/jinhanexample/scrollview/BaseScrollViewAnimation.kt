@@ -1,14 +1,13 @@
 package com.jinhanexample.scrollview
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.databinding.DataBindingUtil
 import com.jinhanexample.BaseActivity
 import com.jinhanexample.R
 import com.jinhanexample.databinding.ActivityScrollViewAnimationBinding
-import com.jinhanexample.mpchart.MPChartCubic
+import com.jinhanexample.animation.progress.ValueAnimProgressBarActivity
 
 class BaseScrollViewAnimation : BaseActivity(), View.OnClickListener {
 

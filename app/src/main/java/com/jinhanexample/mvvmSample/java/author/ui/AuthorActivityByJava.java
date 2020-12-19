@@ -2,20 +2,17 @@ package com.jinhanexample.mvvmSample.java.author.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.jinhanexample.databinding.ActivityAuthorByJavaBinding;
 import com.jinhanexample.mvvmSample.java.author.data.AuthorEntity;
 import com.jinhanexample.mvvmSample.java.author.listener.LongClickListener;
-
-import java.util.List;
 
 public class AuthorActivityByJava extends AppCompatActivity implements LongClickListener {
 
@@ -56,6 +53,7 @@ public class AuthorActivityByJava extends AppCompatActivity implements LongClick
                 .setPositiveButton("네", (dialogInterface, i) -> {
                     authorViewModel.delete(authorEntity);
                 }).setNegativeButton("아니오", null);
+        dialog.show();
     }
 
     @Override

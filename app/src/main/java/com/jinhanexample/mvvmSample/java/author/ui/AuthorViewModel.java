@@ -1,12 +1,8 @@
 package com.jinhanexample.mvvmSample.java.author.ui;
 
 import android.app.Application;
-import android.util.Log;
-
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.ViewModel;
-
 import com.jinhanexample.mvvmSample.java.author.data.AuthorEntity;
 import com.jinhanexample.mvvmSample.java.author.data.AuthorRepository;
 
