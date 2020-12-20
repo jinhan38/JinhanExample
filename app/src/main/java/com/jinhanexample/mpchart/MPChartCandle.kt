@@ -1,11 +1,13 @@
 package com.jinhanexample.mpchart
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.graphics.Color
 import android.graphics.Paint
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.widget.FrameLayout
 import android.widget.SeekBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -17,8 +19,14 @@ import com.github.mikephil.charting.data.CandleDataSet
 import com.github.mikephil.charting.data.CandleEntry
 import com.github.mikephil.charting.interfaces.datasets.IDataSet
 import com.github.mikephil.charting.utils.MPPointD
+import com.jinhanexample.Common
 import com.jinhanexample.R
+import com.jinhanexample.Util.LayoutParamsMargin
+import com.jinhanexample.animation.progress.circle.Circle
 import com.jinhanexample.databinding.ActivityMPChartCandleBinding
+import com.jinhanexample.others.Extentions.setLayoutParamsMargin
+import com.jinhanexample.others.Extentions.setLayoutParamsMarginConst
+import com.jinhanexample.others.Extentions.setLayoutParamsMarginRelative
 
 @Suppress("DEPRECATION")
 class MPChartCandle : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
@@ -27,19 +35,53 @@ class MPChartCandle : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
         private const val TAG = "MPChartCandle"
     }
 
+    lateinit var context: Context
+
+    private var screenWidth: Float = 0f
+    private var screenHeight: Float = 0f
+    private var chartWidth: Float = 0f
+    private var chartMargin = 0f
+    private var chartHeight = 0f
+    private var chartMarginBottom = 0f
+
+    var values = ArrayList<CandleEntry>()
+
+
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+
+
+
+        chartWidth = b.chart1.measuredWidth.toFloat()
+        screenWidth = b.parentWrap.measuredWidth.toFloat()
+        screenHeight = b.parentWrap.measuredHeight.toFloat()
+        chartMargin = (screenWidth - chartWidth) / 2
+
+        chartHeight = b.chart1.measuredHeight.toFloat()
+        chartMarginBottom = screenHeight - chartHeight
+
+        markerSetting()
+    }
+
     lateinit var b: ActivityMPChartCandleBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        b = DataBindingUtil.setContentView(this, R.layout.activity_m_p_chart_candle)
+        b = ActivityMPChartCandleBinding.inflate(layoutInflater)
+        setContentView(b.root)
+        context = this
+
         window.setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
 
+
         title = "MPChartCandle"
         chartSetting()
 
+        Log.d(TAG, "onCreate: axisRight : ${b.chart1.axisRight}")
+        Log.d(TAG, "onCreate: last : ${b.chart1.data.dataSets.last()}")
         setupListener()
 
     }
@@ -109,19 +151,19 @@ class MPChartCandle : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
 //        mpPointD.
 
 
-        var values = ArrayList<CandleEntry>()
+//        var values = ArrayList<CandleEntry>()
 
         for (i in 0..progress) {
-            var multi = b.seekBar2.progress + 1
-            var value: Float = ((Math.random() * 40) + multi).toFloat()
+            val multi = b.seekBar2.progress + 1
+            val value: Float = ((Math.random() * 40) + multi).toFloat()
 
-            var high: Float = ((Math.random() * 9) + 8f).toFloat()
-            var low: Float = ((Math.random() * 9) + 8f).toFloat()
+            val high: Float = ((Math.random() * 9) + 8f).toFloat()
+            val low: Float = ((Math.random() * 9) + 8f).toFloat()
 
-            var open: Float = ((Math.random() * 6) + 1f).toFloat()
-            var close: Float = ((Math.random() * 6) + 1f).toFloat()
+            val open: Float = ((Math.random() * 6) + 1f).toFloat()
+            val close: Float = ((Math.random() * 6) + 1f).toFloat()
 
-            var even: Boolean = i % 2 == 0
+            val even: Boolean = i % 2 == 0
 
             values.add(
                 CandleEntry(
@@ -137,7 +179,7 @@ class MPChartCandle : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
 
         //데이터 생성 끝
 
-        var set1 = CandleDataSet(values, "Data set")
+        val set1 = CandleDataSet(values, "Data set")
 
         set1.setDrawIcons(false)
         set1.axisDependency = YAxis.AxisDependency.LEFT
@@ -165,6 +207,29 @@ class MPChartCandle : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
         b.chart1.invalidate()
     }
 
+    private fun markerSetting() {
+
+        Log.d(
+            TAG,
+            "markerSetting: y : ${values[1].y}, open : ${values[1].open}, high : ${values[1].high}"
+        )
+        Log.d(TAG, "markerSetting: chartHeight : $chartHeight, y : ${values[1].y}")
+        val a = (chartHeight - values[1].y).toInt()
+        Log.d(TAG, "markerSetting: 입력값 : $a")
+
+        b.markerWrap.setLayoutParamsMarginRelative(
+            (chartMargin + chartWidth).toInt(),
+           (chartHeight - values[1].y).toInt()
+
+        )
+
+//        b.markerWrap.setLayoutParamsMarginRelative(
+//            (chartMargin + chartWidth).toInt(),
+//            Common.getDP(this, 100).toInt()
+//        )
+
+    }
+
 
     @SuppressLint("ClickableViewAccessibility")
     fun setupListener() {
@@ -179,8 +244,6 @@ class MPChartCandle : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
             set.setDrawIcons(!set.isDrawIconsEnabled)
             set.yMin
         }
-
-
 
 
 //        var mLastTouchX: Float = 0f

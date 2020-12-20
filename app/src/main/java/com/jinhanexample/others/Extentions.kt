@@ -12,6 +12,8 @@ import android.view.ViewGroup
 import android.view.animation.Interpolator
 import android.widget.EditText
 import android.widget.FrameLayout
+import android.widget.RelativeLayout
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.commit
@@ -26,6 +28,30 @@ object Extentions {
     fun View.setLayoutParamsMargin(leftMargin: Int, topMargin: Int) {
 
         val params = this.layoutParams as FrameLayout.LayoutParams
+        params.leftMargin = leftMargin
+        params.topMargin = topMargin
+        this.layoutParams = params
+
+    }
+
+    /**
+     * 부모뷰는 ConstraintLayout
+     */
+    fun ConstraintLayout.setLayoutParamsMarginConst(leftMargin: Int, topMargin: Int) {
+
+        val params = this.layoutParams as ConstraintLayout.LayoutParams
+        params.leftMargin = leftMargin
+        params.topMargin = topMargin
+        this.layoutParams = params
+
+    }
+
+    /**
+     * 부모뷰는 Relative
+     */
+    fun View.setLayoutParamsMarginRelative(leftMargin: Int, topMargin: Int) {
+
+        val params = this.layoutParams as RelativeLayout.LayoutParams
         params.leftMargin = leftMargin
         params.topMargin = topMargin
         this.layoutParams = params

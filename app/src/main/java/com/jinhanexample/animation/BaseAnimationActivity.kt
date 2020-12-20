@@ -8,6 +8,7 @@ import com.jinhanexample.BaseActivity
 import com.jinhanexample.R
 import com.jinhanexample.animation.animBuilder.AnimBuilderClassActivity
 import com.jinhanexample.animation.progress.ValueAnimProgressBarActivity
+import com.jinhanexample.animation.progress.circle.CirclePercentAnimActivity
 import com.jinhanexample.databinding.ActivityBaseBinding
 
 class BaseAnimationActivity : BaseActivity(), View.OnClickListener {
@@ -26,6 +27,7 @@ class BaseAnimationActivity : BaseActivity(), View.OnClickListener {
         b.LockedBottomSheet.setOnClickListener(this)
         b.animationBuilder.setOnClickListener(this)
         b.progressBarAnim.setOnClickListener(this)
+        b.circleProgress.setOnClickListener(this)
     }
 
     override fun onClick(p0: View?) {
@@ -44,6 +46,9 @@ class BaseAnimationActivity : BaseActivity(), View.OnClickListener {
             }
             R.id.progressBarAnim -> {
                 startActivity(Intent(this, ValueAnimProgressBarActivity::class.java))
+            }
+            R.id.circleProgress -> {
+                startActivity(Intent(this, CirclePercentAnimActivity::class.java))
             }
         }
     }

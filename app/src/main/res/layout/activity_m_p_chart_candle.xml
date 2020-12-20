@@ -1,77 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parentWrap"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     tools:context=".mpchart.MPChartCandle">
 
-    <RelativeLayout
+    <ImageView
+        android:id="@+id/startMarker"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/star"
+        android:visibility="invisible"
+        tools:visibility="visible" />
+
+    <com.github.mikephil.charting.charts.CandleStickChart
+        android:id="@+id/chart1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_above="@+id/seekBar1"
+        android:layout_marginHorizontal="50dp" />
+
+    <SeekBar
+        android:id="@+id/seekBar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="8dp"
+        android:layout_marginRight="5dp"
+        android:layout_toLeftOf="@+id/tvYMax"
+        android:max="200"
+        android:paddingBottom="12dp" />
+
+    <SeekBar
+        android:id="@+id/seekBar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/seekBar2"
+        android:layout_margin="8dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="35dp"
+        android:layout_toLeftOf="@+id/tvXMax"
+        android:max="3000"
+        android:paddingBottom="12dp" />
+
+    <TextView
+        android:id="@+id/tvXMax"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/seekBar1"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="15dp"
+        android:gravity="right"
+        android:text="@string/dash"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/tvYMax"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/seekBar2"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="15dp"
+        android:gravity="right"
+        android:text="@string/dash"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/markerWrap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/startMarker"
-            android:visibility="invisible"
-            tools:visibility="visible"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/star"/>
-
-
-        <com.github.mikephil.charting.charts.CandleStickChart
-            android:id="@+id/chart1"
-            android:layout_width="match_parent"
-            android:layout_marginHorizontal="50dp"
-            android:layout_height="match_parent"
-            android:layout_above="@+id/seekBar1" />
-
-        <SeekBar
-            android:id="@+id/seekBar2"
-            android:layout_width="match_parent"
+            android:id="@+id/marker"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentBottom="true"
-            android:layout_margin="8dp"
-            android:layout_marginRight="5dp"
-            android:layout_toLeftOf="@+id/tvYMax"
-            android:max="200"
-            android:paddingBottom="12dp" />
-
-        <SeekBar
-            android:id="@+id/seekBar1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/seekBar2"
-            android:layout_margin="8dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginBottom="35dp"
-            android:layout_toLeftOf="@+id/tvXMax"
-            android:max="3000"
-            android:paddingBottom="12dp" />
+            android:src="@drawable/ic_baseline_west_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tvXMax"
-            android:layout_width="50dp"
+            android:id="@+id/score"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/seekBar1"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="15dp"
-            android:gravity="right"
-            android:text="@string/dash"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:text="수치"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/marker"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tvYMax"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/seekBar2"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="15dp"
-            android:gravity="right"
-            android:text="@string/dash"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <com.jinhanexample.animation.progress.circle.Circle
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/circle"/>
 
-    </RelativeLayout>
-</layout>
+</RelativeLayout>
