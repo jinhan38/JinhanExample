@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jinhanexample">
 
-
     <application
         android:name=".mvvmTodo.TodoApplication"
         android:allowBackup="true"
@@ -11,8 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JinhanExample">
+        <activity android:name=".draw.rect.RectActivity"></activity>
+        <activity android:name=".draw.DrawActivity" />
         <activity android:name=".animation.progress.circle.CirclePercentAnimActivity" />
-
         <activity android:name=".animation.progress.ValueAnimProgressBarActivity" />
         <activity android:name=".mvvmSample.java.author.ui.AuthorAddActivity" />
         <activity android:name=".mvvmSample.java.author.ui.AuthorActivityByJava" />
@@ -20,7 +20,7 @@
         <activity android:name=".mvvmSample.kotlin.author.ui.AuthorActivityByKotlin" />
         <activity android:name=".designPattern.factory.FactoryPatternActivity" />
         <activity android:name=".designPattern.DesignPatternActivity" />
-        <activity android:name=".draw.DrawActivity" />
+        <activity android:name=".draw.layoutParams.DrawLayoutParamsActivity" />
         <activity android:name=".mpchart.calendar.CalendarMPChartActivity" />
         <activity android:name=".mpchart.MPChartCandle" />
         <activity android:name=".animation.animBuilder.AnimBuilderClassActivity" />

@@ -15,28 +15,27 @@ import kotlin.math.sin
 import kotlin.properties.Delegates
 
 @SuppressLint("ResourceAsColor")
-class Circle(context: Context, attributeSet: AttributeSet) : View(context, attributeSet) {
+class Circle(
+    context: Context, attributeSet: AttributeSet, width: Int, height: Int
+) : View(context, attributeSet) {
 
+
+    
     lateinit var paint: Paint
     lateinit var rect: RectF
 
     var startAngle = 0f
-
-
     var moveAngle = 0f
 
-    var color = 0
-    var colorPoint = 0
-    var colorInnerPoint = 0
-    var alpha = 100
+    var color = R.color.black
+    var colorPoint = R.color.black
+    var colorInnerPoint = R.color.black
     var strokeWidth = 40f
-    var strokeBaseWidth = 0f
+    var strokeInnerPointWidth = 20f
 
-    var drawPoint = false
-    var drawBasePoint = false
+    var bDrawPoint = false
+    var bDrawInnerPoint = false
     var visible: Boolean = false
-    var circleWidth = 0f
-    var circleHeight = 0f
 
 
     init {
@@ -46,10 +45,8 @@ class Circle(context: Context, attributeSet: AttributeSet) : View(context, attri
         paint.isAntiAlias = true
         paint.strokeCap = Paint.Cap.ROUND
 
-        var radius = strokeWidth / 2
-        rect = RectF(radius, radius, circleWidth - radius, circleHeight - radius)
-//        paint.style = Paint.Style.STROKE
-//        paint.alpha = alpha
+        var nRadius = strokeWidth / 2
+        rect = RectF(nRadius, nRadius, width - nRadius, height - nRadius)
 
 
     }
@@ -59,21 +56,19 @@ class Circle(context: Context, attributeSet: AttributeSet) : View(context, attri
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
 
-        canvas?.drawArc(rect, startAngle, moveAngle, false, paint)
 
         if (!visible) return
+        canvas?.drawArc(rect, startAngle, moveAngle, false, paint)
 
         paint.style = Paint.Style.STROKE
-        paint.color = R.color.point_green
+        paint.color = color
         paint.strokeWidth = strokeWidth
-        if (rect != null) {
-            canvas?.drawArc(rect, startAngle, moveAngle, false, paint)
-        }
+        canvas?.drawArc(rect, startAngle, moveAngle, false, paint)
 
 
         val radius = rect.width() / 2
         //원의 끝부분 포인트트
-        if (drawPoint) {
+        if (bDrawPoint) {
             paint.style = Paint.Style.FILL
             paint.color = colorPoint
             val point: Point =
@@ -81,11 +76,11 @@ class Circle(context: Context, attributeSet: AttributeSet) : View(context, attri
             canvas?.drawCircle(point.x.toFloat(), point.y.toFloat(), strokeWidth / 2, paint)
         }
 
-        if (drawBasePoint) {
+        if (bDrawInnerPoint) {
             paint.color = colorInnerPoint
             val point: Point =
                 calculatePointOnArc(rect.centerX(), rect.centerY(), radius, startAngle + moveAngle)
-            canvas?.drawCircle(point.x.toFloat(), point.y.toFloat(), strokeBaseWidth / 2, paint)
+            canvas?.drawCircle(point.x.toFloat(), point.y.toFloat(), strokeInnerPointWidth / 2, paint)
         }
 
     }

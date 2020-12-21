@@ -10,9 +10,9 @@ import com.jinhanexample.codingLecture.CodingLectureMainActivity
 import com.jinhanexample.databinding.ActivityMainBinding
 import com.jinhanexample.designPattern.DesignPatternActivity
 import com.jinhanexample.draw.DrawActivity
+import com.jinhanexample.draw.layoutParams.DrawLayoutParamsActivity
 import com.jinhanexample.floatingButton.BaseFloatingButtonActivity
 import com.jinhanexample.fragment.BaseFragmentActivity
-import com.jinhanexample.fragment.ColorFragmentActivity
 import com.jinhanexample.jetBrain.JetBrainBaseActivity
 import com.jinhanexample.middleClass.MiddleClassActivity
 import com.jinhanexample.mpchart.MPChartList

@@ -8,10 +8,6 @@
     tools:context=".animation.progress.circle.CirclePercentAnimActivity">
 
 
-    <com.jinhanexample.animation.progress.circle.CirclePercentView
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:id="@+id/circlePercentView"/>
 
     <Button
         android:id="@+id/button"

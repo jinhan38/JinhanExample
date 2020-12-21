@@ -19,9 +19,9 @@ class CircleAnimation(
     init {
         circle.startAngle = startAngle
         circle.color = color
-        circle.alpha = alpha
-        circle.bLine = bLine
-        circle.bEndCircle = showEndCircle
+//        circle.alpha = alpha
+//        circle.bLine = bLine
+//        circle.bEndCircle = showEndCircle
         duration = DURATION
 
     }

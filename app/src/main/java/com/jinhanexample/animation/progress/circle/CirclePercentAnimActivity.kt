@@ -14,8 +14,6 @@ class CirclePercentAnimActivity : AppCompatActivity() {
         setContentView(b.root)
 
         b.button.setOnClickListener {
-            b.circlePercentView.showBaseCircle()
-            b.circlePercentView.startAnimation()
         }
 
     }
