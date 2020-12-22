@@ -12,7 +12,7 @@
         android:theme="@style/Theme.JinhanExample">
         <activity android:name=".draw.rect.RectActivity"></activity>
         <activity android:name=".draw.DrawActivity" />
-        <activity android:name=".animation.progress.circle.CirclePercentAnimActivity" />
+        <activity android:name=".animation.progress.circle.CircleProgressAnimActivity" />
         <activity android:name=".animation.progress.ValueAnimProgressBarActivity" />
         <activity android:name=".mvvmSample.java.author.ui.AuthorAddActivity" />
         <activity android:name=".mvvmSample.java.author.ui.AuthorActivityByJava" />

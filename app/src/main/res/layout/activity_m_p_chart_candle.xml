@@ -95,7 +95,7 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <com.jinhanexample.animation.progress.circle.Circle
+    <com.jinhanexample.animation.progress.circle.CircleProgress
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/circle"/>

@@ -7,25 +7,17 @@ import android.graphics.Paint
 import android.os.Bundle
 import android.util.Log
 import android.view.*
-import android.widget.FrameLayout
 import android.widget.SeekBar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
 import com.github.mikephil.charting.components.Description
 import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.components.YAxis
 import com.github.mikephil.charting.data.CandleData
 import com.github.mikephil.charting.data.CandleDataSet
 import com.github.mikephil.charting.data.CandleEntry
-import com.github.mikephil.charting.interfaces.datasets.IDataSet
 import com.github.mikephil.charting.utils.MPPointD
-import com.jinhanexample.Common
 import com.jinhanexample.R
-import com.jinhanexample.Util.LayoutParamsMargin
-import com.jinhanexample.animation.progress.circle.Circle
 import com.jinhanexample.databinding.ActivityMPChartCandleBinding
-import com.jinhanexample.others.Extentions.setLayoutParamsMargin
-import com.jinhanexample.others.Extentions.setLayoutParamsMarginConst
 import com.jinhanexample.others.Extentions.setLayoutParamsMarginRelative
 
 @Suppress("DEPRECATION")

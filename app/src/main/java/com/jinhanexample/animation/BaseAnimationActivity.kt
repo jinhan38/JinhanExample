@@ -8,7 +8,7 @@ import com.jinhanexample.BaseActivity
 import com.jinhanexample.R
 import com.jinhanexample.animation.animBuilder.AnimBuilderClassActivity
 import com.jinhanexample.animation.progress.ValueAnimProgressBarActivity
-import com.jinhanexample.animation.progress.circle.CirclePercentAnimActivity
+import com.jinhanexample.animation.progress.circle.CircleProgressAnimActivity
 import com.jinhanexample.databinding.ActivityBaseBinding
 
 class BaseAnimationActivity : BaseActivity(), View.OnClickListener {
@@ -48,7 +48,7 @@ class BaseAnimationActivity : BaseActivity(), View.OnClickListener {
                 startActivity(Intent(this, ValueAnimProgressBarActivity::class.java))
             }
             R.id.circleProgress -> {
-                startActivity(Intent(this, CirclePercentAnimActivity::class.java))
+                startActivity(Intent(this, CircleProgressAnimActivity::class.java))
             }
         }
     }
