@@ -7,6 +7,7 @@ import androidx.databinding.DataBindingUtil
 import com.jinhanexample.animation.BaseAnimationActivity
 import com.jinhanexample.calendar.CustomCalendarActivity
 import com.jinhanexample.codingLecture.CodingLectureMainActivity
+import com.jinhanexample.customChart.CustomChartActivity
 import com.jinhanexample.databinding.ActivityMainBinding
 import com.jinhanexample.designPattern.DesignPatternActivity
 import com.jinhanexample.draw.DrawActivity
@@ -59,6 +60,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         b.designPattern.setOnClickListener(this)
         b.mvvmSampleKotlin.setOnClickListener(this)
         b.mvvmSampleJava.setOnClickListener(this)
+        b.customChart.setOnClickListener(this)
     }
 
     override fun onClick(p0: View?) {
@@ -120,6 +122,9 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
             R.id.mvvmSampleJava -> {
                 startActivity(Intent(this, AuthorActivityByJava::class.java))
+            }
+            R.id.customChart -> {
+                startActivity(Intent(this, CustomChartActivity::class.java))
             }
 
         }
