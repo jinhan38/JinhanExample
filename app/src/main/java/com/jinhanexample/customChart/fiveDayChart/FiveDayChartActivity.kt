@@ -7,8 +7,10 @@ import kotlinx.android.synthetic.main.activity_five_day_chart.*
 
 class FiveDayChartActivity : AppCompatActivity() {
 
-    private var viewWidth = 0f
-    private var viewHeight = 0f
+    private var viewLeft = 0f
+    private var viewTop = 0f
+    private var viewRight = 0f
+    private var viewBottom = 0f
     lateinit var fiveDayChart: FiveDayChart
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,15 +20,17 @@ class FiveDayChartActivity : AppCompatActivity() {
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
         super.onWindowFocusChanged(hasFocus)
-
-        viewWidth = fiveDayChartView.width.toFloat()
-        viewHeight = fiveDayChartView.height.toFloat()
-        fiveDayChart = FiveDayChart(this, viewWidth, viewHeight, R.color.colorGray400)
+        viewLeft = fiveDayChartView.left.toFloat()
+        viewTop = fiveDayChartView.top.toFloat()
+        viewRight = fiveDayChartView.right.toFloat()
+        viewBottom = fiveDayChartView.bottom.toFloat()
+        fiveDayChart =
+            FiveDayChart(this, viewLeft, viewTop, viewRight, viewBottom, R.color.colorGray400)
 
         fiveDayChartView.addView(fiveDayChart)
 
         fiveDayChart.postInvalidate()
 
-        
+
     }
 }
