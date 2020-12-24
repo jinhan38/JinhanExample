@@ -24,8 +24,22 @@ class FiveDayChartActivity : AppCompatActivity() {
         viewTop = fiveDayChartView.top.toFloat()
         viewRight = fiveDayChartView.right.toFloat()
         viewBottom = fiveDayChartView.bottom.toFloat()
+        var scoreArray: ArrayList<Int> = ArrayList()
+        scoreArray.add(33)
+        scoreArray.add(50)
+        scoreArray.add(77)
+        scoreArray.add(66)
+        scoreArray.add(100)
+
         fiveDayChart =
-            FiveDayChart(this, viewLeft, viewTop, viewRight, viewBottom, R.color.colorGray400)
+            FiveDayChart(
+                this,
+                fiveDayChartView.width.toFloat(),
+                fiveDayChartView.height.toFloat(),
+                R.color.white,
+                R.color.brand_gray,
+                scoreArray
+            )
 
         fiveDayChartView.addView(fiveDayChart)
 

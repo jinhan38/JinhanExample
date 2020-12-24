@@ -5,13 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".customChart.fiveDayChart.FiveDayChartActivity">
+    tools:context=".draw.line.DrawLineActivity">
 
-
-    <FrameLayout
-        android:id="@+id/fiveDayChartView"
-        android:layout_width="314dp"
-        android:layout_height="300dp"
+    <com.jinhanexample.draw.line.DrawDashLine
+        android:layout_width="match_parent"
         android:layout_marginTop="50dp"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_height="3dp"/>
+    
+
 </LinearLayout>

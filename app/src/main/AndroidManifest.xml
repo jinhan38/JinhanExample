@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JinhanExample">
-        <activity android:name=".customChart.fiveDayChart.FiveDayChartActivity"></activity>
+        <activity android:name=".draw.line.DrawLineActivity"></activity>
+        <activity android:name=".customChart.fiveDayChart.FiveDayChartActivity" />
         <activity android:name=".customChart.CustomChartActivity" />
         <activity android:name=".draw.rect.RectActivity" />
         <activity android:name=".draw.DrawActivity" />

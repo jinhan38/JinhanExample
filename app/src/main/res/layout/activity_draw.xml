@@ -18,4 +18,10 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:text="Draw Rect"/>
+
+    <Button
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Draw Line"/>
 </LinearLayout>

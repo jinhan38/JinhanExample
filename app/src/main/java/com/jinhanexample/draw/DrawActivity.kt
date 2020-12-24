@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import com.jinhanexample.R
 import com.jinhanexample.draw.layoutParams.DrawLayoutParamsActivity
+import com.jinhanexample.draw.line.DrawLineActivity
 import com.jinhanexample.draw.rect.RectActivity
 
 class DrawActivity : AppCompatActivity() {
@@ -19,6 +20,10 @@ class DrawActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.rect).setOnClickListener {
             startActivity(Intent(this, RectActivity::class.java))
+        }
+
+        findViewById<Button>(R.id.line).setOnClickListener {
+            startActivity(Intent(this, DrawLineActivity::class.java))
         }
     }
 }
