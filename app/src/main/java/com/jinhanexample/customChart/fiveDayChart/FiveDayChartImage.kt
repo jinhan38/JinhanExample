@@ -3,26 +3,18 @@ package com.jinhanexample.customChart.fiveDayChart
 import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.*
-import android.graphics.drawable.ShapeDrawable
-import android.graphics.drawable.shapes.PathShape
 import android.util.AttributeSet
 import android.util.Log
 import android.util.TypedValue
 import android.view.View
-import androidx.compose.ui.graphics.LinearGradient
-import androidx.compose.ui.graphics.TileMode
-import com.jinhanexample.Common
 import com.jinhanexample.R
+import kotlinx.android.synthetic.main.candle_chart_marker.view.*
 
-class FiveDayChart : View {
+class FiveDayChartImage : View {
 
     //범위 배경
     //https://stackoverflow.com/questions/15450328/androidplot-background-and-ranges
 
-
-    //TODO:: padding 주기, 점이 짤려보인다
-    //TODO:: 범위 background 설정하기
-    //TODO:: X축, Y 축에 텍스트 넣기
 
     companion object {
         private const val TAG = "FiveDayChart"
@@ -57,7 +49,8 @@ class FiveDayChart : View {
 
     private var scoreArray: ArrayList<Int> = ArrayList()//차트에 있는 점의 좌표
 
-    private var circleLocationArray = ArrayList<CircleLocation>()
+    var circleLocationArray = ArrayList<CircleLocation>()
+    private val paddingValue = getDP(context, 5)
 
     @SuppressLint("DrawAllocation")
     override fun onDraw(canvas: Canvas?) {
@@ -70,14 +63,12 @@ class FiveDayChart : View {
         viewPaint.style = Paint.Style.FILL
         canvas?.drawRect(viewRect, viewPaint)
 
-//        http://www.javased.com/?api=android.graphics.DashPathEffect
-
-
         //차트 내 점선 그리기 6개
-        setCircleDashLine(viewRect, canvas)
+//        setCircleDashLine(viewRect, canvas)
+        setRectDashLine(viewRect, canvas)
 
         //배경색 지정
-        setBackgroundPoint(canvas, viewRect)
+        setPointLocation(canvas, viewRect)
 
         //차트 내 점 찍기
         drawCirclePoint(canvas, viewRect)
@@ -89,40 +80,41 @@ class FiveDayChart : View {
      */
     private fun setRectDashLine(viewRect: RectF, canvas: Canvas?) {
 
-        val dashWidth = getDP(context, 3)
+        val dashWidth = getDP(context, 1)
         val dotPaint = Paint()
         dotPaint.isAntiAlias = true
         dotPaint.color = setColor(context, dashColor)
-        dotPaint.style = Paint.Style.STROKE
-        dotPaint.strokeWidth = dashWidth
-        dotPaint.pathEffect = DashPathEffect(floatArrayOf(dashWidth, dashWidth * 2), 0f)
-        //floatArrayOf의 첫번째는 점선의 width, 두번째는 점선의 간격
+        dotPaint.style = Paint.Style.STROKE // style Stroke로 설정해야 점선 적용 가능
+        dotPaint.strokeWidth = dashWidth // strokeWidth값은 선의 두께
+        dotPaint.pathEffect = DashPathEffect(floatArrayOf(dashWidth, dashWidth * 5), 0f)
+//        dotPaint.strokeCap = Paint.Cap.ROUND
+        //DashPathEffect의 첫번째 인자 interval은 점선의 width(dash의 길이)와 점선의 간격(dash의 간격) 입력
         //phase는 점선이 시작할 때 잘려나가는 이미지 값의 허용범위
 
-        val dotOffset = viewHeight / 6
+
+        val dotOffset = (viewHeight - paddingValue) / 5
         val startX = viewRect.left
         val stopX = viewRect.right
 
         //첫번째 점선
-        val firstStartY = (dashWidth / 2)
+        val firstStartY = (dashWidth / 2) + paddingValue
         canvas?.drawLine(startX, firstStartY, stopX, firstStartY, dotPaint)
 
         //2~6번째 점선
         for (i in 1..5) {
-
-            val startY = (dotOffset * i) - (dashWidth / 2)
+            val startY = (dotOffset * i) - (dashWidth / 2) + paddingValue
             canvas?.drawLine(startX, startY, stopX, startY, dotPaint)
         }
 
     }
 
+
     /**
      * 원형 점선 6개 그리기
      */
     private fun setCircleDashLine(viewRect: RectF, canvas: Canvas?) {
-        //원형 점을 그렸을 때 이미지가 짤리는 부분 때문에 padding 10을 주었다.
-        //때문에 원형 점의 위치와 line을 맞추기 위해 점선에도 padding 10을 적용시켰다.
-        val paddingValue = getDP(context, 10)
+        //원형 점을 그렸을 때 이미지가 짤리는 부분 때문에 padding 5을 주었다.
+        //때문에 원형 점의 위치와 line을 맞추기 위해 점선에도 padding 5을 적용시켰다.
         val viewHeight = viewRect.height() - (paddingValue * 2)
 
         val dashWidth = getDP(context, 1) //점의 크기
@@ -132,13 +124,14 @@ class FiveDayChart : View {
         paint.strokeWidth = dashWidth
         paint.style = Paint.Style.STROKE
 
-        val phase = 0f
+        val phase = 0f //첫번째 모양(원형 점선)이 찍히기 전의, 시작점으로부터의 간격
         val advance = getDP(context, 10) //점선의 간격
-        val style: PathDashPathEffect.Style = PathDashPathEffect.Style.TRANSLATE
+        val style: PathDashPathEffect.Style = PathDashPathEffect.Style.MORPH
         val path = Path()
         val pathShape = Path()
         //시작 x좌표, 시작 y좌표
-        pathShape.addCircle(0f, 0f, dashWidth, Path.Direction.CCW)
+//        pathShape.addCircle(0f, 0f, dashWidth, Path.Direction.CCW)
+        pathShape.addOval(0f, 0f, dashWidth, dashWidth, Path.Direction.CCW)
 
         path.reset() //path 시작
         path.moveTo(viewRect.left, paddingValue) //점선의 시작 좌표
@@ -173,79 +166,90 @@ class FiveDayChart : View {
     private fun drawCirclePoint(canvas: Canvas?, viewRect: RectF) {
         //점 좌표 값에 padding값을 계산하여 넣었다.
         //그렇지 않으면 끝부분에 있을 경우 점이 짤린다.
-        val paddingValue = getDP(context, 10)
-        val radius = getDP(context, 4)
+        val radius = getDP(context, 2)
         val circlePaint = Paint()
         circlePaint.isAntiAlias = true
         circlePaint.color = setColor(context, R.color.black)
         circlePaint.style = Paint.Style.FILL
 
         val perX: Float = (viewRect.width() - (paddingValue * 2)) / 4
-        val perY: Float = (viewRect.height() - (paddingValue * 2)) / 100
+        val perY: Float = (viewHeight - paddingValue) / 100
+
+        val xArrayList = ArrayList<Float>()
 
         for (i in 0 until scoreArray.size) {
 
             val x: Float = (perX * i) + paddingValue
-            val y: Float = viewRect.bottom - (scoreArray[i] * perY) - paddingValue
+            val y: Float = viewRect.bottom - (scoreArray[i] * perY)
+            xArrayList.add(x)
 
-            if (i == scoreArray.size - 1) {
-                //마지막 포지션에서 원 하나 더 추가하고 컬러 변경하기기
-                canvas?.drawCircle(
-                    (perX * i) + paddingValue,
-                    viewRect.bottom - (scoreArray[i] * perY) - paddingValue,
-                    getDP(context, 10),
-                    circlePaint
-                )
-                circlePaint.color = setColor(context, R.color.white)
+            if (scoreArray[i] != 0) {
 
+                if (i == scoreArray.size - 1) {
+                    //마지막 포지션에서 원 하나 더 추가하고 컬러 변경하기기
+                    canvas?.drawCircle(
+                        (perX * i) + paddingValue,
+                        viewRect.bottom - (scoreArray[i] * perY),
+                        getDP(context, 5),
+                        circlePaint
+                    )
+                    circlePaint.color = setColor(context, R.color.white)
+
+                }
+
+                canvas?.drawCircle(x, y, radius, circlePaint)
             }
 
-            canvas?.drawCircle(x, y, radius, circlePaint)
-
         }
+
+        (context as FiveDayChartActivity).initXAxisText(xArrayList)
 
     }
 
-
-    private fun setBackgroundPoint(canvas: Canvas?, viewRect: RectF) {
-        val paddingValue = getDP(context, 10)
+    private fun setPointLocation(canvas: Canvas?, viewRect: RectF) {
 
         val perX: Float = (viewRect.width() - (paddingValue * 2)) / 4
-        val perY: Float = (viewRect.height() - (paddingValue * 2)) / 100
-
+        val perY: Float = (viewHeight - paddingValue) / 100
+        var x = 0f
         for (i in 0 until scoreArray.size) {
 
-            var x: Float = (perX * i) + paddingValue
-            var y: Float = viewRect.bottom - (scoreArray[i] * perY) - paddingValue
+            if (scoreArray[i] != 0) {
+
+                x = (perX * i) + paddingValue
+                val y: Float = viewRect.bottom - (scoreArray[i] * perY)
 
 
-            if (i == 0) {
-                circleLocationArray.add(CircleLocation(viewRect.left, viewRect.bottom))
-                circleLocationArray.add(CircleLocation(viewRect.left, y))
+                if (circleLocationArray.size == 0) { // 시작점은 차트 왼쪽 하단부분부터
+                    circleLocationArray.add(CircleLocation(x, viewRect.bottom))
+                    circleLocationArray.add(CircleLocation(x, y))
+                }
+
+                circleLocationArray.add(CircleLocation(x, y))
+
+//                if (i == scoreArray.size - 1) { //마지막 점을 차트 오른쪽 하단에서 시작하여 시작점으로 돌아오기
+//                    circleLocationArray.add(CircleLocation(x, viewRect.bottom))
+//                }
             }
 
-            circleLocationArray.add(CircleLocation(x, y))
-
-            if (i == scoreArray.size - 1) {
-                circleLocationArray.add(CircleLocation(viewRect.right, y))
-                circleLocationArray.add(CircleLocation(viewRect.right, viewRect.bottom))
-            }
         }
 
+        circleLocationArray.add(CircleLocation(x, viewRect.bottom)) //마지막 점의 하단부
         setBackgroundColor(viewRect, circleLocationArray, canvas)
     }
 
 
+    //차트 안쪽 배경 지정
     private fun setBackgroundColor(
         viewRect: RectF,
         circleLocationArray: ArrayList<CircleLocation>,
         canvas: Canvas?
     ) {
 
+
         val colors = intArrayOf(
-            Color.parseColor("#738af8"),
-            Color.parseColor("#8e88cc"),
-            Color.parseColor("#2cff5f5f")
+            Color.parseColor("#1A73BAF8"),
+            Color.parseColor("#1A8E88CC"),
+            Color.parseColor("#1Aff5f5f")
         )
 
 
@@ -257,7 +261,6 @@ class FiveDayChart : View {
             null,
             Shader.TileMode.CLAMP
         )
-//        paint.color = setColor(context, R.color.brand_pink)
         paint.style = Paint.Style.FILL
         val path = Path()
 
@@ -268,20 +271,7 @@ class FiveDayChart : View {
         }
         path.close() //path 끝
 
-//        paint.shader = LinearGradient(
-//            0f,
-//            0f,
-//            0f,
-//            15f,
-//            0xFF1F9928.toInt(),
-//            0xFF184F1E.toInt(),
-//            Shader.TileMode.MIRROR
-//        )
         canvas?.drawPath(path, paint)
-//        val linearGradient: Shader = LinearGradient(colors, 0, 0, 100, 0, TileMode.Clamp)
-//        paint.setShader(linearGradient)
-//        Pnt.setShader(new LinearGradient (0, 0, 100, 0, Color.BLUE, Color.WHITE, TileMode.CLAMP));
-
 
     }
 

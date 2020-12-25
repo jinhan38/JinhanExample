@@ -8,6 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#817F7F</color>
+    <color name="soft_gray">#80D6D6D6</color>
     <color name="red">#F80606</color>
 
     <color name="btn_inactivity">#dad9e2</color>
@@ -38,4 +39,11 @@
     <color name="colorWhite">#ffffffff</color>
     <color name="colorGray400">#bdbdbd</color>
     <color name="colorBlack">#ff000000</color>
+    <color name="Gray100">#F5F5F5</color>
+
+    <color name="chartColor1">#1A73BAF8</color>
+    <color name="chartColor2">#1A8E88CC</color>
+    <color name="chartColor3">#1Aff5f5f</color>
+
+    <color name="Gray300">#E0E0E0</color>
 </resources>
