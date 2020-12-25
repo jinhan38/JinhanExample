@@ -4,24 +4,13 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
-import android.util.Log
 import android.util.TypedValue
 import android.view.View
 import com.jinhanexample.R
-import kotlinx.android.synthetic.main.candle_chart_marker.view.*
 
 class FiveDayChartImage : View {
 
-    //범위 배경
-    //https://stackoverflow.com/questions/15450328/androidplot-background-and-ranges
-
-
-    companion object {
-        private const val TAG = "FiveDayChart"
-    }
-
     constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs)
-
 
     constructor(
         context: Context?,
@@ -40,11 +29,9 @@ class FiveDayChartImage : View {
         this.dashColor = dashColor
     }
 
-
     private var viewWidth = 0f
     private var viewHeight = 0f
     private var viewColor = 0 //배경 컬러
-
     private var dashColor = 0 //점선의 컬러
 
     private var scoreArray: ArrayList<Int> = ArrayList()//차트에 있는 점의 좌표
@@ -183,10 +170,10 @@ class FiveDayChartImage : View {
             val y: Float = viewRect.bottom - (scoreArray[i] * perY)
             xArrayList.add(x)
 
-            if (scoreArray[i] != 0) {
+            if (scoreArray[i] != 0) { //점수가 0 이상일 경우에만 점을 찍어주겠습니다.
 
                 if (i == scoreArray.size - 1) {
-                    //마지막 포지션에서 원 하나 더 추가하고 컬러 변경하기기
+                    //마지막 포지션에서 사이즈가 더 큰검은색 원 하나 더 추가하고, 기존의 원 컬러 변경하기기
                     canvas?.drawCircle(
                         (perX * i) + paddingValue,
                         viewRect.bottom - (scoreArray[i] * perY),
@@ -206,6 +193,10 @@ class FiveDayChartImage : View {
 
     }
 
+    /**
+     * 각 circlePoint의 좌표를 저장
+     * 저장한 좌표값으로 배경색을 넣겠습니다.
+     */
     private fun setPointLocation(canvas: Canvas?, viewRect: RectF) {
 
         val perX: Float = (viewRect.width() - (paddingValue * 2)) / 4
@@ -226,9 +217,6 @@ class FiveDayChartImage : View {
 
                 circleLocationArray.add(CircleLocation(x, y))
 
-//                if (i == scoreArray.size - 1) { //마지막 점을 차트 오른쪽 하단에서 시작하여 시작점으로 돌아오기
-//                    circleLocationArray.add(CircleLocation(x, viewRect.bottom))
-//                }
             }
 
         }
@@ -238,20 +226,20 @@ class FiveDayChartImage : View {
     }
 
 
-    //차트 안쪽 배경 지정
+    /**
+     * 차트 안쪽 배경색 지정
+     */
     private fun setBackgroundColor(
         viewRect: RectF,
         circleLocationArray: ArrayList<CircleLocation>,
         canvas: Canvas?
     ) {
 
-
         val colors = intArrayOf(
             Color.parseColor("#1A73BAF8"),
             Color.parseColor("#1A8E88CC"),
             Color.parseColor("#1Aff5f5f")
         )
-
 
         val paint = Paint()
         paint.isAntiAlias = true
@@ -291,5 +279,8 @@ class FiveDayChartImage : View {
         )
     }
 
+    /**
+     * 위치 저장 data class
+     */
     data class CircleLocation(var x: Float, var y: Float)
 }

@@ -9,18 +9,18 @@
 
 
     <LinearLayout
-        android:layout_marginTop="30dp"
         android:layout_width="match_parent"
-        android:layout_marginHorizontal="23dp"
-        android:background="@drawable/shape_line_gray300_1px_inside"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="23dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/shape_line_gray300_1px_inside"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_height="48dp"
             android:layout_marginHorizontal="1dp"
             android:layout_marginTop="1dp"
-            android:layout_height="48dp"
             android:orientation="horizontal"
             android:weightSum="2">
 
@@ -50,8 +50,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_marginTop="30dp"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp">
 
             <TextView
                 android:id="@+id/textView5"

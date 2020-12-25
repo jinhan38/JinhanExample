@@ -1,7 +1,6 @@
 package com.jinhanexample.customChart.fiveDayChart
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.jinhanexample.Common
 import com.jinhanexample.R
@@ -9,9 +8,6 @@ import kotlinx.android.synthetic.main.activity_five_day_chart.*
 
 class FiveDayChartActivity : AppCompatActivity() {
 
-    companion object {
-        private const val TAG = "FiveDayChartActivity"
-    }
 
     private var viewLeft = 0f
     private var viewTop = 0f

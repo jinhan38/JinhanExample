@@ -2,7 +2,6 @@ package com.jinhanexample.customChart.fiveDayChart
 
 import android.content.Context
 import android.util.AttributeSet
-import android.util.Log
 import android.util.TypedValue
 import android.view.Gravity
 import android.widget.FrameLayout
@@ -17,11 +16,6 @@ import kotlin.collections.ArrayList
 
 
 class FiveDayChartXAxisText : FrameLayout {
-
-
-    companion object {
-        private const val TAG = "FiveDayChartXAxisText"
-    }
 
     constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
 
@@ -57,7 +51,6 @@ class FiveDayChartXAxisText : FrameLayout {
     //요일로 보여주기
     private fun setStringDayText() {
 
-        //TODO::토요일은 파란색, 일요일은 빨간색, today는 첫글자와 배경 이미지
         for (i in 0 until xAxisTextDataArray.size) {
 
             val textView = TextView(context)
@@ -110,6 +103,9 @@ class FiveDayChartXAxisText : FrameLayout {
             val textView = TextView(context)
             textView.textSize = 10f
 
+            //calendar 클래스를 이용해 요일별 int값을 리턴받을 수 있습니다.
+            //"yyyy-MM-dd" 형식의 데이터를 입력하여 calendar의 날짜로 지정하고
+            // cal.get(Calendar.DAY_OF_WEEK) 함수를 이용해 int값을 리턴받으세요
             val cal = Calendar.getInstance()
             val transFormat = SimpleDateFormat("yyyy-MM-dd")
             var to: Date? = null
@@ -120,9 +116,6 @@ class FiveDayChartXAxisText : FrameLayout {
                 e.printStackTrace()
             }
             val dayNum = cal.get(Calendar.DAY_OF_WEEK)
-
-
-
 
             if (i == xAxisTextDataArray.size - 1) {
                 textView.setTextColor(setColor(context, R.color.white))
@@ -147,9 +140,11 @@ class FiveDayChartXAxisText : FrameLayout {
         }
     }
 
-
+    /**
+     * 검은색 원의 이미지 뷰 생성하고 addView
+     */
     private fun setTodayImageView(): ImageView {
-        //오늘 날짜에 원 추가
+
         val imageView = ImageView(context)
         val layoutParams = LinearLayout.LayoutParams(
             getDP(context, 20).toInt(),
@@ -205,7 +200,7 @@ class FiveDayChartXAxisText : FrameLayout {
 
 
     /**
-     * Date Type, yyyy-MM-dd 형식의 데이터를 요일로 반환
+     * 요일별 컬러 다르게 지정
      *
      * @param dayNum
      * @return

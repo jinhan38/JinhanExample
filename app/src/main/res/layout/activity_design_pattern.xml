@@ -4,12 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".designPattern.DesignPatternActivity">
 
     <Button
         android:id="@+id/factoryPattern"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="팩토리 패턴"/>
+        android:text="팩토리 디자인 생성 패턴"/>
+
+    <Button
+        android:id="@+id/AdapterPatternJava"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="어댑터 디자인 구조 패턴 자바"/>
+
+    <Button
+        android:id="@+id/AdapterPatternKotlin"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="어댑터 디자인 구조 패턴 코틀린"/>
+
 
 </LinearLayout>

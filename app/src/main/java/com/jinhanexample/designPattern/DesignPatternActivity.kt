@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.jinhanexample.R
+import com.jinhanexample.designPattern.adapter.java.AdapterDesignPatternActivityJava
+import com.jinhanexample.designPattern.adapter.kotlin.AdapterDesignPatternActivityKotlin
 import com.jinhanexample.designPattern.factory.FactoryPatternActivity
 import kotlinx.android.synthetic.main.activity_design_pattern.*
 
@@ -15,6 +17,14 @@ class DesignPatternActivity : AppCompatActivity() {
 
         factoryPattern.setOnClickListener {
             startActivity(Intent(this, FactoryPatternActivity::class.java))
+        }
+
+        AdapterPatternJava.setOnClickListener {
+            startActivity(Intent(this, AdapterDesignPatternActivityJava::class.java))
+        }
+
+        AdapterPatternKotlin.setOnClickListener {
+            startActivity(Intent(this, AdapterDesignPatternActivityKotlin::class.java))
         }
     }
 }
