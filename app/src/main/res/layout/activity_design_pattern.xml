@@ -25,5 +25,11 @@
         android:layout_height="50dp"
         android:text="어댑터 디자인 구조 패턴 코틀린"/>
 
+    <Button
+        android:id="@+id/compositePatternJava"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Composite 디자인 구조 패턴 코틀린"/>
+
 
 </LinearLayout>

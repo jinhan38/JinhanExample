@@ -46,4 +46,5 @@
     <color name="chartColor3">#1Aff5f5f</color>
 
     <color name="Gray300">#E0E0E0</color>
+    <color name="Gray200">#eeeeee</color>
 </resources>

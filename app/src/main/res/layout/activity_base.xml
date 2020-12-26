@@ -47,5 +47,11 @@
             android:layout_height="50dp"
             android:text="원형 프로그레스 애니메이션" />
 
+        <Button
+            android:id="@+id/customLoadingView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="커스텀 로딩 뷰" />
+
     </LinearLayout>
 </layout>

@@ -15,5 +15,6 @@ class CustomChartActivity : AppCompatActivity() {
         findViewById<Button>(R.id.fiveDayChart).setOnClickListener {
             startActivity(Intent(this, FiveDayChartActivity::class.java))
         }
+
     }
 }

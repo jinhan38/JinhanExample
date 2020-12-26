@@ -10,7 +10,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JinhanExample">
-        <activity android:name=".designPattern.adapter.kotlin.AdapterDesignPatternActivityKotlin"></activity>
+        <activity android:name=".animation.customLoadingView.CustomLoadingViewActivity"></activity>
+        <activity android:name=".viewPager.flexibleHeight.FlexibleViewPagerHeightActivity" />
+        <activity android:name=".designPattern.composite.java.CompositeClientJava" />
+        <activity android:name=".designPattern.adapter.kotlin.AdapterDesignPatternActivityKotlin" />
         <activity android:name=".designPattern.adapter.java.AdapterDesignPatternActivityJava" />
         <activity android:name=".draw.line.DrawLineActivity" />
         <activity android:name=".customChart.fiveDayChart.FiveDayChartActivity" />

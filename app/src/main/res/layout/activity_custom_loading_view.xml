@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".animation.customLoadingView.CustomLoadingViewActivity">
+
+    <Button
+        android:id="@+id/showLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show Loading"
+        app:layout_constraintEnd_toStartOf="@+id/hideLoading"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/hideLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="hide Loading"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/showLoading"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.jinhanexample.animation.customLoadingView.LoadingView
+        android:id="@+id/loading"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="24dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/showLoading"
+        app:lv_color="@color/brand_purple" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

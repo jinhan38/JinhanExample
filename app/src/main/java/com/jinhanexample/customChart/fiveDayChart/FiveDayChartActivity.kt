@@ -4,6 +4,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.jinhanexample.Common
 import com.jinhanexample.R
+import com.jinhanexample.customChart.fiveDayChart.viewPager.ProgressFragmentFirst
+import com.jinhanexample.customChart.fiveDayChart.viewPager.ProgressFragmentSecond
+import com.jinhanexample.customChart.fiveDayChart.viewPager.ViewPagerAdapter
 import kotlinx.android.synthetic.main.activity_five_day_chart.*
 
 class FiveDayChartActivity : AppCompatActivity() {
@@ -34,6 +37,7 @@ class FiveDayChartActivity : AppCompatActivity() {
             dayOfWeekChart.setBackgroundColor(Common.setColor(this, R.color.white))
 
         }
+
         dateChart.setOnClickListener {
             dateType = 1
             setXAxisTextView()
@@ -44,7 +48,27 @@ class FiveDayChartActivity : AppCompatActivity() {
             dateChart.setBackgroundColor(Common.setColor(this, R.color.white))
 
         }
+
+
+        val adapter = ViewPagerAdapter(supportFragmentManager)
+        val progressFragmentFirst = ProgressFragmentFirst()
+        val progressFragmentSecond = ProgressFragmentSecond()
+        var progressCount = 5
+        if (progressCount >= 5) {
+
+            adapter.addItem(progressFragmentFirst)
+            adapter.addItem(progressFragmentSecond)
+        } else {
+            adapter.addItem(progressFragmentFirst)
+        }
+        viewPager.adapter = adapter
+        dots_indicator.setViewPager(viewPager)
+
+
+
     }
+
+
 
     private fun setXAxisTextView() {
         fiveDayChartXAxisTextView.removeAllViews()

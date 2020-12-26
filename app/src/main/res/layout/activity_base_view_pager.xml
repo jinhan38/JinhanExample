@@ -20,5 +20,11 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="FRAGMENT TRANS VIEW PAGER" />
+
+        <Button
+            android:id="@+id/flexibleViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="뷰페이져 높이 wrap Content 설정" />
     </LinearLayout>
 </layout>
