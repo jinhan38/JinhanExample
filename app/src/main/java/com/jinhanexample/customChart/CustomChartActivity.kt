@@ -7,6 +7,7 @@ import com.jinhanexample.R
 import com.jinhanexample.customChart.fiveDayChart.FiveDayChartActivity
 import android.content.Intent
 import com.jinhanexample.customChart.stockChart.StockChartActivity
+import com.jinhanexample.customChart.varChart.BarChartViewActivity
 
 class CustomChartActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,6 +20,10 @@ class CustomChartActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.stockChart).setOnClickListener {
             startActivity(Intent(this, StockChartActivity::class.java))
+        }
+
+        findViewById<Button>(R.id.barChart).setOnClickListener {
+            startActivity(Intent(this, BarChartViewActivity::class.java))
         }
 
     }

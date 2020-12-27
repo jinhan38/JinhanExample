@@ -47,4 +47,7 @@
 
     <color name="Gray300">#E0E0E0</color>
     <color name="Gray200">#eeeeee</color>
+    <color name="blue200">#fafbfd</color>
+    <color name="barColor">#e7ecf2</color>
+
 </resources>

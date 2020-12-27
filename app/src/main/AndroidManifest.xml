@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JinhanExample"
         android:usesCleartextTraffic="true">
-        <activity android:name=".customView.compoundView.IndeterminateActivity"></activity>
+        <activity android:name=".customChart.varChart.BarChartViewActivity"></activity>
+        <activity android:name=".customView.compoundView.IndeterminateActivity" />
         <activity android:name=".customView.compoundView.CompoundViewActivity" />
         <activity android:name=".customView.CustomViewActivity" />
         <activity android:name=".customChart.stockChart.StockChartActivity" />
