@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.jinhanexample.customView.compoundView.StatusView
+        android:id="@+id/statusView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.jinhanexample.customView.compoundView.IndeterminateCheckBox
+        android:id="@+id/indeterminate_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp" />
+
+    <com.jinhanexample.customView.compoundView.IndeterminateCheckBox
+        android:id="@+id/indeterminate_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp" />
+
+    <com.jinhanexample.customView.compoundView.IndeterminateCheckBox
+        android:id="@+id/indeterminate_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp" />
+
+    <com.jinhanexample.customView.compoundView.LinedEditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="It’s easy to modify an existing View, but sometimes there will be no similar View,
+         and you need to create a custom view from scratch.
+         For example, if you want to implement an equalizer in your music player app.
+         This is harder but still doable.
+         In the next part of the series,
+         we will dig more into the Custom Views and explore constructors, lifecycle, and the canvas." />
+</LinearLayout>

@@ -5,18 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".customChart.CustomChartActivity">
+    tools:context=".customView.CustomViewActivity">
 
     <Button
-        android:id="@+id/fiveDayChart"
+        android:id="@+id/compoundView"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="5일 차트"/>
-
-    <Button
-        android:id="@+id/stockChart"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="추식 차트"/>
+        android:text="compound View" />
 
 </LinearLayout>
