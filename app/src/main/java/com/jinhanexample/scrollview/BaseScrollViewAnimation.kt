@@ -8,6 +8,7 @@ import com.jinhanexample.BaseActivity
 import com.jinhanexample.R
 import com.jinhanexample.databinding.ActivityScrollViewAnimationBinding
 import com.jinhanexample.animation.progress.ValueAnimProgressBarActivity
+import com.jinhanexample.scrollview.appBarHide.AppBarHideAnimationActivity
 
 class BaseScrollViewAnimation : BaseActivity(), View.OnClickListener {
 
@@ -26,6 +27,7 @@ class BaseScrollViewAnimation : BaseActivity(), View.OnClickListener {
         b.collapsingToolbarLayout2.setOnClickListener(this)
         b.stickyScrollView.setOnClickListener(this)
         b.scrollShowAnimation.setOnClickListener(this)
+        b.appBarHideAnimation.setOnClickListener(this)
     }
 
     override fun onClick(p0: View?) {
@@ -41,6 +43,9 @@ class BaseScrollViewAnimation : BaseActivity(), View.OnClickListener {
             }
             R.id.scroll_show_animation -> {
                 startActivity(Intent(this, ScrollingShowAnimation::class.java))
+            }
+            R.id.appBarHideAnimation -> {
+                startActivity(Intent(this, AppBarHideAnimationActivity::class.java))
             }
         }
     }
