@@ -13,8 +13,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JinhanExample"
         android:usesCleartextTraffic="true">
-        <activity android:name=".customChart.varChart.BarChartViewActivity"></activity>
-        <activity android:name=".scrollview.appBarHide.AppBarHideAnimationActivity"/>
+        <activity android:name=".viewControl.layoutParams.LayoutParamsActivityKotlin" />
+        <activity android:name=".viewControl.layoutParams.LayoutParamsActivityJava" />
+        <activity android:name=".viewControl.ViewControlActivity" />
+        <activity android:name=".customChart.varChart.BarChartViewActivity" />
+        <activity android:name=".scrollview.appBarHide.AppBarHideAnimationActivity" />
         <activity android:name=".customView.compoundView.CompoundViewActivity" />
         <activity android:name=".customView.CustomViewActivity" />
         <activity android:name=".customChart.stockChart.StockChartActivity" />

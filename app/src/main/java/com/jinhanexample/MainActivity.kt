@@ -26,6 +26,7 @@ import com.jinhanexample.scrollview.BaseScrollViewAnimation
 import com.jinhanexample.stopWatch.StopWatchActivity
 import com.jinhanexample.tablayout.BaseTabLayout
 import com.jinhanexample.textView.TextViewListActivity
+import com.jinhanexample.viewControl.ViewControlActivity
 import com.jinhanexample.viewPager.BaseViewPagerActivity
 
 class MainActivity : BaseActivity(), View.OnClickListener {
@@ -63,6 +64,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         b.mvvmSampleJava.setOnClickListener(this)
         b.customChart.setOnClickListener(this)
         b.customView.setOnClickListener(this)
+        b.viewControl.setOnClickListener(this)
     }
 
     override fun onClick(p0: View?) {
@@ -130,6 +132,9 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
             R.id.customView -> {
                 startActivity(Intent(this, CustomViewActivity::class.java))
+            }
+            R.id.viewControl -> {
+                startActivity(Intent(this, ViewControlActivity::class.java))
             }
 
         }
