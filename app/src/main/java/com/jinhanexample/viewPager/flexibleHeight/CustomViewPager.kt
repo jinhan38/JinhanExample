@@ -2,6 +2,7 @@ package com.jinhanexample.viewPager.flexibleHeight
 
 import android.content.Context
 import android.util.AttributeSet
+import android.util.Log
 import android.view.View
 import androidx.viewpager.widget.ViewPager
 
@@ -14,6 +15,7 @@ class CustomViewPager : ViewPager {
 
         var heightMeasureSpec = heightMeasureSpec
 
+        Log.d("TAG", "onMeasure: count : " + childCount)
         var height = 0
         for (i in 0 until childCount) {
             val child = getChildAt(i)

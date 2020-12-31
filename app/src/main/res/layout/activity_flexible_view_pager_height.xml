@@ -8,10 +8,9 @@
     android:orientation="vertical"
     tools:context=".viewPager.flexibleHeight.FlexibleViewPagerHeightActivity">
 
-
     <com.jinhanexample.viewPager.flexibleHeight.CustomViewPager
         android:id="@+id/flexibleViewPager"
         android:layout_width="match_parent"
-        android:layout_height="400dp" />
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

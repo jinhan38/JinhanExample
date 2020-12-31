@@ -10,6 +10,7 @@ import com.jinhanexample.databinding.ActivityBaseViewPagerBinding
 import com.jinhanexample.viewPager.depth.DepthPageViewPager
 import com.jinhanexample.viewPager.flexibleHeight.FlexibleViewPagerHeightActivity
 import com.jinhanexample.viewPager.fragmentTrans.FragmentTransViewPager
+import com.jinhanexample.viewPager.viewPager2.ViewPager2Activity
 
 class BaseViewPagerActivity : BaseActivity(), View.OnClickListener {
 
@@ -26,6 +27,7 @@ class BaseViewPagerActivity : BaseActivity(), View.OnClickListener {
         b.depthPageViewPager.setOnClickListener(this)
         b.fragmentViewPager.setOnClickListener(this)
         b.flexibleViewPager.setOnClickListener(this)
+        b.viewpager2.setOnClickListener(this)
     }
 
     override fun onClick(p0: View?) {
@@ -38,6 +40,9 @@ class BaseViewPagerActivity : BaseActivity(), View.OnClickListener {
             }
             R.id.flexibleViewPager -> {
                 startActivity(Intent(this, FlexibleViewPagerHeightActivity::class.java))
+            }
+            R.id.viewpager2 -> {
+                startActivity(Intent(this, ViewPager2Activity::class.java))
             }
         }
     }
