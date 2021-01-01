@@ -154,6 +154,12 @@
                 android:layout_height="50dp"
                 android:text="뷰 컨트롤" />
 
+            <Button
+                android:id="@+id/readingIsPower"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="독서의 힘" />
+
 
         </LinearLayout>
 

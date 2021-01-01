@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JinhanExample"
         android:usesCleartextTraffic="true">
-        <activity android:name=".viewPager.viewPager2.ViewPager2Activity"></activity>
+        <activity android:name=".clonePackageReading.ReadingIsPowerActivity"></activity>
+        <activity android:name=".viewPager.viewPager2.ViewPager2Activity" />
         <activity android:name=".viewControl.layoutParams.LayoutParamsActivityKotlin" />
         <activity android:name=".viewControl.layoutParams.LayoutParamsActivityJava" />
         <activity android:name=".viewControl.ViewControlActivity" />

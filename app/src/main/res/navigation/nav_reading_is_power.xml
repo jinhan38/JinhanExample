@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_reading_is_power"
+    app:startDestination="@id/readingIsPowerFragment">
+
+    <fragment
+        android:id="@+id/readingIsPowerFragment"
+        android:name="com.jinhanexample.clonePackageReading.ReadingIsPowerFragment"
+        android:label="Reading"
+        tools:layout="@layout/fragment_reading_is_power">
+
+        <action
+            android:id="@+id/action_readingIsPowerFragment_to_readingAdvantageFragment"
+            app:destination="@id/readingAdvantageFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/readingAdvantageFragment"
+        android:name="com.jinhanexample.clonePackageReading.ReadingAdvantageFragment"
+        android:label="fragment_reading_advantage"
+        tools:layout="@layout/fragment_reading_advantage" />
+    
+</navigation>

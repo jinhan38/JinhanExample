@@ -6,13 +6,13 @@ import android.view.View
 import androidx.databinding.DataBindingUtil
 import com.jinhanexample.animation.BaseAnimationActivity
 import com.jinhanexample.calendar.CustomCalendarActivity
+import com.jinhanexample.clonePackageReading.ReadingIsPowerActivity
 import com.jinhanexample.codingLecture.CodingLectureMainActivity
 import com.jinhanexample.customChart.CustomChartActivity
 import com.jinhanexample.customView.CustomViewActivity
 import com.jinhanexample.databinding.ActivityMainBinding
 import com.jinhanexample.designPattern.DesignPatternActivity
 import com.jinhanexample.draw.DrawActivity
-import com.jinhanexample.draw.layoutParams.DrawLayoutParamsActivity
 import com.jinhanexample.floatingButton.BaseFloatingButtonActivity
 import com.jinhanexample.fragment.BaseFragmentActivity
 import com.jinhanexample.jetBrain.JetBrainBaseActivity
@@ -65,6 +65,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         b.customChart.setOnClickListener(this)
         b.customView.setOnClickListener(this)
         b.viewControl.setOnClickListener(this)
+        b.readingIsPower.setOnClickListener(this)
     }
 
     override fun onClick(p0: View?) {
@@ -135,6 +136,9 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
             R.id.viewControl -> {
                 startActivity(Intent(this, ViewControlActivity::class.java))
+            }
+            R.id.readingIsPower -> {
+                startActivity(Intent(this, ReadingIsPowerActivity::class.java))
             }
 
         }
