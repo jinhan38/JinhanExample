@@ -17,7 +17,7 @@
         android:id="@+id/stockChart"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="추식 차트"/>
+        android:text="주식 차트"/>
 
     <Button
         android:id="@+id/barChart"

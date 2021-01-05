@@ -7,6 +7,7 @@ import com.jinhanexample.R
 import com.jinhanexample.customChart.fiveDayChart.FiveDayChartActivity
 import android.content.Intent
 import com.jinhanexample.customChart.stockChart.StockChartActivity
+import com.jinhanexample.customChart.stockChart.StockChartTradingViewSearch
 import com.jinhanexample.customChart.varChart.BarChartViewActivity
 
 class CustomChartActivity : AppCompatActivity() {
@@ -19,7 +20,7 @@ class CustomChartActivity : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.stockChart).setOnClickListener {
-            startActivity(Intent(this, StockChartActivity::class.java))
+            startActivity(Intent(this, StockChartTradingViewSearch::class.java))
         }
 
         findViewById<Button>(R.id.barChart).setOnClickListener {

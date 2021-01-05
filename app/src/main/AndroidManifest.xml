@@ -3,6 +3,11 @@
     package="com.jinhanexample">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
 
     <application
         android:name=".mvvmTodo.TodoApplication"
@@ -13,7 +18,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JinhanExample"
         android:usesCleartextTraffic="true">
-        <activity android:name=".clonePackageReading.ReadingIsPowerActivity"></activity>
+        <activity android:name=".hybrid.HybridWebViewActivity"></activity>
+        <activity android:name=".hybrid.HybridWebViewActivityJava"></activity>
+        <activity android:name=".customChart.stockChart.StockChartTradingViewSearch" />
+        <activity android:name=".clonePackageReading.ReadingIsPowerActivity" />
         <activity android:name=".viewPager.viewPager2.ViewPager2Activity" />
         <activity android:name=".viewControl.layoutParams.LayoutParamsActivityKotlin" />
         <activity android:name=".viewControl.layoutParams.LayoutParamsActivityJava" />
@@ -97,6 +105,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.jinhanexample.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
     </application>
 
 </manifest>

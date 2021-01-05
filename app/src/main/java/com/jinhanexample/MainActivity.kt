@@ -15,6 +15,8 @@ import com.jinhanexample.designPattern.DesignPatternActivity
 import com.jinhanexample.draw.DrawActivity
 import com.jinhanexample.floatingButton.BaseFloatingButtonActivity
 import com.jinhanexample.fragment.BaseFragmentActivity
+import com.jinhanexample.hybrid.HybridWebViewActivity
+import com.jinhanexample.hybrid.HybridWebViewActivityJava
 import com.jinhanexample.jetBrain.JetBrainBaseActivity
 import com.jinhanexample.middleClass.MiddleClassActivity
 import com.jinhanexample.mpchart.MPChartList
@@ -66,6 +68,8 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         b.customView.setOnClickListener(this)
         b.viewControl.setOnClickListener(this)
         b.readingIsPower.setOnClickListener(this)
+        b.hybridWebView.setOnClickListener(this)
+        b.hybridWebViewJava.setOnClickListener(this)
     }
 
     override fun onClick(p0: View?) {
@@ -139,6 +143,12 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
             R.id.readingIsPower -> {
                 startActivity(Intent(this, ReadingIsPowerActivity::class.java))
+            }
+            R.id.hybridWebView -> {
+                startActivity(Intent(this, HybridWebViewActivity::class.java))
+            }
+            R.id.hybridWebViewJava -> {
+                startActivity(Intent(this, HybridWebViewActivityJava::class.java))
             }
 
         }

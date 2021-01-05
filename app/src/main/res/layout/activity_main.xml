@@ -161,6 +161,21 @@
                 android:text="독서의 힘" />
 
 
+            <Button
+                android:id="@+id/hybridWebView"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="하이브리드 코틀린" />
+
+
+
+            <Button
+                android:id="@+id/hybridWebViewJava"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="하이브리드 자바" />
+
+
         </LinearLayout>
 
 
