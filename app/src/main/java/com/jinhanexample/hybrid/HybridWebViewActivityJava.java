@@ -2,12 +2,17 @@ package com.jinhanexample.hybrid;
 
 import android.app.Activity;
 import android.app.DownloadManager;
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.service.voice.AlwaysOnHotwordDetector;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.webkit.MimeTypeMap;
 import android.webkit.ValueCallback;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -26,14 +31,14 @@ import java.net.URLDecoder;
 
 public class HybridWebViewActivityJava extends AppCompatActivity {
 
-    public static String baseUrl = "https://devapi.lifeplusmentalcare.com:2080/not/NOT01010000.do";
+    //    public static String baseUrl = "https://devapi.lifeplusmentalcare.com:2080/not/NOT01010000.do";
+    public static String baseUrl = "https://devapi.lifeplusmentalcare.com:2080/not/NOT02010000.do";
     public static Activity activity;
     private WebView mWebView;
     private String intentKeyword;
     private AndroidBridge androidBridge;
-    private ProgressBar progressBar;
-    ValueCallback mFilePathCallback;
     private static final String TAG = "HybridWebViewActivityJa";
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -48,6 +53,8 @@ public class HybridWebViewActivityJava extends AppCompatActivity {
         browserSettings();
 
     }
+
+
 
 
     private void browserSettings() {
@@ -67,42 +74,15 @@ public class HybridWebViewActivityJava extends AppCompatActivity {
         //캐시파일 사용 금지(운영중엔 주석처리 할 것)
         settings.setCacheMode(WebSettings.LOAD_NO_CACHE); //개발중엔 no_cache, 배포중엔 load_default
 
-        String url = baseUrl + intentKeyword;
-        mWebView.loadUrl(url);
+//        String url = baseUrl + intentKeyword;
+        mWebView.loadUrl(baseUrl);
 
         //기본 웹뷰 세팅
         //메인 추가 웹뷰 세팅
         settings.setAllowFileAccess(true);//파일 엑세스
-//        settings.setLoadWithOverviewMode(true);
-//        settings.setAppCachePath(mainActivity.getApplicationContext().getCacheDir().getAbsolutePath());
-//        settings.setPluginState(WebSettings.PluginState.ON);
-
-
-//        mWebView.setDownloadListener(new DownloadListener() {
-//            @Override
-//            public void onDownloadStart(String url, String userAgent, String contentDisposition, String mimeType, long contentLength) {
-//                mWebView.loadUrl(JavaScriptInterface.getBase64StringFromBlobUrl(url));
-//                Log.e("logURL", url);
-//            }
-//        });
-
-//        mWebView.setWebChromeClient(new WebChromeClient() {
-//            @Override
-//            public boolean onShowFileChooser(WebView webView, ValueCallback filePathCallback, FileChooserParams fileChooserParams) {
-//                mFilePathCallback = filePathCallback;
-//
-//                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-//                intent.addCategory(Intent.CATEGORY_OPENABLE);
-//                intent.setType("image/*");
-//
-//                startActivityForResult(intent, 0);
-//                return true;
-//            }
-//
-//
-//        });
 
     }
+
 
 
     /**
@@ -113,42 +93,26 @@ public class HybridWebViewActivityJava extends AppCompatActivity {
      */
     public void startDownload(String url, String dir, String fileName) {
 
-//        File file = File(getExternalFilesDir(null), "dev_submit.mp4")
-
-//        File file = new File(getUrlDecode(dir));
-//
-//        DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
-//        request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
-//        request.setTitle(fileName);
-//        request.setDescription("Downloading file...");
-//        request.allowScanningByMediaScanner();
-//        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-//        request.setDestinationUri(Uri.fromFile(file));
-//        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "" + System.currentTimeMillis());
-//        request.setAllowedOverMetered(true);
-//        request.setAllowedOverRoaming(true);
-//        DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
-//        manager.enqueue(request);
-
         File file = new File(getUrlDecode(dir));
-
 
         DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
         request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
-        request.setTitle(fileName);
+        request.setTitle(fileName); // 알림에서 보일 이름, 화면 상단 notification에서 나타나는 이름이다.
         request.setDescription("Downloading file...");
         request.allowScanningByMediaScanner();
         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
         request.setDestinationUri(Uri.fromFile(file));
-        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "" + System.currentTimeMillis());
+        // subPath가 실제 파일 이름, 파일 이름에 확장자가 포함되어 있어야 함
+        // 슬래시 이용해서 경로 추가 가능
+        request.setMimeType("image/jpeg");
+        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, System.currentTimeMillis() + "");
         request.setAllowedOverMetered(true);
         request.setAllowedOverRoaming(true);
         DownloadManager manager = (DownloadManager) activity.getSystemService(Context.DOWNLOAD_SERVICE);
         manager.enqueue(request);
-        Toast.makeText(activity, "파일 다운로드가 완료되었습니다.", Toast.LENGTH_SHORT).show();
-
 
     }
+
 
 
     public String getUrlDecode(String _strFileName) {
@@ -163,6 +127,8 @@ public class HybridWebViewActivityJava extends AppCompatActivity {
         return strRet;
     }
 
+    
+
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if ((keyCode == KeyEvent.KEYCODE_BACK) && mWebView.canGoBack()) {
@@ -171,6 +137,7 @@ public class HybridWebViewActivityJava extends AppCompatActivity {
         }
         return super.onKeyDown(keyCode, event);
     }
+
 
 
 }

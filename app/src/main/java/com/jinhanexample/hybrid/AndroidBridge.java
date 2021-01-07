@@ -8,8 +8,10 @@ import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
+import android.os.Handler;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.webkit.JavascriptInterface;
@@ -28,6 +30,8 @@ public class AndroidBridge {
 
     private WebView mWebView;
     private Integer curNum;
+
+    private final Handler handler = new Handler();
 
     public AndroidBridge(WebView mWebView, Integer curNum) {
         this.mWebView = mWebView;
@@ -55,6 +59,16 @@ public class AndroidBridge {
 
         Log.e(TAG, "fileDownload: url : " + url);
         Log.e(TAG, "fileDownload: fileName : " + fileName);
+
+
+
+
+
+
+
+
+
+
         //아래 줄은 외부저장소의 경로를 가져오는 코드  : 경로 =/mnt/sdcard/Download
         File file = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
         String strDir = file.getAbsolutePath();
@@ -111,7 +125,35 @@ public class AndroidBridge {
             result = true;
         }
 
+
+
+
+        File direct = new File(Environment.getExternalStorageDirectory() + "/download");
+
+        if (!direct.exists()) {
+
+            direct.mkdir();
+
+        } // end of if
+
+
+
+
         if (result) ((HybridWebViewActivityJava) activity).startDownload(url, dir, fileName);
+
+
+    }
+
+
+    @JavascriptInterface
+    public void postMessage() {
+        handler.post(new Runnable() {
+            public void run() {
+                mWebView.loadUrl("javascript:androidLoadingPageShow()");
+                //웹페이지에서 로딩이 끝나면 알아서 로딩 페이지를 닫아버린다.
+                Log.e(TAG, "androidLoadingPageShow: ");
+            }
+        });
 
     }
 }
