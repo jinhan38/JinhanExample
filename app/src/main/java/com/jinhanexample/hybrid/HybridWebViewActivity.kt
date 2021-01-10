@@ -36,7 +36,6 @@ class HybridWebViewActivity : AppCompatActivity() {
         setContentView(R.layout.activity_hybrid_web_view)
         activity = this
         mWebView = findViewById(R.id.webViewJava)
-        progressBar = findViewById(R.id.progressBar)
         if (intent.hasExtra("keyword")) {
             intentKeyword = intent.getStringExtra("keyword").toString()
         }
@@ -65,40 +64,6 @@ class HybridWebViewActivity : AppCompatActivity() {
         Log.d(TAG, "browserSetting: $url")
         webView.loadUrl(url)
 
-//        mWebView.setDownloadListener { url: String?, userAgent: String?, contentDisposition: String?, mimeType: String?, contentLength: Long ->
-//            val request =
-//                DownloadManager.Request(Uri.parse(url))
-//            request.setMimeType(mimeType)
-//
-//            //------------------------COOKIE!!------------------------
-//            val cookies =
-//                CookieManager.getInstance().getCookie(url)
-//            request.addRequestHeader("cookie", cookies)
-//            request.addRequestHeader("User-Agent", userAgent)
-//            //------------------------COOKIE!!------------------------
-//            request.setDescription("Downloading file...")
-//            request.setTitle(
-//                URLUtil.guessFileName(
-//                    url, contentDisposition,
-//                    mimeType
-//                )
-//            )
-//            request.allowScanningByMediaScanner()
-//            request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
-//            request.setDestinationInExternalPublicDir(
-//                Environment.DIRECTORY_DOWNLOADS,
-//                URLUtil.guessFileName(
-//                    url, contentDisposition, mimeType
-//                )
-//            )
-//            val dm =
-//                getSystemService(DOWNLOAD_SERVICE) as DownloadManager
-//            dm.enqueue(request)
-//            Toast.makeText(
-//                applicationContext, "Downloading File",
-//                Toast.LENGTH_LONG
-//            ).show()
-//        }
 
     }
 

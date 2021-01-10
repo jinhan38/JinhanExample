@@ -3,16 +3,11 @@ package com.jinhanexample.hybrid;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.DownloadManager;
-import android.content.ContentResolver;
-import android.content.ContentValues;
-import android.content.Context;
+import android.app.AlertDialog;
 import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
 import android.os.Handler;
-import android.provider.MediaStore;
 import android.util.Log;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
@@ -20,11 +15,12 @@ import android.widget.Toast;
 
 import androidx.core.app.ActivityCompat;
 
-import com.google.android.play.core.splitinstall.ac;
-import com.jinhanexample.MainActivity;
+import com.google.gson.JsonObject;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.File;
-import java.util.Objects;
 
 public class AndroidBridge {
 
@@ -53,54 +49,13 @@ public class AndroidBridge {
     @JavascriptInterface
     public void onDownloadStart(String url, String fileName) {
 
-        Log.e(TAG, "clicked!");
-        Log.e(TAG, "onDownloadStart: url : " + url);
-        Log.e(TAG, "onDownloadStart: fileName : " + fileName);
-
-        Log.e(TAG, "fileDownload: url : " + url);
-        Log.e(TAG, "fileDownload: fileName : " + fileName);
-
-
-
-
-
-
-
-
-
-
         //아래 줄은 외부저장소의 경로를 가져오는 코드  : 경로 =/mnt/sdcard/Download
         File file = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
         String strDir = file.getAbsolutePath();
 
-//        ContentResolver resolver = activity.getContentResolver();
-//        ContentValues contentValues = new ContentValues();
-//        contentValues.put(MediaStore.MediaColumns.MIME_TYPE, );
-
-//        Log.d(TAG, "onDownloadStart: 경로 : " + strDir + "/HANWHA");
-//        val resolver = context.contentResolver
-//        val contentValues = ContentValues().apply {
-//            put(MediaStore.MediaColumns.DISPLAY_NAME, "CuteKitten001")
-//            put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg")
-//            put(MediaStore.MediaColumns.RELATIVE_PATH, "DCIM/PerracoLabs")
-//        }
-//
-//        val uri = resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues)
-//
-//        resolver.openOutputStream(uri).use {
-//            // TODO something with the stream
-//        }
-
-
         storagePermissionCheck(downloadBaseUrl + url, strDir, fileName);
 
-
-//        DownloadManager.getInstance().setSavePath(strDir + "/ARTEUM"); // 저장하려는 경로 지정.
-//        DownloadManager.getInstance().setDownloadUrl("https://www.arteum.co.kr" + url);
-
-
     }
-
 
     @SuppressLint("ObsoleteSdkInt")
     private void storagePermissionCheck(String url, String dir, String fileName) {
@@ -126,34 +81,61 @@ public class AndroidBridge {
         }
 
 
-
-
         File direct = new File(Environment.getExternalStorageDirectory() + "/download");
 
         if (!direct.exists()) {
-
             direct.mkdir();
-
-        } // end of if
-
-
-
+        }
 
         if (result) ((HybridWebViewActivityJava) activity).startDownload(url, dir, fileName);
-
 
     }
 
 
     @JavascriptInterface
-    public void postMessage() {
-        handler.post(new Runnable() {
-            public void run() {
-                mWebView.loadUrl("javascript:androidLoadingPageShow()");
-                //웹페이지에서 로딩이 끝나면 알아서 로딩 페이지를 닫아버린다.
-                Log.e(TAG, "androidLoadingPageShow: ");
+    public void postMessage(final String message) {
+        handler.post(() -> {
+
+            JSONObject result;
+            try {
+                result = new JSONObject(message);
+
+                String callback = result.getString("callback");
+                String msg = result.getString("message");
+                String action = result.getString("action");
+                Log.d(TAG, "postMessage: callback : " + callback);
+                Log.d(TAG, "postMessage: message : " + msg);
+
+                if (action.equals("getCustInfo")) {
+                    Log.d(TAG, "postMessage: getCustInfo 진입");
+                    String custNo = "고객번호";
+                    String custId = "고객 아이디";
+                    String custName = "고객 이름";
+                    mWebView.loadUrl("javascript:custInfoCallBackAndroid('" + custNo + ", " + custId + ", " + custName + "')"); //params 값 전송
+
+                } else {
+
+                    AlertDialog dialog = new AlertDialog.Builder(activity).
+                            setMessage(msg).
+                            setPositiveButton("확인", (dialog1, which) -> {
+                                Toast.makeText(activity, "확인 클릭", Toast.LENGTH_SHORT).show();
+                                dialog1.cancel();
+                                //삭제 콜백 보내기
+                                mWebView.loadUrl("javascript:confirmCallbackAndroid()"); //params 값 전송
+                            }).setNegativeButton("취소", (dailog2, which) -> {
+                        Toast.makeText(activity, "취소 클릭", Toast.LENGTH_SHORT).show();
+                        dailog2.cancel();
+                    }).create();
+                    dialog.show();
+
+                }
+
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
+
         });
 
     }
+
 }
