@@ -61,6 +61,7 @@ public class HybridWebViewActivityJava extends AppCompatActivity {
     private void browserSettings() {
 
         androidBridge = new AndroidBridge(mWebView, 0);
+        androidBridge.setBaseUrl(baseUrl);
         mWebView.addJavascriptInterface(androidBridge, "AndroidApp");
 
         WebSettings settings = mWebView.getSettings();
@@ -92,7 +93,9 @@ public class HybridWebViewActivityJava extends AppCompatActivity {
 //                return super.onJsAlert(view, null, message, result);
             }
         });
-        mWebView.loadUrl(baseUrl);
+        String urlLoad = "https://devapi.lifeplusmentalcare.com:2080/not/NOT02010000.do?ntprCustCode=9009998689&custNo=9064294429";
+        mWebView.loadUrl(urlLoad);
+//        mWebView.loadUrl(baseUrl);
 
         //기본 웹뷰 세팅
         //메인 추가 웹뷰 세팅

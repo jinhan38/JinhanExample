@@ -13,4 +13,16 @@
         android:layout_height="60dp"
         android:text="compound View" />
 
+    <Button
+        android:id="@+id/changeViewSizeBySeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Change View Size Animation" />
+
+    <Button
+        android:id="@+id/activityPopup"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Custom Activity Popup" />
+
 </LinearLayout>

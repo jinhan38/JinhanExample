@@ -18,8 +18,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JinhanExample"
         android:usesCleartextTraffic="true">
-        <activity android:name=".hybrid.HybridWebViewActivity"></activity>
-        <activity android:name=".hybrid.HybridWebViewActivityJava"></activity>
+        <activity android:name=".string.StringFormatActivity"></activity>
+        <activity android:name=".string.StringBaseActivity" />
+        <activity android:name=".eventBus.EventBusSampleActivityJava" />
+        <activity android:name=".eventBus.EventBusSampleActivityKotlin" />
+        <activity android:name=".eventBus.EventBusBaseActivity" />
+        <activity android:name=".service.ServiceBaseActivity" />
+        <activity android:name=".broadcast.BroadCastActivityJava" />
+        <activity android:name=".broadcast.BroadCastBaseActivity" />
+        <activity android:name=".broadcast.BroadCastActivityKotlin" />
+        <activity android:name=".video.ExoPlayerActivity" />
+        <activity android:name=".login.email.EmailSpinnerActivity" />
+        <activity android:name=".login.LoginActivity" />
+        <activity android:name=".customView.activityPopup.PopupLayoutActivity" />
+        <activity
+            android:name=".customView.activityPopup.ShowPopup"
+            android:theme="@style/Theme.Transparent" />
+        <activity android:name=".customView.changeViewSizeBySeekBar.ChangeViewSizeBySeekBarJava" />
+        <activity android:name=".video.VideoBaseActivity" />
+        <activity android:name=".video.VideoAudioFocusControlJava" />
+        <activity android:name=".video.VideoAudioFocusControlKotlin" />
+        <activity android:name=".recyclerView.tagView.TagViewActivityJava" />
+        <activity android:name=".recyclerView.tagView.TagViewActivity" />
+        <activity android:name=".recyclerView.flexBoxRecyclerView.FlexRecyclerViewActivity" />
+        <activity android:name=".hybrid.HybridWebViewActivity" />
+        <activity android:name=".hybrid.HybridWebViewActivityJava" />
         <activity android:name=".customChart.stockChart.StockChartTradingViewSearch" />
         <activity android:name=".clonePackageReading.ReadingIsPowerActivity" />
         <activity android:name=".viewPager.viewPager2.ViewPager2Activity" />
@@ -115,7 +138,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
         </provider>
-
     </application>
 
 </manifest>

@@ -175,6 +175,31 @@
                 android:layout_height="50dp"
                 android:text="하이브리드 자바" />
 
+            <Button
+                android:id="@+id/btnVideo"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="비디오 뷰" />
+
+            <Button
+                android:id="@+id/btnBroadCast"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="브로드캐스트" />
+
+            <Button
+                android:id="@+id/btnEventBus"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="이벤트버스" />
+
+
+            <Button
+                android:id="@+id/btnString"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="String 처리" />
+
 
         </LinearLayout>
 

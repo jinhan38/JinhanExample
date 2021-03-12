@@ -43,7 +43,7 @@ public class AndroidBridge {
 
     private static final String TAG = "AndroidBridge";
     public static String DOWNLOAD_FILE_NAME = "";
-    private String downloadBaseUrl = "https://devapi.lifeplusmentalcare.com:2080";
+    private String downloadBaseUrl = "";
 
     //웹 자바스크립트에서 호출
     @JavascriptInterface
@@ -55,6 +55,10 @@ public class AndroidBridge {
 
         storagePermissionCheck(downloadBaseUrl + url, strDir, fileName);
 
+    }
+
+    public void setBaseUrl(String url){
+        this.downloadBaseUrl = url;
     }
 
     @SuppressLint("ObsoleteSdkInt")
@@ -118,12 +122,10 @@ public class AndroidBridge {
                     AlertDialog dialog = new AlertDialog.Builder(activity).
                             setMessage(msg).
                             setPositiveButton("확인", (dialog1, which) -> {
-                                Toast.makeText(activity, "확인 클릭", Toast.LENGTH_SHORT).show();
                                 dialog1.cancel();
                                 //삭제 콜백 보내기
                                 mWebView.loadUrl("javascript:confirmCallbackAndroid()"); //params 값 전송
                             }).setNegativeButton("취소", (dailog2, which) -> {
-                        Toast.makeText(activity, "취소 클릭", Toast.LENGTH_SHORT).show();
                         dailog2.cancel();
                     }).create();
                     dialog.show();

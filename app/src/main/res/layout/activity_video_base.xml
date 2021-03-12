@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".video.VideoBaseActivity">
+
+    <Button
+        android:id="@+id/btnMediaPlayerJava"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="미디어 플레이어 자바" />
+
+    <Button
+        android:id="@+id/btnMediaPlayerKotlin"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="미디어 플레이어 코틀린" />
+
+
+    <Button
+        android:id="@+id/btnExoPlayerJava"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="엑소플레이어 자바" />
+
+</LinearLayout>

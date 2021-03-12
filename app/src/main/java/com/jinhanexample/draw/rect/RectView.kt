@@ -1,11 +1,13 @@
 package com.jinhanexample.draw.rect
 
 import android.annotation.SuppressLint
+import android.content.ContentValues.TAG
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Paint
 import android.graphics.RectF
 import android.util.AttributeSet
+import android.util.Log
 import android.view.Gravity
 import android.view.MotionEvent
 import android.view.View
@@ -94,6 +96,9 @@ class RectView(context: Context, attributeSet: AttributeSet) : View(context, att
 
         //화면을 눌렀을 때 event가 동작하도록 했습니다.
 
+        if (event != null) {
+            Log.d(TAG, "onTouchEvent:  event.x : " + event.y)
+        }
         //그리고 해당 지점의 좌표값도 얻어올 수 있습니다.
         when (event?.action) {
 

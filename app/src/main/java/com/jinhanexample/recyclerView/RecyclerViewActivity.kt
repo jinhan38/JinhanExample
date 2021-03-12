@@ -8,7 +8,10 @@ import androidx.databinding.DataBindingUtil
 import com.jinhanexample.R
 import com.jinhanexample.databinding.ActivityRecyclerViewBinding
 import com.jinhanexample.recyclerView.dragAndSwipe.DragAndSwipeRecyclerViewActivity
+import com.jinhanexample.recyclerView.flexBoxRecyclerView.FlexRecyclerViewActivity
 import com.jinhanexample.recyclerView.grouping.GroupingRecyclerViewActivity
+import com.jinhanexample.recyclerView.tagView.TagViewActivity
+import com.jinhanexample.recyclerView.tagView.TagViewActivityJava
 
 class RecyclerViewActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -20,6 +23,8 @@ class RecyclerViewActivity : AppCompatActivity(), View.OnClickListener {
         b.childTabControlRecyclerView.setOnClickListener(this)
         b.groupingRecyclerView.setOnClickListener(this)
         b.dragAndSwipeRecyclerView.setOnClickListener(this)
+        b.flexBoxRecyclerView.setOnClickListener(this)
+        b.tagViewRecyclerView.setOnClickListener(this)
     }
 
     override fun onClick(p0: View?) {
@@ -33,6 +38,12 @@ class RecyclerViewActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.dragAndSwipeRecyclerView -> {
                 startActivity(Intent(this, DragAndSwipeRecyclerViewActivity::class.java))
+            }
+            R.id.flexBoxRecyclerView -> {
+                startActivity(Intent(this, FlexRecyclerViewActivity::class.java))
+            }
+            R.id.tagViewRecyclerView -> {
+                startActivity(Intent(this, TagViewActivityJava::class.java))
             }
         }
     }

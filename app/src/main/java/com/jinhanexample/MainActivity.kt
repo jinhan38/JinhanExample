@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.databinding.DataBindingUtil
 import com.jinhanexample.animation.BaseAnimationActivity
+import com.jinhanexample.broadcast.BroadCastActivityKotlin
+import com.jinhanexample.broadcast.BroadCastBaseActivity
 import com.jinhanexample.calendar.CustomCalendarActivity
 import com.jinhanexample.clonePackageReading.ReadingIsPowerActivity
 import com.jinhanexample.codingLecture.CodingLectureMainActivity
@@ -13,6 +15,7 @@ import com.jinhanexample.customView.CustomViewActivity
 import com.jinhanexample.databinding.ActivityMainBinding
 import com.jinhanexample.designPattern.DesignPatternActivity
 import com.jinhanexample.draw.DrawActivity
+import com.jinhanexample.eventBus.EventBusBaseActivity
 import com.jinhanexample.floatingButton.BaseFloatingButtonActivity
 import com.jinhanexample.fragment.BaseFragmentActivity
 import com.jinhanexample.hybrid.HybridWebViewActivity
@@ -26,8 +29,10 @@ import com.jinhanexample.mvvmTodo.ui.MVVMTodoActivity
 import com.jinhanexample.recyclerView.RecyclerViewActivity
 import com.jinhanexample.scrollview.BaseScrollViewAnimation
 import com.jinhanexample.stopWatch.StopWatchActivity
+import com.jinhanexample.string.StringBaseActivity
 import com.jinhanexample.tablayout.BaseTabLayout
 import com.jinhanexample.textView.TextViewListActivity
+import com.jinhanexample.video.VideoBaseActivity
 import com.jinhanexample.viewControl.ViewControlActivity
 import com.jinhanexample.viewPager.BaseViewPagerActivity
 
@@ -40,7 +45,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         b = DataBindingUtil.setContentView(this, R.layout.activity_main)
         setupListener()
-
     }
 
 
@@ -70,6 +74,10 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         b.readingIsPower.setOnClickListener(this)
         b.hybridWebView.setOnClickListener(this)
         b.hybridWebViewJava.setOnClickListener(this)
+        b.btnVideo.setOnClickListener(this)
+        b.btnBroadCast.setOnClickListener(this)
+        b.btnEventBus.setOnClickListener(this)
+        b.btnString.setOnClickListener(this)
     }
 
     override fun onClick(p0: View?) {
@@ -149,6 +157,18 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
             R.id.hybridWebViewJava -> {
                 startActivity(Intent(this, HybridWebViewActivityJava::class.java))
+            }
+            R.id.btnVideo -> {
+                startActivity(Intent(this, VideoBaseActivity::class.java))
+            }
+            R.id.btnBroadCast -> {
+                startActivity(Intent(this, BroadCastBaseActivity::class.java))
+            }
+            R.id.btnEventBus -> {
+                startActivity(Intent(this, EventBusBaseActivity::class.java))
+            }
+            R.id.btnString -> {
+                startActivity(Intent(this, StringBaseActivity::class.java))
             }
 
         }

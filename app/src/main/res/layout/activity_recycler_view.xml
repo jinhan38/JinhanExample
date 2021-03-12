@@ -27,5 +27,19 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="드래그, 스와이프 기능" />
+
+        <Button
+            android:id="@+id/flexBoxRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="FlexBox 라이브러리 이용" />
+
+        <Button
+            android:id="@+id/tagViewRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="TagView 라이브러리" />
+
+
     </LinearLayout>
 </layout>
