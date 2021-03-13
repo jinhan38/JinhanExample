@@ -32,5 +32,11 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="뷰페이저 2" />
+
+        <Button
+            android:id="@+id/btnSurveyViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="설문조사 뷰페이저" />
     </LinearLayout>
 </layout>

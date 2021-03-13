@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".viewPager.survey.question.SurveyViewPager2Fragment">
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvQuestionNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        tools:text="questionNumber" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:gravity="center_vertical"
+        android:paddingStart="30dp"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        tools:text="질문" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSurveyViewPager2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:layout_marginTop="30dp"
+        tools:itemCount="5"
+        tools:listitem="@layout/survey_recyclerview_item" />
+
+</LinearLayout>

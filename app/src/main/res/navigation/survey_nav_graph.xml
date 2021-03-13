@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/survey_nav_graph"
+    app:startDestination="@id/surveyStartFragment">
+
+    <fragment
+        android:id="@+id/surveyStartFragment"
+        android:name="com.jinhanexample.viewPager.survey.start.SurveyStartFragment"
+        android:label="fragment_survey_start"
+        tools:layout="@layout/fragment_survey_start" >
+        <action
+            android:id="@+id/action_surveyStartFragment_to_surveyQuestionFragment"
+            app:destination="@id/surveyQuestionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/surveyQuestionFragment"
+        android:name="com.jinhanexample.viewPager.survey.question.SurveyQuestionFragment"
+        android:label="fragment_survey_question"
+        tools:layout="@layout/fragment_survey_question" />
+</navigation>

@@ -18,7 +18,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JinhanExample"
         android:usesCleartextTraffic="true">
-        <activity android:name=".string.StringFormatActivity"></activity>
+        <activity android:name=".viewPager.survey.container.ViewPagerQuestionBaseActivity"></activity>
+        <activity android:name=".string.StringFormatActivity" />
         <activity android:name=".string.StringBaseActivity" />
         <activity android:name=".eventBus.EventBusSampleActivityJava" />
         <activity android:name=".eventBus.EventBusSampleActivityKotlin" />

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".viewPager.survey.start.SurveyStartFragment">
+
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="Welcome Survey"
+        android:textColor="@color/black"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:paddingTop="50dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSurvey1"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:text="Survey 1"
+            android:gravity="center_vertical"
+            android:padding="0dp"
+            android:textAllCaps="false"
+            android:paddingStart="20dp"
+            android:layout_marginHorizontal="30dp"
+            android:textStyle="normal"
+            android:textColor="@color/black"
+            android:textSize="16dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSurvey2"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:text="Survey 2"
+            android:gravity="center_vertical"
+            android:padding="0dp"
+            android:textAllCaps="false"
+            android:paddingStart="20dp"
+            android:layout_marginHorizontal="30dp"
+            android:textStyle="normal"
+            android:textColor="@color/black"
+            android:textSize="16dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSurvey3"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:text="Survey 3"
+            android:gravity="center_vertical"
+            android:padding="0dp"
+            android:textAllCaps="false"
+            android:paddingStart="20dp"
+            android:layout_marginHorizontal="30dp"
+            android:textStyle="normal"
+            android:textColor="@color/black"
+            android:textSize="16dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:id="@+id/btnSurvey4"
+            android:layout_height="70dp"
+            android:text="Survey 4"
+            android:gravity="center_vertical"
+            android:padding="0dp"
+            android:textAllCaps="false"
+            android:paddingStart="20dp"
+            android:layout_marginHorizontal="30dp"
+            android:textStyle="normal"
+            android:textColor="@color/black"
+            android:textSize="16dp"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
