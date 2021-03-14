@@ -2,7 +2,6 @@ package com.jinhanexample.viewPager.survey.question
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -70,11 +69,6 @@ class SurveyViewPager2Fragment : Fragment() {
 
     }
 
-
-    override fun onDestroy() {
-        super.onDestroy()
-        GlobalBus.bus!!.unregister(this)
-    }
 
     inner class SurveyRecyclerViewAdapter :
         RecyclerView.Adapter<SurveyRecyclerViewAdapter.ItemViewHolder>() {

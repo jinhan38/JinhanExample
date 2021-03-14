@@ -2,15 +2,11 @@ package com.jinhanexample.viewPager.survey.question
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.navigation.NavOptions
-import androidx.navigation.Navigation
-import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import com.jinhanexample.R
 import com.jinhanexample.databinding.FragmentSurveyQuestionBinding
@@ -18,7 +14,6 @@ import com.jinhanexample.eventBus.event.GlobalBus
 import com.jinhanexample.viewPager.survey.model.SurveyChoiceModel
 import com.jinhanexample.viewPager.survey.model.SurveyListModel
 import com.squareup.otto.Subscribe
-import kotlin.collections.HashMap
 import kotlin.collections.set
 
 
