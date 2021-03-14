@@ -3,18 +3,20 @@ package com.jinhanexample
 import android.R
 import android.animation.ObjectAnimator
 import android.content.Context
+import android.util.Log
 import android.util.TypedValue
 import android.view.Gravity
 import android.view.View
 import android.view.animation.Interpolator
 import android.widget.TextView
 import android.widget.Toast
+import com.jinhanexample.viewPager.survey.start.SurveyStartFragment
 
 class Common {
 
     companion object {
 
-         fun getDP(context: Context, value: Int): Float {
+        fun getDP(context: Context, value: Int): Float {
             return TypedValue.applyDimension(
                 TypedValue.COMPLEX_UNIT_DIP,
                 value.toFloat(),
@@ -74,6 +76,22 @@ class Common {
 //        Toast toast = Toast.makeText(context, msg, Toast.LENGTH_SHORT);
 //        toast.setGravity(Gravity.BOTTOM, Gravity.CENTER_HORIZONTAL, 0);
 //        toast.show();
+        }
+
+
+        fun getJsonDataFromAsset(context: Context, fileName: String): String? {
+            val jsonString: String
+            try {
+                jsonString = context.assets.open(fileName).bufferedReader().use {
+                    it.readText()
+                }
+            } catch (e: Exception) {
+                Log.d("getJsonDataFromAsset", "getJsonDataFromAsset: $e ")
+                return null
+            }
+
+            return jsonString
+
         }
 
     }

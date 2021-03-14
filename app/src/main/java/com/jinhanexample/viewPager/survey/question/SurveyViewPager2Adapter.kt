@@ -7,14 +7,17 @@ import com.jinhanexample.viewPager.survey.model.SurveyListModel
 
 class SurveyViewPager2Adapter : FragmentStateAdapter {
 
-    var surveyListModel: SurveyListModel
+    private var surveyListModel: SurveyListModel
+    var fragmentArray = ArrayList<SurveyViewPager2Fragment>()
 
     constructor(
         fragmentActivity: FragmentActivity,
         surveyListModel: SurveyListModel,
-        controlViewPagerPage: ControlViewPagerPage,
     ) : super(fragmentActivity) {
         this.surveyListModel = surveyListModel
+        for (i in 0 until surveyListModel.list.size) {
+            fragmentArray.add(SurveyViewPager2Fragment().newInstance(surveyListModel.list[i]))
+        }
     }
 
 
@@ -23,10 +26,12 @@ class SurveyViewPager2Adapter : FragmentStateAdapter {
     }
 
     override fun createFragment(position: Int): Fragment {
-//        var fragment = SurveyViewPager2Fragment()
-//        fragment.arguments?.apply {
-//            putParcelable("data", surveyListModel.list[position])
-//        }
-        return SurveyViewPager2Fragment().newInstance(surveyListModel.list[position])
+        return fragmentArray[position]
+    }
+
+    fun uiUpdate(pageNum: Int) {
+        fragmentArray[pageNum].surveyRecyclerViewAdapter.clickedPosition = -1
+        fragmentArray[pageNum].surveyRecyclerViewAdapter.notifyDataSetChanged()
+
     }
 }

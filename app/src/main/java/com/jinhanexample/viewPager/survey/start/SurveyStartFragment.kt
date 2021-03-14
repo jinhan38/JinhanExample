@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.gson.Gson
+import com.jinhanexample.Common
 import com.jinhanexample.R
 import com.jinhanexample.databinding.FragmentSurveyStartBinding
 import com.jinhanexample.viewPager.survey.model.SurveyListModel
@@ -36,9 +37,6 @@ class SurveyStartFragment : Fragment(), View.OnClickListener {
     fun setupListener() {
 
         b.btnSurvey1.setOnClickListener(this)
-        b.btnSurvey2.setOnClickListener(this)
-        b.btnSurvey3.setOnClickListener(this)
-        b.btnSurvey4.setOnClickListener(this)
 
     }
 
@@ -50,21 +48,10 @@ class SurveyStartFragment : Fragment(), View.OnClickListener {
         when (v!!.id) {
             R.id.btnSurvey1 -> {
                 surveyType = SurveyType.QUESTION_ONE
-                Log.d(TAG, "onClick: one : ${getJsonDataFromAsset(mContext, "survey.json")}")
             }
-            R.id.btnSurvey2 -> {
-                surveyType = SurveyType.QUESTION_TWO
-            }
-            R.id.btnSurvey3 -> {
-                surveyType = SurveyType.QUESTION_THREE
-            }
-            R.id.btnSurvey4 -> {
-                surveyType = SurveyType.QUESTION_FOUR
-            }
-
         }
+
         val bundle = Bundle()
-        Log.d(TAG, "onClick: 모델 확인 : ${getModel(surveyType!!)}")
         bundle.putString("surveyType", surveyType.toString())
         bundle.putParcelable("surveyData", getModel(surveyType!!))
         findNavController().navigate(R.id.action_surveyStartFragment_to_surveyQuestionFragment,
@@ -78,7 +65,7 @@ class SurveyStartFragment : Fragment(), View.OnClickListener {
         var jsonFileString: String? = null
         when (surveyType) {
             SurveyType.QUESTION_ONE -> {
-                jsonFileString = getJsonDataFromAsset(mContext, "survey.json")
+                jsonFileString = Common.getJsonDataFromAsset(mContext, "survey.json")
                 val gson = Gson()
                 surveyListModel = gson.fromJson(jsonFileString, SurveyListModel::class.java)
             }
@@ -96,27 +83,5 @@ class SurveyStartFragment : Fragment(), View.OnClickListener {
 
         return surveyListModel
     }
-
-
-    private fun getJsonDataFromAsset(context: Context, fileName: String): String? {
-        val jsonString: String
-        try {
-            jsonString = context.assets.open(fileName).bufferedReader().use {
-                it.readText()
-            }
-        } catch (e: Exception) {
-            Log.d(TAG, "getJsonDataFromAsset: $e ")
-            return null
-        }
-
-        return jsonString
-
-    }
-
-
-    companion object {
-        private const val TAG = "SurveyStartFragment"
-    }
-
 
 }
