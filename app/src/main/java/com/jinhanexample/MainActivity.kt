@@ -28,6 +28,7 @@ import com.jinhanexample.mvvmSample.kotlin.author.ui.AuthorActivityByKotlin
 import com.jinhanexample.mvvmTodo.ui.MVVMTodoActivity
 import com.jinhanexample.recyclerView.RecyclerViewActivity
 import com.jinhanexample.scrollview.BaseScrollViewAnimation
+import com.jinhanexample.service.ServiceBaseActivity
 import com.jinhanexample.stopWatch.StopWatchActivity
 import com.jinhanexample.string.StringBaseActivity
 import com.jinhanexample.tablayout.BaseTabLayout
@@ -78,6 +79,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         b.btnBroadCast.setOnClickListener(this)
         b.btnEventBus.setOnClickListener(this)
         b.btnString.setOnClickListener(this)
+        b.btnSoundPlayer.setOnClickListener(this)
     }
 
     override fun onClick(p0: View?) {
@@ -169,6 +171,9 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
             R.id.btnString -> {
                 startActivity(Intent(this, StringBaseActivity::class.java))
+            }
+            R.id.btnSoundPlayer -> {
+                startActivity(Intent(this, ServiceBaseActivity::class.java))
             }
 
         }
