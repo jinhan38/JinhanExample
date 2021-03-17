@@ -14,6 +14,8 @@ import com.jinhanexample.databinding.ActivityAuthorByJavaBinding;
 import com.jinhanexample.mvvmSample.java.author.data.AuthorEntity;
 import com.jinhanexample.mvvmSample.java.author.listener.LongClickListener;
 
+import java.util.Optional;
+
 public class AuthorActivityByJava extends AppCompatActivity implements LongClickListener {
 
     private ActivityAuthorByJavaBinding b;

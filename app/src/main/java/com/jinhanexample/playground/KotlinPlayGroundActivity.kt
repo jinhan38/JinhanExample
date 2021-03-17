@@ -3,6 +3,7 @@ package com.jinhanexample.playground
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.jinhanexample.R
+import java.lang.Exception
 import java.time.Instant
 
 class KotlinPlayGroundActivity : AppCompatActivity() {
@@ -11,20 +12,23 @@ class KotlinPlayGroundActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kotlin_play_ground)
 
-        val size = listOf(0, 3, 5, 7, 9)
-        println("size : ${size.length()}")
-        println("calFold : ${size.calFold()}")
-        println("calReduce : ${size.calReduce()}")
+        var str: String? = null
+        var strValueFirst = str ?: "It is null"
+        println("strValueFirst : $strValueFirst")
 
+        str = "It is not null"
+        var strValueSecond = str ?: "It is null"
+        println("strValueSecond : $strValueSecond")
+
+
+        var num: Int? = null
+        var intValueFirst = num ?: 0
+        println("intValueFirst : $intValueFirst")
+
+        num = 11
+        var intValueSecond = num ?: 0
+        println("intValueSecond : $intValueSecond")
 
     }
 
-    fun <T> List<T>.length() = this.size
-
-    fun List<Int>.calFold(): Int = this.fold(1) { a, b -> a + b }
-
-    fun List<Int>.calReduce(): Int = this.reduce { a, b -> a + b }
-
 }
-
-
