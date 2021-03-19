@@ -3,8 +3,7 @@ package com.jinhanexample.playground
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.jinhanexample.R
-import java.lang.Exception
-import java.time.Instant
+import java.io.File
 
 class KotlinPlayGroundActivity : AppCompatActivity() {
 
@@ -12,23 +11,34 @@ class KotlinPlayGroundActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kotlin_play_ground)
 
-        var str: String? = null
-        var strValueFirst = str ?: "It is null"
-        println("strValueFirst : $strValueFirst")
+        val creditCard = CreditCard(1)
+        val payment_1 = Payment(creditCard, 1)
+        val payment_2 = Payment(creditCard, 1)
+        val payment_3 = Payment(creditCard, 1)
+        val payment_4 = Payment(creditCard, 1)
+        val newPayment = payment_1.combine(payment_2).combine(payment_3)
 
-        str = "It is not null"
-        var strValueSecond = str ?: "It is null"
-        println("strValueSecond : $strValueSecond")
+        println("newPayment : ${newPayment.amount}")
+    }
 
 
-        var num: Int? = null
-        var intValueFirst = num ?: 0
-        println("intValueFirst : $intValueFirst")
+    class Payment(val creditCard: CreditCard, val amount: Int) {
 
-        num = 11
-        var intValueSecond = num ?: 0
-        println("intValueSecond : $intValueSecond")
+        fun combine(payment: Payment): Payment =
+            if (creditCard == payment.creditCard)
+                Payment(creditCard, amount + payment.amount)
+            else
+                throw IllegalStateException("Cards don't match")
 
     }
+
+    companion object {
+        fun groupByCard(payments: List<Payment>): List<Payment> =
+            payments.groupBy { it.creditCard }.values.map { it.reduce(Payment::combine) }
+
+    }
+
+    class CreditCard(val cardNum: Int)
+
 
 }

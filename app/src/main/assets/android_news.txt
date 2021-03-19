@@ -1,0 +1,5 @@
+Samsung's march to get Android 11 to as many of its devices as possible is showing no signs of slowing down, and today's lucky winner is the Galaxy A70 from 2019. 
+This phone received Android 10 in February of last year, and now it's getting One UI 3.1 based on Android 11, way ahead of schedule - it was slotted for May.
+The update is currently rolling out in Ukraine, with more countries to follow soon, undoubtedly. 
+The over-the-air rollout will ship build A705FNXXU5DUC6 to your Galaxy A70 if you are in Ukraine, and this includes the March 2021 security patch level. 
+It's a 1.9GB download, so make sure your connection isn't too slow when you grab it.
