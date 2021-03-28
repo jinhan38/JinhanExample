@@ -206,6 +206,12 @@
                 android:layout_height="50dp"
                 android:text="사운드 플레이어" />
 
+            <Button
+                android:id="@+id/btnTouchTest"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="터치 테스트" />
+
 
         </LinearLayout>
 

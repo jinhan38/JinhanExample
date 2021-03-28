@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.databinding.DataBindingUtil
 import com.jinhanexample.animation.BaseAnimationActivity
-import com.jinhanexample.broadcast.BroadCastActivityKotlin
 import com.jinhanexample.broadcast.BroadCastBaseActivity
 import com.jinhanexample.calendar.CustomCalendarActivity
 import com.jinhanexample.clonePackageReading.ReadingIsPowerActivity
@@ -33,6 +32,7 @@ import com.jinhanexample.stopWatch.StopWatchActivity
 import com.jinhanexample.string.StringBaseActivity
 import com.jinhanexample.tablayout.BaseTabLayout
 import com.jinhanexample.textView.TextViewListActivity
+import com.jinhanexample.touch.TouchTestActivity
 import com.jinhanexample.video.VideoBaseActivity
 import com.jinhanexample.viewControl.ViewControlActivity
 import com.jinhanexample.viewPager.BaseViewPagerActivity
@@ -80,6 +80,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         b.btnEventBus.setOnClickListener(this)
         b.btnString.setOnClickListener(this)
         b.btnSoundPlayer.setOnClickListener(this)
+        b.btnTouchTest.setOnClickListener(this)
     }
 
     override fun onClick(p0: View?) {
@@ -174,6 +175,9 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
             R.id.btnSoundPlayer -> {
                 startActivity(Intent(this, ServiceBaseActivity::class.java))
+            }
+            R.id.btnTouchTest -> {
+                startActivity(Intent(this, TouchTestActivity::class.java))
             }
 
         }

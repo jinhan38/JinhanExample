@@ -11,6 +11,7 @@ import com.jinhanexample.viewPager.depth.DepthPageViewPager
 import com.jinhanexample.viewPager.flexibleHeight.FlexibleViewPagerHeightActivity
 import com.jinhanexample.viewPager.fragmentTrans.FragmentTransViewPager
 import com.jinhanexample.viewPager.survey.container.ViewPagerQuestionBaseActivity
+import com.jinhanexample.viewPager.touchTestViewPager.ui.TouchTestViewPagerActivity
 import com.jinhanexample.viewPager.viewPager2.ViewPager2Activity
 
 class BaseViewPagerActivity : BaseActivity(), View.OnClickListener {
@@ -30,6 +31,7 @@ class BaseViewPagerActivity : BaseActivity(), View.OnClickListener {
         b.flexibleViewPager.setOnClickListener(this)
         b.viewpager2.setOnClickListener(this)
         b.btnSurveyViewPager.setOnClickListener(this)
+        b.touchListenerTestViewPager.setOnClickListener(this)
     }
 
     override fun onClick(p0: View?) {
@@ -48,6 +50,9 @@ class BaseViewPagerActivity : BaseActivity(), View.OnClickListener {
             }
             R.id.btnSurveyViewPager -> {
                 startActivity(Intent(this, ViewPagerQuestionBaseActivity::class.java))
+            }
+            R.id.touchListenerTestViewPager -> {
+                startActivity(Intent(this, TouchTestViewPagerActivity::class.java))
             }
         }
     }
