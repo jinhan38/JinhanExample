@@ -5,8 +5,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.jinhanexample.viewPager.touchTestViewPager.ui.TouchTestViewPagerFragment;
-
 import java.util.ArrayList;
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {

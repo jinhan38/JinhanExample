@@ -7,7 +7,6 @@ import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.jinhanexample.databinding.TouchListenerTestRecycleverItemBinding
 import com.jinhanexample.viewPager.touchTestViewPager.ui.TouchTestChildPagerFragment
-import com.jinhanexample.viewPager.touchTestViewPager.ui.TouchTestViewPagerFragment
 import kotlinx.android.synthetic.main.touch_listener_test_recyclever_item.view.*
 
 //class CartListNormalAdapter : RecyclerView.Adapter<CartListNormalAdapter.Holder>() {

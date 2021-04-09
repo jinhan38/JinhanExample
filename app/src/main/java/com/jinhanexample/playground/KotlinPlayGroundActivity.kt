@@ -3,7 +3,8 @@ package com.jinhanexample.playground
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.jinhanexample.R
-import java.io.File
+import kotlinx.coroutines.*
+import java.lang.Exception
 
 class KotlinPlayGroundActivity : AppCompatActivity() {
 
@@ -11,34 +12,41 @@ class KotlinPlayGroundActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kotlin_play_ground)
 
-        val creditCard = CreditCard(1)
-        val payment_1 = Payment(creditCard, 1)
-        val payment_2 = Payment(creditCard, 1)
-        val payment_3 = Payment(creditCard, 1)
-        val payment_4 = Payment(creditCard, 1)
-        val newPayment = payment_1.combine(payment_2).combine(payment_3)
+        runBlocking {
 
-        println("newPayment : ${newPayment.amount}")
+            //    Dispatchers.Default 는 코루틴이 GlobalScope 에서 실행될 경우에
+//    사용되며 공통으로 사용되는 백그라운드 스레드 풀을 이용합니다.
+//    즉, launch(Dispatchers.Default) {…} 와 GlobalScope.launch {…} 는
+//    동일한 디스패처를 사용합니다.
+
+            //코루틴을 cancel시키기 위해서는 suspend function call 이 필요함
+            //yield와 delay()가 suspend function 역할을 함
+            val startTime = System.currentTimeMillis()
+            val job = launch(Dispatchers.Default) {
+
+                try {
+                    var nextPrintTime = startTime
+                    var i = 0
+                    while (i < 5) {
+                        if (System.currentTimeMillis() >= nextPrintTime) {
+                            yield()
+                            println("aaaaaaaaaaa : ${i++}  aaaaaaaaaa")
+                            nextPrintTime += 500
+                        }
+                    }
+                } catch (e: Exception) {
+                    println("Exception : $e")
+                }
+            }
+
+            delay(2000)
+            job.cancelAndJoin()    // cancel을 시키면 yield가 exception을 던진다
+
+        }
+
     }
-
-
-    class Payment(val creditCard: CreditCard, val amount: Int) {
-
-        fun combine(payment: Payment): Payment =
-            if (creditCard == payment.creditCard)
-                Payment(creditCard, amount + payment.amount)
-            else
-                throw IllegalStateException("Cards don't match")
-
-    }
-
-    companion object {
-        fun groupByCard(payments: List<Payment>): List<Payment> =
-            payments.groupBy { it.creditCard }.values.map { it.reduce(Payment::combine) }
-
-    }
-
-    class CreditCard(val cardNum: Int)
 
 
 }
+
+

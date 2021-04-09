@@ -35,7 +35,7 @@ import com.jinhanexample.textView.TextViewListActivity
 import com.jinhanexample.touch.TouchTestActivity
 import com.jinhanexample.video.VideoBaseActivity
 import com.jinhanexample.viewControl.ViewControlActivity
-import com.jinhanexample.viewPager.BaseViewPagerActivity
+//import com.jinhanexample.viewPager.BaseViewPagerActivity
 
 class MainActivity : BaseActivity(), View.OnClickListener {
 
@@ -99,7 +99,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 startActivity(Intent(this, BaseAnimationActivity::class.java))
             }
             R.id.viewPager -> {
-                startActivity(Intent(this, BaseViewPagerActivity::class.java))
+//                startActivity(Intent(this, BaseViewPagerActivity::class.java))
             }
             R.id.floatingButton -> {
                 startActivity(Intent(this, BaseFloatingButtonActivity::class.java))
