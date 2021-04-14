@@ -8,7 +8,9 @@ import com.jinhanexample.BaseActivity
 import com.jinhanexample.R
 import com.jinhanexample.databinding.ActivityScrollViewAnimationBinding
 import com.jinhanexample.animation.progress.ValueAnimProgressBarActivity
+import com.jinhanexample.scrollview.StickyScrollViewSecond.StickyScrollViewSecondActivity
 import com.jinhanexample.scrollview.appBarHide.AppBarHideAnimationActivity
+import com.jinhanexample.scrollview.appBarHideSecond.AppBarHideSecondActivity
 
 class BaseScrollViewAnimation : BaseActivity(), View.OnClickListener {
 
@@ -26,8 +28,11 @@ class BaseScrollViewAnimation : BaseActivity(), View.OnClickListener {
         b.collapsingToolbarLayout.setOnClickListener(this)
         b.collapsingToolbarLayout2.setOnClickListener(this)
         b.stickyScrollView.setOnClickListener(this)
+        b.stickyScrollViewSecond.setOnClickListener(this)
         b.scrollShowAnimation.setOnClickListener(this)
         b.appBarHideAnimation.setOnClickListener(this)
+        b.appBarHideAnimationSecond.setOnClickListener(this)
+        b.appBarHideAnimationSecond.setOnClickListener(this)
     }
 
     override fun onClick(p0: View?) {
@@ -41,11 +46,17 @@ class BaseScrollViewAnimation : BaseActivity(), View.OnClickListener {
             R.id.sticky_scroll_view -> {
                 startActivity(Intent(this, StickyScrollView::class.java))
             }
+            R.id.sticky_scroll_view_second -> {
+                startActivity(Intent(this, StickyScrollViewSecondActivity::class.java))
+            }
             R.id.scroll_show_animation -> {
                 startActivity(Intent(this, ScrollingShowAnimation::class.java))
             }
             R.id.appBarHideAnimation -> {
                 startActivity(Intent(this, AppBarHideAnimationActivity::class.java))
+            }
+            R.id.appBarHideAnimationSecond -> {
+                startActivity(Intent(this, AppBarHideSecondActivity::class.java))
             }
         }
     }

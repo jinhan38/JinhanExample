@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".scrollview.StickyScrollViewSecond.StickyScrollViewSecondActivity">
+
+
+<!--        <com.google.android.material.appbar.AppBarLayout-->
+<!--            android:id="@+id/appbarLayout"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+
+
+<!--            <androidx.appcompat.widget.Toolbar-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:id="@+id/toolbar"-->
+<!--                android:layout_height="52dp"-->
+<!--                app:layout_scrollFlags="scroll|enterAlways|snap">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="50dp"-->
+<!--                    android:background="@color/brand_yellow"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="툴바" />-->
+
+<!--            </androidx.appcompat.widget.Toolbar>-->
+
+
+<!--        </com.google.android.material.appbar.AppBarLayout>-->
+
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/stickyContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

@@ -21,17 +21,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JinhanExample"
         android:usesCleartextTraffic="true">
-        <activity android:name=".touch.TouchTestActivity"></activity>
+        <activity android:name=".scrollview.StickyScrollViewSecond.StickyScrollViewSecondActivity"
+            android:theme="@style/Theme.Design.NoActionBar"/>
+        <activity android:name=".scrollview.appBarHideSecond.AppBarHideSecondActivity" />
+        <activity android:name=".touch.TouchTestActivity" />
         <activity android:name=".playground.KotlinPlayGroundActivity">
 
-             <intent-filter>
-             <action android:name="android.intent.action.MAIN" />
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
 
 
-             <category android:name="android.intent.category.LAUNCHER" />
-             </intent-filter>
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
-        <activity android:name=".viewPager.touchTestViewPager.ui.TouchTestViewPagerActivity" />
         <activity android:name=".viewPager.survey.container.ViewPagerQuestionBaseActivity" />
         <activity android:name=".string.StringFormatActivity" />
         <activity android:name=".string.StringBaseActivity" />
@@ -122,7 +124,6 @@
         <activity android:name=".floatingButton.ExpandFloatingButton" />
         <activity android:name=".floatingButton.BaseFloatingButtonActivity" />
         <activity android:name=".viewPager.depth.DepthPageViewPager" />
-        <activity android:name=".viewPager.BaseViewPagerActivity" />
         <activity android:name=".animation.BaseAnimationActivity" />
         <activity android:name=".animation.ScaleAnimation" />
         <activity android:name=".tablayout.BaseTabLayout" />
@@ -137,11 +138,11 @@
         <activity android:name=".mpchart.MPChartCubic" />
         <activity android:name=".mpchart.MPChartList" />
         <activity android:name=".MainActivity">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <provider
