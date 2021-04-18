@@ -27,12 +27,12 @@
         <activity android:name=".touch.TouchTestActivity" />
         <activity android:name=".playground.KotlinPlayGroundActivity">
 
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
+             <intent-filter>
+             <action android:name="android.intent.action.MAIN" />
+<!---->
+<!---->
+             <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
         </activity>
         <activity android:name=".viewPager.survey.container.ViewPagerQuestionBaseActivity" />
         <activity android:name=".string.StringFormatActivity" />
@@ -138,11 +138,11 @@
         <activity android:name=".mpchart.MPChartCubic" />
         <activity android:name=".mpchart.MPChartList" />
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
 
         <provider

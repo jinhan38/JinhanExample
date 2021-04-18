@@ -8,14 +8,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AccelerateInterpolator
+import android.view.animation.Animation
 import android.view.animation.LinearInterpolator
+import android.view.animation.TranslateAnimation
 import androidx.fragment.app.Fragment
-import com.google.android.material.appbar.AppBarLayout
 import com.jinhanexample.Common
 import com.jinhanexample.animation.animBuilder.ObjectAnimationBuilder
+import com.jinhanexample.animation.animBuilder.TranslateAnimationBuilder
 import com.jinhanexample.databinding.FragmentStickyScrollViewSecondBinding
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 
 class StickyScrollViewSecondFragment : Fragment() {
@@ -89,11 +89,11 @@ class StickyScrollViewSecondFragment : Fragment() {
 //                })
 
 
-                ObjectAnimationBuilder.Builder(b.toolbar, 1, "y", toolbarY)
-                    .setInterpolator(AccelerateInterpolator()).build()
+//                ObjectAnimationBuilder.Builder(b.toolbar, 1, "y", toolbarY)
+//                    .setInterpolator(AccelerateInterpolator()).build()
 
-                ObjectAnimationBuilder.Builder(b.mainScrollView, 1, "y", toolbarHeight + toolbarY)
-                    .setInterpolator(AccelerateInterpolator()).build()
+//                ObjectAnimationBuilder.Builder(b.mainScrollView, 1, "y", toolbarHeight + toolbarY)
+//                    .setInterpolator(AccelerateInterpolator()).build()
 
         }
 
