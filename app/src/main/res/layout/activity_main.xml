@@ -168,7 +168,6 @@
                 android:text="하이브리드 코틀린" />
 
 
-
             <Button
                 android:id="@+id/hybridWebViewJava"
                 android:layout_width="match_parent"
@@ -211,6 +210,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:text="터치 테스트" />
+
+            <Button
+                android:id="@+id/btnHoliday"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="공휴일, 주말 날짜 얻어오기" />
 
 
         </LinearLayout>

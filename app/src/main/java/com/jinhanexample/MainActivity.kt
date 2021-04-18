@@ -17,6 +17,7 @@ import com.jinhanexample.draw.DrawActivity
 import com.jinhanexample.eventBus.EventBusBaseActivity
 import com.jinhanexample.floatingButton.BaseFloatingButtonActivity
 import com.jinhanexample.fragment.BaseFragmentActivity
+import com.jinhanexample.holiday.HolidayDataActivity
 import com.jinhanexample.hybrid.HybridWebViewActivity
 import com.jinhanexample.hybrid.HybridWebViewActivityJava
 import com.jinhanexample.jetBrain.JetBrainBaseActivity
@@ -35,6 +36,8 @@ import com.jinhanexample.textView.TextViewListActivity
 import com.jinhanexample.touch.TouchTestActivity
 import com.jinhanexample.video.VideoBaseActivity
 import com.jinhanexample.viewControl.ViewControlActivity
+import com.jinhanexample.viewPager.BaseViewPagerActivity
+
 //import com.jinhanexample.viewPager.BaseViewPagerActivity
 
 class MainActivity : BaseActivity(), View.OnClickListener {
@@ -81,6 +84,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         b.btnString.setOnClickListener(this)
         b.btnSoundPlayer.setOnClickListener(this)
         b.btnTouchTest.setOnClickListener(this)
+        b.btnHoliday.setOnClickListener(this)
     }
 
     override fun onClick(p0: View?) {
@@ -99,7 +103,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 startActivity(Intent(this, BaseAnimationActivity::class.java))
             }
             R.id.viewPager -> {
-//                startActivity(Intent(this, BaseViewPagerActivity::class.java))
+                startActivity(Intent(this, BaseViewPagerActivity::class.java))
             }
             R.id.floatingButton -> {
                 startActivity(Intent(this, BaseFloatingButtonActivity::class.java))
@@ -178,6 +182,9 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
             R.id.btnTouchTest -> {
                 startActivity(Intent(this, TouchTestActivity::class.java))
+            }
+            R.id.btnHoliday -> {
+                startActivity(Intent(this, HolidayDataActivity::class.java))
             }
 
         }

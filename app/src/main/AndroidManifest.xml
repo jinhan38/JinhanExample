@@ -21,9 +21,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JinhanExample"
         android:usesCleartextTraffic="true">
-        <activity android:name=".scrollview.StickyScrollViewSecond.StickyScrollViewSecondActivity"
-            android:theme="@style/Theme.Design.NoActionBar"/>
+        <activity android:name=".holiday.HolidayDataActivity"></activity>
+        <activity
+            android:name=".scrollview.StickyScrollViewSecond.StickyScrollViewSecondActivity"
+            android:theme="@style/Theme.Design.NoActionBar" />
         <activity android:name=".scrollview.appBarHideSecond.AppBarHideSecondActivity" />
+        <activity android:name=".viewPager.BaseViewPagerActivity" />
         <activity android:name=".touch.TouchTestActivity" />
         <activity android:name=".playground.KotlinPlayGroundActivity">
 
