@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.paging.PagingSource
 import com.jinhanexample.R
 import kotlinx.coroutines.*
+import java.lang.IllegalArgumentException
 import java.lang.StringBuilder
 
 class KotlinPlayGroundActivity : AppCompatActivity() {
@@ -13,29 +14,48 @@ class KotlinPlayGroundActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kotlin_play_ground)
 
-        print(add(3, 6).toString())
-        print(add(3, 20, 7).toString())
+        print("factorial : ${Factorial.factorial(3)}")
+        val list = listOf<Int>(3, 4, 1, 56)
+        print("sum : ${sum(list)}")
+
     }
 
-    tailrec fun add(x: Int, y: Int, z: Int): Int = if (y == 0) x else add(inc(x), dec(y), z)
-
-    fun add(a: Int, b: Int): Int {
-        var x = a
-        var y = b
-
-        while (y != 0) {
-            x = inc(x)
-            y = dec(y)
+    fun <T> head(list: List<T>): T =
+        if (list.isEmpty()) {
+            throw IllegalArgumentException("head called on empty list")
+        } else {
+            list[0]
         }
 
-        return x
-    }
+    fun <T> tail(list: List<T>): List<T> =
+        if (list.isEmpty()) {
+            throw IllegalArgumentException("tail called on empty list")
+        } else {
+            list.drop(1)
+        }
 
-    fun inc(n: Int) = n + 1
-    fun dec(n: Int) = n - 1
+    fun sum(list: List<Int>): Int =
+        if (list.isEmpty()) {
+            0
+        } else {
+            head(list) + sum(tail(list))
+        }
+
+//    fun sum(list: List<Int>): Int = if (list.isEmpty()) 0 else list[0] + sum(list.drop(1))
+
 
     fun print(msg: String) {
         println("Kotlin test : $msg")
+
+    }
+
+
+    object Factorial {
+        val factorial: (Int) -> Int by lazy {
+            { n: Int ->
+                if (n <= 1) n else n * factorial(n - 1)
+            }
+        }
 
     }
 }

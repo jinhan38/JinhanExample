@@ -10,6 +10,7 @@ import com.jinhanexample.databinding.ActivityRecyclerViewBinding
 import com.jinhanexample.recyclerView.dragAndSwipe.DragAndSwipeRecyclerViewActivity
 import com.jinhanexample.recyclerView.flexBoxRecyclerView.FlexRecyclerViewActivity
 import com.jinhanexample.recyclerView.grouping.GroupingRecyclerViewActivity
+import com.jinhanexample.recyclerView.stickyRecyclerView.StickyRecyclerViewActivity
 import com.jinhanexample.recyclerView.tagView.TagViewActivity
 import com.jinhanexample.recyclerView.tagView.TagViewActivityJava
 
@@ -25,6 +26,7 @@ class RecyclerViewActivity : AppCompatActivity(), View.OnClickListener {
         b.dragAndSwipeRecyclerView.setOnClickListener(this)
         b.flexBoxRecyclerView.setOnClickListener(this)
         b.tagViewRecyclerView.setOnClickListener(this)
+        b.stickyRecyclerView.setOnClickListener(this)
     }
 
     override fun onClick(p0: View?) {
@@ -44,6 +46,9 @@ class RecyclerViewActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.tagViewRecyclerView -> {
                 startActivity(Intent(this, TagViewActivityJava::class.java))
+            }
+            R.id.stickyRecyclerView -> {
+                startActivity(Intent(this, StickyRecyclerViewActivity::class.java))
             }
         }
     }
