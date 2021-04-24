@@ -21,7 +21,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JinhanExample"
         android:usesCleartextTraffic="true">
-        <activity android:name=".recyclerView.stickyRecyclerView.StickyRecyclerViewActivity"></activity>
+        <activity android:name=".jetBrain.paging.PagingLibraryActivity"></activity>
+        <activity android:name=".recyclerView.stickyRecyclerView.StickyRecyclerViewActivity" />
         <activity android:name=".holiday.HolidayDataActivity" />
         <activity
             android:name=".scrollview.StickyScrollViewSecond.StickyScrollViewSecondActivity"

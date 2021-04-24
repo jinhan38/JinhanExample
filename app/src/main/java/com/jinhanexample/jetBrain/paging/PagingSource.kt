@@ -1,4 +1,4 @@
-package com.jinhanexample.jetBrain.paging.model
+package com.jinhanexample.jetBrain.paging
 
 import androidx.paging.PagingSource
 
@@ -11,12 +11,13 @@ class PagingSource(
             val nextPage = params.key ?: 1
             val response = repository.getPagingData(nextPage)
 
+            //response 타입이 Pair이다.
+            //Pair.first는 앞의 값을, Pair.second는 뒤의 값을 의미한다.
             LoadResult.Page(
                 data = response.first,
                 prevKey = response.second?.minus(2),
                 nextKey = response.second
             )
-
         } catch (e: Exception) {
             LoadResult.Error(Throwable(e.message))
         }
