@@ -35,7 +35,7 @@ class SplashAnimFirstActivity : AppCompatActivity() {
             Handler(mainLooper).postDelayed({
                 startActivity(Intent(this, SplashAnimSecondActivity::class.java))
                 finish()
-            }, 1700)
+            }, 1000)
 
 
         }
@@ -71,16 +71,20 @@ class SplashAnimFirstActivity : AppCompatActivity() {
 
         binding.moveView.apply {
 
-            animate().alpha(0.5f).translationY(distance_y).scaleX(0.1f).scaleY(0.1f)
-                .setDuration(800)
+            animate().alpha(0.5f).translationY(distance_y)
+                .scaleX(0.1f)
+                .scaleY(0.1f)
+                .setDuration(500)
                 .setInterpolator(AccelerateInterpolator())
                 .withEndAction {
 
                     //translationY = 0f 값을 주면 이동 전의 원래 위치를 의미
-                    animate().alpha(1f).scaleX(0.25f).scaleY(0.5f)
+                    animate().alpha(1f)
+                        .scaleX(0.25f)
+                        .scaleY(0.5f)
 //                        .x(Common.getDP(this@SplashAnimFirstActivity, 100))
 //                        .y(Common.getDP(this@SplashAnimFirstActivity, 50))
-                        .setDuration(1000)
+                        .setDuration(500)
                         .setInterpolator(AccelerateInterpolator())
                 }
 
