@@ -1,6 +1,7 @@
 package com.jinhanexample.playground
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.paging.PagingSource
 import com.jinhanexample.R
@@ -14,50 +15,55 @@ class KotlinPlayGroundActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kotlin_play_ground)
 
-        print("factorial : ${Factorial.factorial(3)}")
-        val list = listOf<Int>(3, 4, 1, 56)
-        print("sum : ${sum(list)}")
+
+        val list = listOf<Int>(3, 1, 5, 2)
+
+        val stringList = listOf<String>("AA", "BB", "CC")
+        try {
+            print("makeString : ${makeString(stringList, "뭐지")}")
+        } catch (e: Exception) {
+            print("익셉션 : $e")
+        }
 
     }
 
-    fun <T> head(list: List<T>): T =
-        if (list.isEmpty()) {
-            throw IllegalArgumentException("head called on empty list")
-        } else {
-            list[0]
+    fun <T> makeString(list: List<T>, delim: String): String =
+        when {
+            list.isEmpty() -> "리스트 0"
+            list.tail().isEmpty() ->
+                "리스트 ${list.head()} ${makeString(list.tail(), delim)}"
+            else -> "리스트 ${list.head()} $delim ${makeString(list.tail(), delim)}"
+
         }
 
-    fun <T> tail(list: List<T>): List<T> =
-        if (list.isEmpty()) {
+    fun <T> List<T>.head(): T =
+        if (this.isEmpty()) {
+            throw IllegalArgumentException("head called on empty list")
+        } else {
+            this[0]
+        }
+
+    fun <T> List<T>.tail(): List<T> =
+        if (this.isEmpty()) {
             throw IllegalArgumentException("tail called on empty list")
         } else {
-            list.drop(1)
+//            print("drop ${this.drop(1)}")
+            this.drop(1)
         }
 
     fun sum(list: List<Int>): Int =
         if (list.isEmpty()) {
             0
         } else {
-            head(list) + sum(tail(list))
+//            print("sum 계산 : ${sum(list.tail())}")
+            list.head() + sum(list.tail())
         }
-
-//    fun sum(list: List<Int>): Int = if (list.isEmpty()) 0 else list[0] + sum(list.drop(1))
-
 
     fun print(msg: String) {
         println("Kotlin test : $msg")
 
     }
 
-
-    object Factorial {
-        val factorial: (Int) -> Int by lazy {
-            { n: Int ->
-                if (n <= 1) n else n * factorial(n - 1)
-            }
-        }
-
-    }
 }
 
 

@@ -21,7 +21,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JinhanExample"
         android:usesCleartextTraffic="true">
-        <activity android:name=".jetBrain.paging.PagingLibraryActivity"></activity>
+        <activity android:name=".animation.splashAnim.SplashAnimSecondActivity"></activity>
+        <activity android:name=".animation.splashAnim.SplashAnimFirstActivity" />
+        <activity android:name=".jetBrain.paging.PagingLibraryActivity" />
         <activity android:name=".recyclerView.stickyRecyclerView.StickyRecyclerViewActivity" />
         <activity android:name=".holiday.HolidayDataActivity" />
         <activity
@@ -34,8 +36,17 @@
 
             <!-- <intent-filter> -->
             <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
+        </activity>
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".viewPager.survey.container.ViewPagerQuestionBaseActivity" />
         <activity android:name=".string.StringFormatActivity" />
@@ -140,13 +151,6 @@
         <activity android:name=".scrollview.BaseScrollViewAnimation" />
         <activity android:name=".mpchart.MPChartCubic" />
         <activity android:name=".mpchart.MPChartList" />
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
 
         <provider
             android:name="androidx.core.content.FileProvider"

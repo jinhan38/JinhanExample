@@ -10,6 +10,7 @@ import com.jinhanexample.animation.animBuilder.AnimBuilderClassActivity
 import com.jinhanexample.animation.customLoadingView.CustomLoadingViewActivity
 import com.jinhanexample.animation.progress.ValueAnimProgressBarActivity
 import com.jinhanexample.animation.progress.circle.CircleProgressAnimActivity
+import com.jinhanexample.animation.splashAnim.SplashAnimFirstActivity
 import com.jinhanexample.databinding.ActivityBaseBinding
 
 class BaseAnimationActivity : BaseActivity(), View.OnClickListener {
@@ -30,6 +31,7 @@ class BaseAnimationActivity : BaseActivity(), View.OnClickListener {
         b.progressBarAnim.setOnClickListener(this)
         b.circleProgress.setOnClickListener(this)
         b.customLoadingView.setOnClickListener(this)
+        b.splashAnim.setOnClickListener(this)
     }
 
     override fun onClick(p0: View?) {
@@ -54,6 +56,9 @@ class BaseAnimationActivity : BaseActivity(), View.OnClickListener {
             }
             R.id.customLoadingView -> {
                 startActivity(Intent(this, CustomLoadingViewActivity::class.java))
+            }
+            R.id.splashAnim -> {
+                startActivity(Intent(this, SplashAnimFirstActivity::class.java))
             }
         }
     }

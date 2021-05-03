@@ -15,7 +15,7 @@ import kotlinx.coroutines.launch
 
 class PagingLibraryActivity : AppCompatActivity() {
 
-    private val viewModel by viewModels<PagingViewModel>()
+//    private val viewModel by viewModels<PagingViewModel>()
 
     private val adapter = PagingAdapter()
 
@@ -43,13 +43,13 @@ class PagingLibraryActivity : AppCompatActivity() {
                 }
             }
 
-            viewModel.data.observe(this@PagingLibraryActivity, Observer {
-                lifecycleScope.launch {
-                    adapter.submitData(it)
-                }
-            })
+//            viewModel.data.observe(this@PagingLibraryActivity, Observer {
+//                lifecycleScope.launch {
+//                    adapter.submitData(it)
+//                }
+//            })
 
-            viewModel.init()
+//            viewModel.init()
         }
     }
 }

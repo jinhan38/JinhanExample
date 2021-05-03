@@ -53,5 +53,11 @@
             android:layout_height="50dp"
             android:text="커스텀 로딩 뷰" />
 
+        <Button
+            android:id="@+id/splashAnim"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="스플래시 애니메이션" />
+
     </LinearLayout>
 </layout>
